@@ -12,6 +12,11 @@ pt-BR:
       bio: "Bio: %{bio}"
       edit: 'Editar Perfil'
 
+  user_sessions:
+    new:
+      title: Login
+      sign_up: 'Cadastre-se'
+
   signup_mailer:
     confirm_email:
       subject: 'Colcho.net - Confirme seu email'
@@ -48,3 +53,18 @@ pt-BR:
         description: descrição
         location: localização
         title: Título
+
+
+      activemodel:
+        attributes:
+          user_sessions:
+            email: Email
+            password: Senha
+        erros:
+          messages:
+            invalid_login: Usuário ou senha inválidos
+
+      helpers:
+        submit:
+          user_session:
+            create: Entrar

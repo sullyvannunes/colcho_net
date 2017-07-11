@@ -18681,3 +18681,582 @@ Processing by UsersController#show as HTML
 Completed 200 OK in 24ms (Views: 22.7ms | ActiveRecord: 0.1ms)
 
 
+Started GET "/pt-BR/users" for 127.0.0.1 at 2017-07-11 13:37:27 -0300
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#index as HTML
+  Parameters: {"locale"=>"pt-BR"}
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (17.9ms)
+Completed 200 OK in 289ms (Views: 276.1ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/?locale=pt-BR" for 127.0.0.1 at 2017-07-11 13:37:30 -0300
+Processing by HomeController#index as HTML
+  Parameters: {"locale"=>"pt-BR"}
+  [1m[36mRoom Load (0.2ms)[0m  [1m[34mSELECT  "rooms".* FROM "rooms" ORDER BY "rooms"."id" ASC LIMIT ?[0m  [["LIMIT", 3]]
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 38ms (Views: 19.0ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/pt-BR/rooms" for 127.0.0.1 at 2017-07-11 13:37:32 -0300
+Processing by RoomsController#index as HTML
+  Parameters: {"locale"=>"pt-BR"}
+  Rendering rooms/index.html.erb within layouts/application
+  [1m[36mRoom Load (0.3ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms"[0m
+  Rendered rooms/index.html.erb within layouts/application (5.3ms)
+Completed 200 OK in 23ms (Views: 21.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/pt-BR/users/new" for 127.0.0.1 at 2017-07-11 13:37:33 -0300
+Processing by UsersController#new as HTML
+  Parameters: {"locale"=>"pt-BR"}
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (13.8ms)
+  Rendered users/new.html.erb within layouts/application (15.8ms)
+Completed 200 OK in 59ms (Views: 57.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/?locale=pt-BR" for 127.0.0.1 at 2017-07-11 13:37:35 -0300
+Processing by HomeController#index as HTML
+  Parameters: {"locale"=>"pt-BR"}
+  [1m[36mRoom Load (0.4ms)[0m  [1m[34mSELECT  "rooms".* FROM "rooms" ORDER BY "rooms"."id" ASC LIMIT ?[0m  [["LIMIT", 3]]
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 25ms (Views: 21.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/user_sessions/new" for 127.0.0.1 at 2017-07-11 14:33:38 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/user_sessions/new"):
+  
+actionpack (5.1.2) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.2) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.2) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.2) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.2) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.2) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.2) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.2) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.2) lib/rails/engine.rb:522:in `call'
+puma (3.9.1) lib/puma/configuration.rb:224:in `call'
+puma (3.9.1) lib/puma/server.rb:602:in `handle_request'
+puma (3.9.1) lib/puma/server.rb:435:in `process_client'
+puma (3.9.1) lib/puma/server.rb:299:in `block in run'
+puma (3.9.1) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/user_session/new" for 127.0.0.1 at 2017-07-11 14:34:53 -0300
+Processing by UserSessionsController#new as HTML
+  Rendering user_sessions/new.html.erb within layouts/application
+  Rendered user_sessions/new.html.erb within layouts/application (121.2ms)
+Completed 500 Internal Server Error in 126ms
+
+
+  
+ActionView::Template::Error (undefined method `user_sessions_path' for #<#<Class:0x007f11f55fdf08>:0x007f11f55f1910>
+Did you mean?  user_session_path
+               user_session_url):
+     5: </div>
+     6: <% end %>
+     7: 
+     8: <%= form_for @session do |f| %>
+     9:   <p>
+    10:     <%= f.label :email %>
+    11:     <%= f.text_field :email%>
+  
+app/views/user_sessions/new.html.erb:8:in `_app_views_user_sessions_new_html_erb__134498884677887289_69857553938980'
+Started PUT "/__web_console/repl_sessions/b66dc31b603a44a768d2d5bcdee5caaa" for 127.0.0.1 at 2017-07-11 14:35:38 -0300
+Started PUT "/__web_console/repl_sessions/b66dc31b603a44a768d2d5bcdee5caaa" for 127.0.0.1 at 2017-07-11 14:35:46 -0300
+Started PUT "/__web_console/repl_sessions/b66dc31b603a44a768d2d5bcdee5caaa" for 127.0.0.1 at 2017-07-11 14:35:46 -0300
+Started PUT "/__web_console/repl_sessions/b66dc31b603a44a768d2d5bcdee5caaa" for 127.0.0.1 at 2017-07-11 14:35:47 -0300
+Started PUT "/__web_console/repl_sessions/b66dc31b603a44a768d2d5bcdee5caaa" for 127.0.0.1 at 2017-07-11 14:35:50 -0300
+Started PUT "/__web_console/repl_sessions/b66dc31b603a44a768d2d5bcdee5caaa" for 127.0.0.1 at 2017-07-11 14:35:52 -0300
+Started PUT "/__web_console/repl_sessions/b66dc31b603a44a768d2d5bcdee5caaa" for 127.0.0.1 at 2017-07-11 14:36:04 -0300
+Started GET "/user_session/new" for 127.0.0.1 at 2017-07-11 14:47:32 -0300
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UserSessionsController#new as HTML
+  Rendering user_sessions/new.html.erb within layouts/application
+  Rendered user_sessions/new.html.erb within layouts/application (131.5ms)
+Completed 500 Internal Server Error in 145ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `user_sessions_path' for #<#<Class:0x00556c4eb701a0>:0x00556c4eb62848>
+Did you mean?  user_session_path
+               user_session_url):
+     5: </div>
+     6: <% end %>
+     7: 
+     8: <%= form_for @session do |f| %>
+     9:   <p>
+    10:     <%= f.label :email %>
+    11:     <%= f.text_field :email%>
+  
+app/views/user_sessions/new.html.erb:8:in `_app_views_user_sessions_new_html_erb__3172538598683203500_46961832729300'
+Started GET "/user_session/" for 127.0.0.1 at 2017-07-11 14:53:49 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/user_session"):
+  
+actionpack (5.1.2) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.2) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.2) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.2) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.2) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.2) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.2) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.2) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.2) lib/rails/engine.rb:522:in `call'
+puma (3.9.1) lib/puma/configuration.rb:224:in `call'
+puma (3.9.1) lib/puma/server.rb:602:in `handle_request'
+puma (3.9.1) lib/puma/server.rb:435:in `process_client'
+puma (3.9.1) lib/puma/server.rb:299:in `block in run'
+puma (3.9.1) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/user_session/" for 127.0.0.1 at 2017-07-11 14:54:30 -0300
+  
+Started GET "/user_session/new" for 127.0.0.1 at 2017-07-11 14:54:40 -0300
+ActionController::RoutingError (No route matches [GET] "/user_session"):
+  
+actionpack (5.1.2) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.2) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.2) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.2) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.2) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.2) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.2) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.2) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.2) lib/rails/engine.rb:522:in `call'
+puma (3.9.1) lib/puma/configuration.rb:224:in `call'
+puma (3.9.1) lib/puma/server.rb:602:in `handle_request'
+puma (3.9.1) lib/puma/server.rb:435:in `process_client'
+puma (3.9.1) lib/puma/server.rb:299:in `block in run'
+puma (3.9.1) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Processing by UserSessionsController#new as HTML
+  Rendering user_sessions/new.html.erb within layouts/application
+  Rendered user_sessions/new.html.erb within layouts/application (106.2ms)
+Completed 500 Internal Server Error in 112ms
+
+
+  
+ActionView::Template::Error (undefined method `user_sessions_path' for #<#<Class:0x00556c4fc209a0>:0x00556c4fc17580>
+Did you mean?  user_session_path
+               user_session_url):
+     5: </div>
+     6: <% end %>
+     7: 
+     8: <%= form_for @session do |f| %>
+     9:   <p>
+    10:     <%= f.label :email %>
+    11:     <%= f.text_field :email%>
+  
+app/views/user_sessions/new.html.erb:8:in `_app_views_user_sessions_new_html_erb__3172538598683203500_46961841474820'
+Started PUT "/__web_console/repl_sessions/2237fd3c83c5aa6794994853776dbc90" for 127.0.0.1 at 2017-07-11 14:55:22 -0300
+Started PUT "/__web_console/repl_sessions/2237fd3c83c5aa6794994853776dbc90" for 127.0.0.1 at 2017-07-11 14:55:28 -0300
+Started PUT "/__web_console/repl_sessions/2237fd3c83c5aa6794994853776dbc90" for 127.0.0.1 at 2017-07-11 14:55:28 -0300
+Started PUT "/__web_console/repl_sessions/2237fd3c83c5aa6794994853776dbc90" for 127.0.0.1 at 2017-07-11 14:55:43 -0300
+Started PUT "/__web_console/repl_sessions/2237fd3c83c5aa6794994853776dbc90" for 127.0.0.1 at 2017-07-11 14:55:46 -0300
+Started PUT "/__web_console/repl_sessions/2237fd3c83c5aa6794994853776dbc90" for 127.0.0.1 at 2017-07-11 14:55:46 -0300
+Started GET "/user_session/new" for 127.0.0.1 at 2017-07-11 14:59:07 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/user_session/new"):
+  
+actionpack (5.1.2) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.2) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.2) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.2) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.2) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.2) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.2) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.2) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.2) lib/rails/engine.rb:522:in `call'
+puma (3.9.1) lib/puma/configuration.rb:224:in `call'
+puma (3.9.1) lib/puma/server.rb:602:in `handle_request'
+puma (3.9.1) lib/puma/server.rb:435:in `process_client'
+puma (3.9.1) lib/puma/server.rb:299:in `block in run'
+puma (3.9.1) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/user_sessions/new" for 127.0.0.1 at 2017-07-11 14:59:22 -0300
+Processing by UserSessionsController#new as HTML
+  Rendering user_sessions/new.html.erb within layouts/application
+  Rendered user_sessions/new.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 217ms (Views: 214.2ms)
+
+
+Started POST "/pt-BR/user_sessions" for 127.0.0.1 at 2017-07-11 14:59:24 -0300
+Processing by UserSessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"owQfl7GLMyR0Nwn1dMorDN5RomkvIfgGT0lzSduDEyaIotNueYEOx4a+wHYmBi2rfzImpexJN7333v1CY0sLtg==", "user_session"=>{"email"=>"", "password"=>"[FILTERED]"}, "commit"=>"Criar User session", "locale"=>"pt-BR"}
+No template found for UserSessionsController#create, rendering head :no_content
+Completed 204 No Content in 16ms
+
+
+Started GET "/user_sessions/new" for 127.0.0.1 at 2017-07-11 15:03:23 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/user_sessions/new"):
+  
+actionpack (5.1.2) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.2) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.2) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.2) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.2) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.2) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.2) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.2) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.2) lib/rails/engine.rb:522:in `call'
+puma (3.9.1) lib/puma/configuration.rb:224:in `call'
+puma (3.9.1) lib/puma/server.rb:602:in `handle_request'
+puma (3.9.1) lib/puma/server.rb:435:in `process_client'
+puma (3.9.1) lib/puma/server.rb:299:in `block in run'
+puma (3.9.1) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/user_sessions/new" for 127.0.0.1 at 2017-07-11 15:03:40 -0300
+Processing by UserSessionsController#new as HTML
+  Rendering user_sessions/new.html.erb within layouts/application
+  Rendered user_sessions/new.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 24ms (Views: 21.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-07-11 15:04:13 -0300
+Processing by HomeController#index as HTML
+  [1m[36mRoom Load (0.2ms)[0m  [1m[34mSELECT  "rooms".* FROM "rooms" ORDER BY "rooms"."id" ASC LIMIT ?[0m  [["LIMIT", 3]]
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 34ms (Views: 16.1ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/user_session" for 127.0.0.1 at 2017-07-11 15:05:10 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/user_session"):
+  
+actionpack (5.1.2) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.2) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.2) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.2) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.2) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.2) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.2) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.2) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.2) lib/rails/engine.rb:522:in `call'
+puma (3.9.1) lib/puma/configuration.rb:224:in `call'
+puma (3.9.1) lib/puma/server.rb:602:in `handle_request'
+puma (3.9.1) lib/puma/server.rb:435:in `process_client'
+puma (3.9.1) lib/puma/server.rb:299:in `block in run'
+puma (3.9.1) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/user_session/new" for 127.0.0.1 at 2017-07-11 15:05:14 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/user_session/new"):
+  
+actionpack (5.1.2) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.2) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.2) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.2) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.2) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.2) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.2) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.2) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.2) lib/rails/engine.rb:522:in `call'
+puma (3.9.1) lib/puma/configuration.rb:224:in `call'
+puma (3.9.1) lib/puma/server.rb:602:in `handle_request'
+puma (3.9.1) lib/puma/server.rb:435:in `process_client'
+puma (3.9.1) lib/puma/server.rb:299:in `block in run'
+puma (3.9.1) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/user_sessions" for 127.0.0.1 at 2017-07-11 15:05:21 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/user_sessions"):
+  
+actionpack (5.1.2) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.2) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.2) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.2) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.2) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.2) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.2) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.2) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.2) lib/rails/engine.rb:522:in `call'
+puma (3.9.1) lib/puma/configuration.rb:224:in `call'
+puma (3.9.1) lib/puma/server.rb:602:in `handle_request'
+puma (3.9.1) lib/puma/server.rb:435:in `process_client'
+puma (3.9.1) lib/puma/server.rb:299:in `block in run'
+puma (3.9.1) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/user_sessions/new" for 127.0.0.1 at 2017-07-11 15:05:23 -0300
+Processing by UserSessionsController#new as HTML
+  Rendering user_sessions/new.html.erb within layouts/application
+  Rendered user_sessions/new.html.erb within layouts/application (4.3ms)
+Completed 200 OK in 28ms (Views: 24.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pt-BR/user_sessions/new" for 127.0.0.1 at 2017-07-11 15:05:48 -0300
+Processing by UserSessionsController#new as HTML
+  Parameters: {"locale"=>"pt-BR"}
+  Rendering user_sessions/new.html.erb within layouts/application
+  Rendered user_sessions/new.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 29ms (Views: 27.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pt-BR/user_sessions/new" for 127.0.0.1 at 2017-07-11 15:08:36 -0300
+Processing by UserSessionsController#new as HTML
+  Parameters: {"locale"=>"pt-BR"}
+  Rendering user_sessions/new.html.erb within layouts/application
+  Rendered user_sessions/new.html.erb within layouts/application (13.4ms)
+Completed 200 OK in 47ms (Views: 43.2ms)
+
+
+Started GET "/pt-BR/user_sessions/new" for 127.0.0.1 at 2017-07-11 15:08:57 -0300
+Processing by UserSessionsController#new as HTML
+  Parameters: {"locale"=>"pt-BR"}
+  Rendering user_sessions/new.html.erb within layouts/application
+  Rendered user_sessions/new.html.erb within layouts/application (13.8ms)
+Completed 200 OK in 39ms (Views: 37.0ms)
+
+
+Started GET "/pt-BR/user_sessions/new" for 127.0.0.1 at 2017-07-11 15:09:15 -0300
+Processing by UserSessionsController#new as HTML
+  Parameters: {"locale"=>"pt-BR"}
+  Rendering user_sessions/new.html.erb within layouts/application
+  Rendered user_sessions/new.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 25ms (Views: 23.6ms)
+
+
+Started GET "/pt-BR/user_sessions/new" for 127.0.0.1 at 2017-07-11 15:27:08 -0300
+Processing by UserSessionsController#new as HTML
+  Parameters: {"locale"=>"pt-BR"}
+  Rendering user_sessions/new.html.erb within layouts/application
+  Rendered user_sessions/new.html.erb within layouts/application (12.3ms)
+Completed 200 OK in 35ms (Views: 32.4ms)
+
+
+Started GET "/pt-BR/user_sessions/new" for 127.0.0.1 at 2017-07-11 15:44:54 -0300
+Processing by UserSessionsController#new as HTML
+  Parameters: {"locale"=>"pt-BR"}
+  Rendering user_sessions/new.html.erb within layouts/application
+  Rendered user_sessions/new.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 25ms (Views: 22.6ms)
+
+
+Started POST "/pt-BR/user_sessions" for 127.0.0.1 at 2017-07-11 15:45:03 -0300
+Processing by UserSessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"M6IigNG9dsMKExMuYDFUXWaCqUSm9tGGCNk8TLkRxO4YBO55GbdLIPia2q0y/VL6x+EtiGWeHj2wTrJHAdncfg==", "user_session"=>{"email"=>"sulllvahn", "password"=>"[FILTERED]"}, "commit"=>"Criar User session", "locale"=>"pt-BR"}
+Completed 500 Internal Server Error in 2ms
+
+
+  
+NameError (uninitialized constant UserSessionsController::UsersSession):
+  
+app/controllers/user_sessions_controller.rb:7:in `create'
+Started POST "/pt-BR/user_sessions" for 127.0.0.1 at 2017-07-11 15:46:32 -0300
+  
+SyntaxError (/home/sullyvan/workspace-sullyvan/proj/colcho_net/app/controllers/user_sessions_controller.rb:7: syntax error, unexpected ']', expecting ')'
+ params.require(:user_session].permit(:email, :password))
+                              ^
+/home/sullyvan/workspace-sullyvan/proj/colcho_net/app/controllers/user_sessions_controller.rb:7: syntax error, unexpected ')', expecting keyword_end
+on].permit(:email, :password))
+                              ^):
+  
+app/controllers/user_sessions_controller.rb:7: syntax error, unexpected ']', expecting ')'
+app/controllers/user_sessions_controller.rb:7: syntax error, unexpected ')', expecting keyword_end
+Started GET "/pt-BR/user_sessions" for 127.0.0.1 at 2017-07-11 15:46:36 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/pt-BR/user_sessions"):
+  
+actionpack (5.1.2) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.2) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.2) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.2) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.2) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.2) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.2) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.2) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.2) lib/rails/engine.rb:522:in `call'
+puma (3.9.1) lib/puma/configuration.rb:224:in `call'
+puma (3.9.1) lib/puma/server.rb:602:in `handle_request'
+puma (3.9.1) lib/puma/server.rb:435:in `process_client'
+puma (3.9.1) lib/puma/server.rb:299:in `block in run'
+puma (3.9.1) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/pt-BR/user_sessions/new" for 127.0.0.1 at 2017-07-11 15:46:44 -0300
+  
+SyntaxError (/home/sullyvan/workspace-sullyvan/proj/colcho_net/app/controllers/user_sessions_controller.rb:7: syntax error, unexpected ']', expecting ')'
+ params.require(:user_session].permit(:email, :password))
+                              ^
+/home/sullyvan/workspace-sullyvan/proj/colcho_net/app/controllers/user_sessions_controller.rb:7: syntax error, unexpected ')', expecting keyword_end
+on].permit(:email, :password))
+                              ^):
+  
+app/controllers/user_sessions_controller.rb:7: syntax error, unexpected ']', expecting ')'
+app/controllers/user_sessions_controller.rb:7: syntax error, unexpected ')', expecting keyword_end
+Started GET "/pt-BR/user_sessions/new" for 127.0.0.1 at 2017-07-11 15:47:26 -0300
+Processing by UserSessionsController#new as HTML
+  Parameters: {"locale"=>"pt-BR"}
+  Rendering user_sessions/new.html.erb within layouts/application
+  Rendered user_sessions/new.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 21ms (Views: 18.8ms)
+
+
+Started POST "/pt-BR/user_sessions" for 127.0.0.1 at 2017-07-11 15:47:31 -0300
+Processing by UserSessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"nr7iJqSnPe50TPUdiTrzzUROQMx+b0NKsSCTbwqluN+1GC7fbK0ADYbFPJ7b9vVq5S3EAL0HjPEJtx1ksm2gTw==", "user_session"=>{"email"=>"sdfg", "password"=>"[FILTERED]"}, "commit"=>"Criar User session", "locale"=>"pt-BR"}
+Completed 500 Internal Server Error in 1ms
+
+
+  
+NameError (uninitialized constant UserSessionsController::UsersSession):
+  
+app/controllers/user_sessions_controller.rb:7:in `create'
+Started POST "/pt-BR/user_sessions" for 127.0.0.1 at 2017-07-11 15:48:27 -0300
+Processing by UserSessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"nr7iJqSnPe50TPUdiTrzzUROQMx+b0NKsSCTbwqluN+1GC7fbK0ADYbFPJ7b9vVq5S3EAL0HjPEJtx1ksm2gTw==", "user_session"=>{"email"=>"sdfg", "password"=>"[FILTERED]"}, "commit"=>"Criar User session", "locale"=>"pt-BR"}
+Completed 500 Internal Server Error in 31ms
+
+
+  
+NoMethodError (undefined method `authenticate' for User (call 'User.connection' to establish a connection):Class):
+  
+app/models/user_session.rb:19:in `authenticate'
+app/controllers/user_sessions_controller.rb:8:in `create'
+Started POST "/pt-BR/user_sessions" for 127.0.0.1 at 2017-07-11 16:08:51 -0300
+Processing by UserSessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"nr7iJqSnPe50TPUdiTrzzUROQMx+b0NKsSCTbwqluN+1GC7fbK0ADYbFPJ7b9vVq5S3EAL0HjPEJtx1ksm2gTw==", "user_session"=>{"email"=>"sdfg", "password"=>"[FILTERED]"}, "commit"=>"Criar User session", "locale"=>"pt-BR"}
+Completed 500 Internal Server Error in 22ms
+
+
+  
+NoMethodError (undefined method `authenticate' for User (call 'User.connection' to establish a connection):Class):
+  
+app/models/user_session.rb:19:in `authenticate'
+app/controllers/user_sessions_controller.rb:8:in `create'
+Started POST "/pt-BR/user_sessions" for 127.0.0.1 at 2017-07-11 16:10:19 -0300
+Processing by UserSessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"nr7iJqSnPe50TPUdiTrzzUROQMx+b0NKsSCTbwqluN+1GC7fbK0ADYbFPJ7b9vVq5S3EAL0HjPEJtx1ksm2gTw==", "user_session"=>{"email"=>"sdfg", "password"=>"[FILTERED]"}, "commit"=>"Criar User session", "locale"=>"pt-BR"}
+Completed 500 Internal Server Error in 10ms
+
+
+  
+ArgumentError (wrong number of arguments (given 2, expected 0)):
+  
+app/models/user.rb:27:in `authenticate'
+app/models/user_session.rb:19:in `authenticate'
+app/controllers/user_sessions_controller.rb:8:in `create'
+Started POST "/pt-BR/user_sessions" for 127.0.0.1 at 2017-07-11 16:10:49 -0300
+Processing by UserSessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"nr7iJqSnPe50TPUdiTrzzUROQMx+b0NKsSCTbwqluN+1GC7fbK0ADYbFPJ7b9vVq5S3EAL0HjPEJtx1ksm2gTw==", "user_session"=>{"email"=>"sdfg", "password"=>"[FILTERED]"}, "commit"=>"Criar User session", "locale"=>"pt-BR"}
+Completed 500 Internal Server Error in 16ms
+
+
+  
+NoMethodError (undefined method `id' for true:TrueClass):
+  
+app/models/user_session.rb:34:in `store'
+app/models/user_session.rb:21:in `authenticate'
+app/controllers/user_sessions_controller.rb:8:in `create'
