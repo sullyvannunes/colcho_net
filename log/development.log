@@ -17667,3 +17667,1017 @@ puma (3.9.1) lib/puma/server.rb:602:in `handle_request'
 puma (3.9.1) lib/puma/server.rb:435:in `process_client'
 puma (3.9.1) lib/puma/server.rb:299:in `block in run'
 puma (3.9.1) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/" for 127.0.0.1 at 2017-07-11 10:20:22 -0300
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#index as HTML
+  [1m[36mRoom Load (0.2ms)[0m  [1m[34mSELECT  "rooms".* FROM "rooms" ORDER BY "rooms"."id" ASC LIMIT ?[0m  [["LIMIT", 3]]
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 393ms (Views: 362.2ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/rooms" for 127.0.0.1 at 2017-07-11 10:20:56 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/rooms"):
+  
+actionpack (5.1.2) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.2) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.2) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.2) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.2) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.2) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.2) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.2) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.2) lib/rails/engine.rb:522:in `call'
+puma (3.9.1) lib/puma/configuration.rb:224:in `call'
+puma (3.9.1) lib/puma/server.rb:602:in `handle_request'
+puma (3.9.1) lib/puma/server.rb:435:in `process_client'
+puma (3.9.1) lib/puma/server.rb:299:in `block in run'
+puma (3.9.1) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/rooms" for 127.0.0.1 at 2017-07-11 10:23:08 -0300
+Processing by RoomsController#index as HTML
+  Rendering rooms/index.html.erb within layouts/application
+  [1m[36mRoom Load (0.1ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms"[0m
+  Rendered rooms/index.html.erb within layouts/application (227.3ms)
+Completed 500 Internal Server Error in 233ms (ActiveRecord: 1.1ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `edit_room' for #<#<Class:0x007ff1809ffbb8>:0x007ff178123268>
+Did you mean?  edit_room_url):
+    19:         <td><%= room.location %></td>
+    20:         <td><%= room.description %></td>
+    21:         <td><%= link_to 'Show', room %></td>
+    22:         <td><%= link_to 'Edit', edit_room %></td>
+    23:         <td><%= link_to 'Destroy', room_path, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    24:       </tr>
+    25:     <% end %>
+  
+app/views/rooms/index.html.erb:22:in `block in _app_views_rooms_index_html_erb__1521089312091985825_70337539122100'
+app/views/rooms/index.html.erb:16:in `_app_views_rooms_index_html_erb__1521089312091985825_70337539122100'
+Started PUT "/__web_console/repl_sessions/098d40a6bdc89598e42bb7e535846235" for 127.0.0.1 at 2017-07-11 10:24:29 -0300
+Started PUT "/__web_console/repl_sessions/098d40a6bdc89598e42bb7e535846235" for 127.0.0.1 at 2017-07-11 10:24:40 -0300
+Started PUT "/__web_console/repl_sessions/098d40a6bdc89598e42bb7e535846235" for 127.0.0.1 at 2017-07-11 10:25:55 -0300
+Started PUT "/__web_console/repl_sessions/098d40a6bdc89598e42bb7e535846235" for 127.0.0.1 at 2017-07-11 10:26:04 -0300
+Started PUT "/__web_console/repl_sessions/098d40a6bdc89598e42bb7e535846235" for 127.0.0.1 at 2017-07-11 10:26:36 -0300
+Started PUT "/__web_console/repl_sessions/098d40a6bdc89598e42bb7e535846235" for 127.0.0.1 at 2017-07-11 10:26:44 -0300
+Started GET "/rooms" for 127.0.0.1 at 2017-07-11 10:27:21 -0300
+Processing by RoomsController#index as HTML
+  Rendering rooms/index.html.erb within layouts/application
+  [1m[36mRoom Load (0.4ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms"[0m
+  Rendered rooms/index.html.erb within layouts/application (4.2ms)
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.4ms)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"show", :controller=>"rooms", :locale=>:"pt-BR"}, missing required keys: [:id]):
+    20:         <td><%= room.description %></td>
+    21:         <td><%= link_to 'Show', room %></td>
+    22:         <td><%= link_to 'Edit', edit_room_path(room) %></td>
+    23:         <td><%= link_to 'Destroy', room_path, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    24:       </tr>
+    25:     <% end %>
+    26:   </tbody>
+  
+app/views/rooms/index.html.erb:23:in `block in _app_views_rooms_index_html_erb__1521089312091985825_70337549828380'
+app/views/rooms/index.html.erb:16:in `_app_views_rooms_index_html_erb__1521089312091985825_70337549828380'
+Started PUT "/__web_console/repl_sessions/69ff372f1d68e71e21aa86d6a6945bff" for 127.0.0.1 at 2017-07-11 10:28:20 -0300
+Started PUT "/__web_console/repl_sessions/69ff372f1d68e71e21aa86d6a6945bff" for 127.0.0.1 at 2017-07-11 10:28:22 -0300
+Started PUT "/__web_console/repl_sessions/69ff372f1d68e71e21aa86d6a6945bff" for 127.0.0.1 at 2017-07-11 10:31:19 -0300
+Started GET "/rooms" for 127.0.0.1 at 2017-07-11 10:32:52 -0300
+Processing by RoomsController#index as HTML
+  Rendering rooms/index.html.erb within layouts/application
+  [1m[36mRoom Load (0.6ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms"[0m
+  Rendered rooms/index.html.erb within layouts/application (5.8ms)
+Completed 200 OK in 35ms (Views: 32.8ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/user" for 127.0.0.1 at 2017-07-11 10:33:02 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/user"):
+  
+actionpack (5.1.2) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.2) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.2) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.2) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.2) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.2) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.2) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.2) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.2) lib/rails/engine.rb:522:in `call'
+puma (3.9.1) lib/puma/configuration.rb:224:in `call'
+puma (3.9.1) lib/puma/server.rb:602:in `handle_request'
+puma (3.9.1) lib/puma/server.rb:435:in `process_client'
+puma (3.9.1) lib/puma/server.rb:299:in `block in run'
+puma (3.9.1) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/users" for 127.0.0.1 at 2017-07-11 10:33:05 -0300
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (13.7ms)
+Completed 200 OK in 34ms (Views: 29.8ms | ActiveRecord: 0.7ms)
+
+
+Started DELETE "/pt-BR/users/1" for 127.0.0.1 at 2017-07-11 10:33:11 -0300
+  
+AbstractController::ActionNotFound (The action 'destroy' could not be found for UsersController):
+  
+actionpack (5.1.2) lib/abstract_controller/base.rb:119:in `process'
+actionview (5.1.2) lib/action_view/rendering.rb:30:in `process'
+actionpack (5.1.2) lib/action_controller/metal.rb:189:in `dispatch'
+actionpack (5.1.2) lib/action_controller/metal.rb:253:in `dispatch'
+actionpack (5.1.2) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (5.1.2) lib/action_dispatch/routing/route_set.rb:31:in `serve'
+actionpack (5.1.2) lib/action_dispatch/journey/router.rb:46:in `block in serve'
+actionpack (5.1.2) lib/action_dispatch/journey/router.rb:33:in `each'
+actionpack (5.1.2) lib/action_dispatch/journey/router.rb:33:in `serve'
+actionpack (5.1.2) lib/action_dispatch/routing/route_set.rb:832:in `call'
+rack (2.0.3) lib/rack/etag.rb:25:in `call'
+rack (2.0.3) lib/rack/conditional_get.rb:38:in `call'
+rack (2.0.3) lib/rack/head.rb:12:in `call'
+rack (2.0.3) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.3) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/cookies.rb:613:in `call'
+activerecord (5.1.2) lib/active_record/migration.rb:556:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+activesupport (5.1.2) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.2) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.2) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.2) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.2) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.2) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.2) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.2) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.2) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.2) lib/rails/engine.rb:522:in `call'
+puma (3.9.1) lib/puma/configuration.rb:224:in `call'
+puma (3.9.1) lib/puma/server.rb:602:in `handle_request'
+puma (3.9.1) lib/puma/server.rb:435:in `process_client'
+puma (3.9.1) lib/puma/server.rb:299:in `block in run'
+puma (3.9.1) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/room" for 127.0.0.1 at 2017-07-11 10:33:21 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/room"):
+  
+actionpack (5.1.2) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.2) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.2) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.2) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.2) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.2) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.2) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.2) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.2) lib/rails/engine.rb:522:in `call'
+puma (3.9.1) lib/puma/configuration.rb:224:in `call'
+puma (3.9.1) lib/puma/server.rb:602:in `handle_request'
+puma (3.9.1) lib/puma/server.rb:435:in `process_client'
+puma (3.9.1) lib/puma/server.rb:299:in `block in run'
+puma (3.9.1) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/rooms" for 127.0.0.1 at 2017-07-11 10:33:26 -0300
+Processing by RoomsController#index as HTML
+  Rendering rooms/index.html.erb within layouts/application
+  [1m[36mRoom Load (0.3ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms"[0m
+  Rendered rooms/index.html.erb within layouts/application (5.1ms)
+Completed 200 OK in 26ms (Views: 23.9ms | ActiveRecord: 0.3ms)
+
+
+Started DELETE "/pt-BR/rooms/2" for 127.0.0.1 at 2017-07-11 10:33:31 -0300
+Processing by RoomsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"6/mjl0H8gJNQqq8YaT9g8bZTuuGLty+xVP6bsDIWlZfAX29uifa9cKIjZps782ZWFzA+LUjf4ArsaRW7it6NBw==", "locale"=>"pt-BR", "id"=>"2"}
+  [1m[36mRoom Load (0.3ms)[0m  [1m[34mSELECT  "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[31mDELETE FROM "rooms" WHERE "rooms"."id" = ?[0m  [["id", 2]]
+  [1m[35m (95.9ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/pt-BR/rooms
+Completed 302 Found in 149ms (ActiveRecord: 96.4ms)
+
+
+Started GET "/pt-BR/rooms" for 127.0.0.1 at 2017-07-11 10:33:31 -0300
+Processing by RoomsController#index as HTML
+  Parameters: {"locale"=>"pt-BR"}
+  Rendering rooms/index.html.erb within layouts/application
+  [1m[36mRoom Load (0.3ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms"[0m
+  Rendered rooms/index.html.erb within layouts/application (4.8ms)
+Completed 200 OK in 24ms (Views: 22.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/pt-BR/users" for 127.0.0.1 at 2017-07-11 10:33:37 -0300
+Processing by UsersController#index as HTML
+  Parameters: {"locale"=>"pt-BR"}
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (5.8ms)
+Completed 200 OK in 32ms (Views: 30.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/pt-BR/users" for 127.0.0.1 at 2017-07-11 10:34:06 -0300
+Processing by UsersController#index as HTML
+  Parameters: {"locale"=>"pt-BR"}
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (5.6ms)
+Completed 200 OK in 34ms (Views: 32.5ms | ActiveRecord: 0.3ms)
+
+
+Started DELETE "/pt-BR/users/5" for 127.0.0.1 at 2017-07-11 10:34:10 -0300
+  
+AbstractController::ActionNotFound (The action 'destroy' could not be found for UsersController):
+  
+actionpack (5.1.2) lib/abstract_controller/base.rb:119:in `process'
+actionview (5.1.2) lib/action_view/rendering.rb:30:in `process'
+actionpack (5.1.2) lib/action_controller/metal.rb:189:in `dispatch'
+actionpack (5.1.2) lib/action_controller/metal.rb:253:in `dispatch'
+actionpack (5.1.2) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (5.1.2) lib/action_dispatch/routing/route_set.rb:31:in `serve'
+actionpack (5.1.2) lib/action_dispatch/journey/router.rb:46:in `block in serve'
+actionpack (5.1.2) lib/action_dispatch/journey/router.rb:33:in `each'
+actionpack (5.1.2) lib/action_dispatch/journey/router.rb:33:in `serve'
+actionpack (5.1.2) lib/action_dispatch/routing/route_set.rb:832:in `call'
+rack (2.0.3) lib/rack/etag.rb:25:in `call'
+rack (2.0.3) lib/rack/conditional_get.rb:38:in `call'
+rack (2.0.3) lib/rack/head.rb:12:in `call'
+rack (2.0.3) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.3) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/cookies.rb:613:in `call'
+activerecord (5.1.2) lib/active_record/migration.rb:556:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+activesupport (5.1.2) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.2) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.2) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.2) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.2) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.2) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.2) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.2) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.2) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.2) lib/rails/engine.rb:522:in `call'
+puma (3.9.1) lib/puma/configuration.rb:224:in `call'
+puma (3.9.1) lib/puma/server.rb:602:in `handle_request'
+puma (3.9.1) lib/puma/server.rb:435:in `process_client'
+puma (3.9.1) lib/puma/server.rb:299:in `block in run'
+puma (3.9.1) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/en/users" for 127.0.0.1 at 2017-07-11 10:40:09 -0300
+Processing by UsersController#index as HTML
+  Parameters: {"locale"=>"en"}
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (15.2ms)
+Completed 200 OK in 39ms (Views: 34.7ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/en/users/4" for 127.0.0.1 at 2017-07-11 10:40:16 -0300
+Processing by UsersController#show as HTML
+  Parameters: {"locale"=>"en", "id"=>"4"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 45ms (Views: 28.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/pt-Br/users/4" for 127.0.0.1 at 2017-07-11 10:40:23 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/pt-Br/users/4"):
+  
+actionpack (5.1.2) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.2) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.2) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.2) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.2) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.2) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.2) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.2) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.2) lib/rails/engine.rb:522:in `call'
+puma (3.9.1) lib/puma/configuration.rb:224:in `call'
+puma (3.9.1) lib/puma/server.rb:602:in `handle_request'
+puma (3.9.1) lib/puma/server.rb:435:in `process_client'
+puma (3.9.1) lib/puma/server.rb:299:in `block in run'
+puma (3.9.1) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/pt-BR/users/4" for 127.0.0.1 at 2017-07-11 10:40:29 -0300
+Processing by UsersController#show as HTML
+  Parameters: {"locale"=>"pt-BR", "id"=>"4"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 23ms (Views: 21.3ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/en/users/4" for 127.0.0.1 at 2017-07-11 10:40:40 -0300
+Processing by UsersController#show as HTML
+  Parameters: {"locale"=>"en", "id"=>"4"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 30ms (Views: 27.5ms | ActiveRecord: 0.1ms)
+
+
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+SignupMailer#confirm_email: processed outbound mail in 0.6ms
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering signup_mailer/confirm_email.html.erb
+  Rendered signup_mailer/confirm_email.html.erb (3.4ms)
+SignupMailer#confirm_email: processed outbound mail in 95.6ms
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering signup_mailer/confirm_email.html.erb
+  Rendered signup_mailer/confirm_email.html.erb (1.3ms)
+SignupMailer#confirm_email: processed outbound mail in 6.6ms
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering signup_mailer/confirm_email.html.erb
+  Rendered signup_mailer/confirm_email.html.erb (1.0ms)
+SignupMailer#confirm_email: processed outbound mail in 6.1ms
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering signup_mailer/confirm_email.html.erb
+  Rendered signup_mailer/confirm_email.html.erb (1.1ms)
+SignupMailer#confirm_email: processed outbound mail in 7.6ms
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+SignupMailer#confirm_email: processed outbound mail in 4.5ms
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+SignupMailer#confirm_email: processed outbound mail in 9.9ms
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+SignupMailer#confirm_email: processed outbound mail in 8.7ms
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+SignupMailer#confirm_email: processed outbound mail in 6.4ms
+Started GET "/" for 127.0.0.1 at 2017-07-11 11:14:43 -0300
+Processing by HomeController#index as HTML
+  [1m[36mRoom Load (0.2ms)[0m  [1m[34mSELECT  "rooms".* FROM "rooms" ORDER BY "rooms"."id" ASC LIMIT ?[0m  [["LIMIT", 3]]
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (1.2ms)
+Completed 500 Internal Server Error in 48ms (ActiveRecord: 1.1ms)
+
+
+  
+ActionView::Template::Error (can not load translations from /home/sullyvan/workspace-sullyvan/proj/colchonet/config/locales/pt-BR.yml: #<Psych::SyntaxError: (/home/sullyvan/workspace-sullyvan/proj/colchonet/config/locales/pt-BR.yml): did not find expected key while parsing a block mapping at line 15 column 7>):
+    16: 			<h1><%= link_to "colcho.net", root_path %> </h1>
+    17: 				<nav>
+    18: 					<ul>
+    19: 						<li><%= link_to t('layout.rooms'), rooms_path %> </li>
+    20: 						<li><%= link_to t('layout.signup'), new_user_path %> </li>
+    21: 					</ul>
+    22: 				</nav>
+  
+app/views/layouts/application.html.erb:19:in `_app_views_layouts_application_html_erb___3913701517689980350_47148180730740'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering signup_mailer/confirm_email.html.erb
+  Rendered signup_mailer/confirm_email.html.erb (1.7ms)
+  Rendering signup_mailer/confirm_email.text.erb
+  Rendered signup_mailer/confirm_email.text.erb (0.8ms)
+SignupMailer#confirm_email: processed outbound mail in 283.8ms
+Sent mail to sullyvan@ex.com (14.6ms)
+Date: Tue, 11 Jul 2017 11:18:22 -0300
+From: no-reply@colcho.net
+To: sullyvan@ex.com
+Message-ID: <5964de2e2638a_18442afc69175c106513@PC-DSV-SULLYVAN.mail>
+Subject: translation missing: pt-BR.signup_mailer.confirm_email.subject
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_5964de2e23ae4_18442afc69175c106462";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_5964de2e23ae4_18442afc69175c106462
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+Seja bem vindo ao Colcho.net!
+Seja bem vindo ao Colcho.net, sullyvan. O Colcho.net =C3=A9 o lugar ideal=
+ para voc=C3=AA alugar aquele quarto sobrando na sua casa e ainda conhece=
+r gente do mundo inteiro.
+Para voc=C3=AA come=C3=A7ar a usar o site, acesse o link: http://localhos=
+t:3000/
+Obrigado por se cadastrar no http://localhost:3000/.
+
+----==_mimepart_5964de2e23ae4_18442afc69175c106462
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+<h1>Seja bem vindo ao Colcho.net! </h1>
+<p>
+Seja bem vindo ao Colcho.net, sullyvan. O Colcho.net =C3=A9 o lugar ideal=
+ para voc=C3=AA alugar aquele quarto sobrando na sua casa e ainda conhece=
+r gente do mundo inteiro.
+</p>
+<p>
+Para voc=C3=AA come=C3=A7ar a usar o site, acesse o link: <a href=3D"http=
+://localhost:3000/">http://localhost:3000/</a>
+</p>
+<p>
+Obrigado por se cadastrar no <a href=3D"http://localhost:3000/">Colcho.ne=
+t</a>.
+</p>
+
+----==_mimepart_5964de2e23ae4_18442afc69175c106462--
+
+Started GET "/user/new" for 127.0.0.1 at 2017-07-11 11:20:57 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/user/new"):
+  
+actionpack (5.1.2) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.2) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.2) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.2) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.2) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.2) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.2) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.2) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.2) lib/rails/engine.rb:522:in `call'
+puma (3.9.1) lib/puma/configuration.rb:224:in `call'
+puma (3.9.1) lib/puma/server.rb:602:in `handle_request'
+puma (3.9.1) lib/puma/server.rb:435:in `process_client'
+puma (3.9.1) lib/puma/server.rb:299:in `block in run'
+puma (3.9.1) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/users/new" for 127.0.0.1 at 2017-07-11 11:21:08 -0300
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (22.9ms)
+  Rendered users/new.html.erb within layouts/application (32.0ms)
+Completed 200 OK in 100ms (Views: 63.5ms | ActiveRecord: 1.4ms)
+
+
+Started POST "/pt-BR/users" for 127.0.0.1 at 2017-07-11 11:21:29 -0300
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"DpCYafWWoNaN+0g2gBJir6CY6VauUOId0St4xmKbYKIlNlSQPZydNX9ygbXS3mQIAfttmm04LaZpvPbN2lN4Mg==", "user"=>{"full_name"=>"sullyvan", "location"=>"Rio de Janeiro", "email"=>"sullyvan.nunes@yahoo.com.br", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "bio"=>"Aponte o seu browser para o endereço do cliente do mailcatcher (http:\r\n//localhost:1080) e veja seus emails. Note que você pode ver também a ver-\r\nsão puro texto. Excelente ferramenta, não é mesmo? Agora, precisamos en-\r\ntregar o email no momento do cadastro. Abra o controle UsersController\r\n( app/controllers/users_controller.rb ):"}, "commit"=>"Criar Usuário", "locale"=>"pt-BR"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "sullyvan.nunes@yahoo.com.br"], ["LIMIT", 1]]
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "users" ("full_name", "email", "password_digest", "location", "bio", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["full_name", "sullyvan"], ["email", "sullyvan.nunes@yahoo.com.br"], ["password_digest", "$2a$10$QhEB6SLq2RG9xYopesWeU.PPKtyY/8Kg9EPQw64IWMH3DP0/hUcmu"], ["location", "Rio de Janeiro"], ["bio", "Aponte o seu browser para o endereço do cliente do mailcatcher (http:\r\n//localhost:1080) e veja seus emails. Note que você pode ver também a ver-\r\nsão puro texto. Excelente ferramenta, não é mesmo? Agora, precisamos en-\r\ntregar o email no momento do cadastro. Abra o controle UsersController\r\n( app/controllers/users_controller.rb ):"], ["created_at", "2017-07-11 14:21:29.472709"], ["updated_at", "2017-07-11 14:21:29.472709"]]
+  [1m[35m (244.2ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/pt-BR/users/6
+Completed 302 Found in 344ms (ActiveRecord: 245.2ms)
+
+
+Started GET "/pt-BR/users/6" for 127.0.0.1 at 2017-07-11 11:21:29 -0300
+Processing by UsersController#show as HTML
+  Parameters: {"locale"=>"pt-BR", "id"=>"6"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 27ms (Views: 23.4ms | ActiveRecord: 0.4ms)
+
+
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering signup_mailer/confirm_email.html.erb
+  Rendered signup_mailer/confirm_email.html.erb (0.9ms)
+  Rendering signup_mailer/confirm_email.text.erb
+  Rendered signup_mailer/confirm_email.text.erb (0.3ms)
+SignupMailer#confirm_email: processed outbound mail in 15.8ms
+Sent mail to sullyvan.nunes@yahoo.com.br (4.2ms)
+Date: Tue, 11 Jul 2017 11:22:20 -0300
+From: no-reply@colcho.net
+To: sullyvan.nunes@yahoo.com.br
+Message-ID: <5964df1ca885d_18442afc69175c10674e@PC-DSV-SULLYVAN.mail>
+Subject: translation missing: pt-BR.signup_mailer.confirm_email.subject
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_5964df1ca7ed8_18442afc69175c106692";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_5964df1ca7ed8_18442afc69175c106692
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+Seja bem vindo ao Colcho.net!
+Seja bem vindo ao Colcho.net, sullyvan. O Colcho.net =C3=A9 o lugar ideal=
+ para voc=C3=AA alugar aquele quarto sobrando na sua casa e ainda conhece=
+r gente do mundo inteiro.
+Para voc=C3=AA come=C3=A7ar a usar o site, acesse o link: http://localhos=
+t:3000/
+Obrigado por se cadastrar no http://localhost:3000/.
+
+----==_mimepart_5964df1ca7ed8_18442afc69175c106692
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+<h1>Seja bem vindo ao Colcho.net! </h1>
+<p>
+Seja bem vindo ao Colcho.net, sullyvan. O Colcho.net =C3=A9 o lugar ideal=
+ para voc=C3=AA alugar aquele quarto sobrando na sua casa e ainda conhece=
+r gente do mundo inteiro.
+</p>
+<p>
+Para voc=C3=AA come=C3=A7ar a usar o site, acesse o link: <a href=3D"http=
+://localhost:3000/">http://localhost:3000/</a>
+</p>
+<p>
+Obrigado por se cadastrar no <a href=3D"http://localhost:3000/">Colcho.ne=
+t</a>.
+</p>
+
+----==_mimepart_5964df1ca7ed8_18442afc69175c106692--
+
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering signup_mailer/confirm_email.html.erb
+  Rendered signup_mailer/confirm_email.html.erb (0.5ms)
+  Rendering signup_mailer/confirm_email.text.erb
+  Rendered signup_mailer/confirm_email.text.erb (0.3ms)
+SignupMailer#confirm_email: processed outbound mail in 12.7ms
+Sent mail to sullyvan.nunes@yahoo.com.br (4.1ms)
+Date: Tue, 11 Jul 2017 11:23:33 -0300
+From: no-reply@colcho.net
+To: sullyvan.nunes@yahoo.com.br
+Message-ID: <5964df6540804_18442afc69175c10692f@PC-DSV-SULLYVAN.mail>
+Subject: translation missing: pt-BR.signup_mailer.confirm_email.subject
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_5964df653fea5_18442afc69175c10689a";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_5964df653fea5_18442afc69175c10689a
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+Seja bem vindo ao Colcho.net!
+Seja bem vindo ao Colcho.net, sullyvan. O Colcho.net =C3=A9 o lugar ideal=
+ para voc=C3=AA alugar aquele quarto sobrando na sua casa e ainda conhece=
+r gente do mundo inteiro.
+Para voc=C3=AA come=C3=A7ar a usar o site, acesse o link: http://localhos=
+t:3000/
+Obrigado por se cadastrar no http://localhost:3000/.
+
+----==_mimepart_5964df653fea5_18442afc69175c10689a
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+<h1>Seja bem vindo ao Colcho.net! </h1>
+<p>
+Seja bem vindo ao Colcho.net, sullyvan. O Colcho.net =C3=A9 o lugar ideal=
+ para voc=C3=AA alugar aquele quarto sobrando na sua casa e ainda conhece=
+r gente do mundo inteiro.
+</p>
+<p>
+Para voc=C3=AA come=C3=A7ar a usar o site, acesse o link: <a href=3D"http=
+://localhost:3000/">http://localhost:3000/</a>
+</p>
+<p>
+Obrigado por se cadastrar no <a href=3D"http://localhost:3000/">Colcho.ne=
+t</a>.
+</p>
+
+----==_mimepart_5964df653fea5_18442afc69175c10689a--
+
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering signup_mailer/confirm_email.html.erb
+  Rendered signup_mailer/confirm_email.html.erb (1.1ms)
+  Rendering signup_mailer/confirm_email.text.erb
+  Rendered signup_mailer/confirm_email.text.erb (0.7ms)
+SignupMailer#confirm_email: processed outbound mail in 18.4ms
+Sent mail to sullyvan.nunes@yahoo.com.br (4.1ms)
+Date: Tue, 11 Jul 2017 11:28:21 -0300
+From: no-reply@colcho.net
+To: sullyvan.nunes@yahoo.com.br
+Message-ID: <5964e08580b3e_18442afc69175c107196@PC-DSV-SULLYVAN.mail>
+Subject: translation missing: pt-BR.signup_mailer.confirm_email.subject
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_5964e0857fd25_18442afc69175c1070c4";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_5964e0857fd25_18442afc69175c1070c4
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+Seja bem vindo ao Colcho.net!
+Seja bem vindo ao Colcho.net, sullyvan. O Colcho.net =C3=A9 o lugar ideal=
+ para voc=C3=AA alugar aquele quarto sobrando na sua casa e ainda conhece=
+r gente do mundo inteiro.
+Para voc=C3=AA come=C3=A7ar a usar o site, acesse o link: http://localhos=
+t:3000/
+Obrigado por se cadastrar no http://localhost:3000/.
+
+----==_mimepart_5964e0857fd25_18442afc69175c1070c4
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+<h1>Seja bem vindo ao Colcho.net! </h1>
+<p>
+Seja bem vindo ao Colcho.net, sullyvan. O Colcho.net =C3=A9 o lugar ideal=
+ para voc=C3=AA alugar aquele quarto sobrando na sua casa e ainda conhece=
+r gente do mundo inteiro.
+</p>
+<p>
+Para voc=C3=AA come=C3=A7ar a usar o site, acesse o link: <a href=3D"http=
+://localhost:3000/">http://localhost:3000/</a>
+</p>
+<p>
+Obrigado por se cadastrar no <a href=3D"http://localhost:3000/">Colcho.ne=
+t</a>.
+</p>
+
+----==_mimepart_5964e0857fd25_18442afc69175c1070c4--
+
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering signup_mailer/confirm_email.html.erb
+  Rendered signup_mailer/confirm_email.html.erb (1.5ms)
+  Rendering signup_mailer/confirm_email.text.erb
+  Rendered signup_mailer/confirm_email.text.erb (0.9ms)
+SignupMailer#confirm_email: processed outbound mail in 146.7ms
+Sent mail to sullyvan.nunes@yahoo.com.br (165.2ms)
+Date: Tue, 11 Jul 2017 11:34:16 -0300
+From: no-reply@colcho.net
+To: sullyvan.nunes@yahoo.com.br
+Message-ID: <5964e1e8152b3_1b1b2ad220f01c0826798@PC-DSV-SULLYVAN.mail>
+Subject: Colcho.net - Confirme seu email
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_5964e1e813fab_1b1b2ad220f01c08266c1";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_5964e1e813fab_1b1b2ad220f01c08266c1
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+Seja bem vindo ao Colcho.net!
+Seja bem vindo ao Colcho.net, sullyvan. O Colcho.net =C3=A9 o lugar ideal=
+ para voc=C3=AA alugar aquele quarto sobrando na sua casa e ainda conhece=
+r gente do mundo inteiro.
+Para voc=C3=AA come=C3=A7ar a usar o site, acesse o link: http://localhos=
+t:3000/
+Obrigado por se cadastrar no http://localhost:3000/.
+
+----==_mimepart_5964e1e813fab_1b1b2ad220f01c08266c1
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+<h1>Seja bem vindo ao Colcho.net! </h1>
+<p>
+Seja bem vindo ao Colcho.net, sullyvan. O Colcho.net =C3=A9 o lugar ideal=
+ para voc=C3=AA alugar aquele quarto sobrando na sua casa e ainda conhece=
+r gente do mundo inteiro.
+</p>
+<p>
+Para voc=C3=AA come=C3=A7ar a usar o site, acesse o link: <a href=3D"http=
+://localhost:3000/">http://localhost:3000/</a>
+</p>
+<p>
+Obrigado por se cadastrar no <a href=3D"http://localhost:3000/">Colcho.ne=
+t</a>.
+</p>
+
+----==_mimepart_5964e1e813fab_1b1b2ad220f01c08266c1--
+
+Started GET "/pt-BR/users/new" for 127.0.0.1 at 2017-07-11 11:37:08 -0300
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#new as HTML
+  Parameters: {"locale"=>"pt-BR"}
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (17.6ms)
+  Rendered users/new.html.erb within layouts/application (27.7ms)
+Completed 200 OK in 488ms (Views: 466.3ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/pt-BR/users" for 127.0.0.1 at 2017-07-11 11:37:43 -0300
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"83K6UzpYmYySUnYfd6qhw1eIwr9xuUJGfYwUNnbJrkfY1Haq8lKkb2Dbv5wlZqdk9utGc7LRjf3FG5o9zgG21w==", "user"=>{"full_name"=>"sll@", "location"=>"Brasil", "email"=>"sullyvan.nunes@yahoo.com.br", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "bio"=>" Seja bem vindo ao Colcho.net, sullyvan. O Colcho.net é o lugar ideal para você alugar aquele quarto sobrando na sua casa e ainda conhecer gente do mundo inteiro.\r\n\r\nPara você começar a usar o site, acesse o link: http://localhost:3000/\r\n\r\nObrigado por se cadastrar no Colcho.net. "}, "commit"=>"Criar Usuário", "locale"=>"pt-BR"}
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "sullyvan.nunes@yahoo.com.br"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (3.6ms)
+  Rendered users/new.html.erb within layouts/application (4.9ms)
+Completed 200 OK in 103ms (Views: 21.2ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/pt-BR/users" for 127.0.0.1 at 2017-07-11 11:37:59 -0300
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"P/6pfCaxF5RvZuyE7x3gGiner/QCcZkT2V0K5XiUs98UWGWF7rsqd53vJQe90ea9iL0rOMEZVqhhyoTuwFyrTw==", "user"=>{"full_name"=>"sll@", "location"=>"Brasil", "email"=>"s@yahoo.com.br", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "bio"=>" Seja bem vindo ao Colcho.net, sullyvan. O Colcho.net é o lugar ideal para você alugar aquele quarto sobrando na sua casa e ainda conhecer gente do mundo inteiro.\r\n\r\nPara você começar a usar o site, acesse o link: http://localhost:3000/\r\n\r\nObrigado por se cadastrar no Colcho.net. "}, "commit"=>"Criar Usuário", "locale"=>"pt-BR"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "s@yahoo.com.br"], ["LIMIT", 1]]
+  [1m[35mSQL (1.2ms)[0m  [1m[32mINSERT INTO "users" ("full_name", "email", "password_digest", "location", "bio", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["full_name", "sll@"], ["email", "s@yahoo.com.br"], ["password_digest", "$2a$10$xkFnmUhNUz0mgB7KHPSrO.qH84u5SwPUavfb8xipc6qRvlFC5IwSK"], ["location", "Brasil"], ["bio", " Seja bem vindo ao Colcho.net, sullyvan. O Colcho.net é o lugar ideal para você alugar aquele quarto sobrando na sua casa e ainda conhecer gente do mundo inteiro.\r\n\r\nPara você começar a usar o site, acesse o link: http://localhost:3000/\r\n\r\nObrigado por se cadastrar no Colcho.net. "], ["created_at", "2017-07-11 14:37:59.780511"], ["updated_at", "2017-07-11 14:37:59.780511"]]
+  [1m[35m (196.3ms)[0m  [1m[36mcommit transaction[0m
+  Rendering signup_mailer/confirm_email.html.erb
+  Rendered signup_mailer/confirm_email.html.erb (1.7ms)
+  Rendering signup_mailer/confirm_email.text.erb
+  Rendered signup_mailer/confirm_email.text.erb (1.1ms)
+SignupMailer#confirm_email: processed outbound mail in 260.6ms
+Sent mail to s@yahoo.com.br (17.9ms)
+Date: Tue, 11 Jul 2017 11:38:00 -0300
+From: no-reply@colcho.net
+To: s@yahoo.com.br
+Message-ID: <5964e2c855e8e_1ab32ac4fd6c46ec446b@PC-DSV-SULLYVAN.mail>
+Subject: Colcho.net - Confirme seu email
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_5964e2c854b59_1ab32ac4fd6c46ec43d6";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_5964e2c854b59_1ab32ac4fd6c46ec43d6
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+Seja bem vindo ao Colcho.net!
+Seja bem vindo ao Colcho.net, sll@. O Colcho.net =C3=A9 o lugar ideal par=
+a voc=C3=AA alugar aquele quarto sobrando na sua casa e ainda conhecer ge=
+nte do mundo inteiro.
+Para voc=C3=AA come=C3=A7ar a usar o site, acesse o link: http://localhos=
+t:3000/
+Obrigado por se cadastrar no http://localhost:3000/.
+
+----==_mimepart_5964e2c854b59_1ab32ac4fd6c46ec43d6
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+<h1>Seja bem vindo ao Colcho.net! </h1>
+<p>
+Seja bem vindo ao Colcho.net, sll@. O Colcho.net =C3=A9 o lugar ideal par=
+a voc=C3=AA alugar aquele quarto sobrando na sua casa e ainda conhecer ge=
+nte do mundo inteiro.
+</p>
+<p>
+Para voc=C3=AA come=C3=A7ar a usar o site, acesse o link: <a href=3D"http=
+://localhost:3000/">http://localhost:3000/</a>
+</p>
+<p>
+Obrigado por se cadastrar no <a href=3D"http://localhost:3000/">Colcho.ne=
+t</a>.
+</p>
+
+----==_mimepart_5964e2c854b59_1ab32ac4fd6c46ec43d6--
+
+Redirected to http://localhost:3000/pt-BR/users/7
+Completed 302 Found in 667ms (ActiveRecord: 197.8ms)
+
+
+Started GET "/pt-BR/users/7" for 127.0.0.1 at 2017-07-11 11:38:00 -0300
+Processing by UsersController#show as HTML
+  Parameters: {"locale"=>"pt-BR", "id"=>"7"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 32ms (Views: 25.2ms | ActiveRecord: 0.4ms)
+
+
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddConfirmationFieldsToUsers (20170711144015)
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddConfirmationFieldsToUsers (20170711144015)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "users" ADD "confirmed_at" datetime[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "users" ADD "confirmation_token" varchar[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20170711144015"]]
+  [1m[35m (93.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+[0m
+Started GET "/users/new" for 127.0.0.1 at 2017-07-11 11:51:21 -0300
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (5.3ms)
+  Rendered users/new.html.erb within layouts/application (6.6ms)
+Completed 200 OK in 44ms (Views: 25.5ms | ActiveRecord: 1.5ms)
+
+
+Started POST "/pt-BR/users" for 127.0.0.1 at 2017-07-11 11:52:13 -0300
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"nm62B13diLUcJIblmzKn8v6sBA5kNFnPn2zzt4iIWZa1yHr+lde1Vu6tT2bJ/qFVX8+AwqdclnQn+328MEBBBg==", "user"=>{"full_name"=>"Sulk", "location"=>"Rio de Janeiro", "email"=>"teste@email.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "bio"=>"confirmed_at.present?\r\nend\r\nend\r\nO método confirm! marca o campo confirmed_at com a hora corrente, limpa\r\no token e salva o modelo. Experimente no console:\r\nuser = User.last\r\n# => #<User id: 1, full_name: \"Vinicius Baggio Fuentes\", ...>\r\nuser.confirm!\r\n# => true\r\nuser.confirmed?\r\n# => true\r\nuser.confirmation_token\r\n# => \"\"\r\nCom este código, estamos quase prontos! Agora te"}, "commit"=>"Criar Usuário", "locale"=>"pt-BR"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "teste@email.com"], ["LIMIT", 1]]
+  [1m[35mSQL (1.1ms)[0m  [1m[32mINSERT INTO "users" ("full_name", "email", "password_digest", "location", "bio", "created_at", "updated_at", "confirmation_token") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["full_name", "Sulk"], ["email", "teste@email.com"], ["password_digest", "$2a$10$wXk./FXBmV3./wORS.SkLujM.YXSsyZanaa8asBUg1TtMxbZMxfMi"], ["location", "Rio de Janeiro"], ["bio", "confirmed_at.present?\r\nend\r\nend\r\nO método confirm! marca o campo confirmed_at com a hora corrente, limpa\r\no token e salva o modelo. Experimente no console:\r\nuser = User.last\r\n# => #<User id: 1, full_name: \"Vinicius Baggio Fuentes\", ...>\r\nuser.confirm!\r\n# => true\r\nuser.confirmed?\r\n# => true\r\nuser.confirmation_token\r\n# => \"\"\r\nCom este código, estamos quase prontos! Agora te"], ["created_at", "2017-07-11 14:52:13.887848"], ["updated_at", "2017-07-11 14:52:13.887848"], ["confirmation_token", "iRS0-VxZo6_S9nZdXuQPUA"]]
+  [1m[35m (205.0ms)[0m  [1m[36mcommit transaction[0m
+  Rendering signup_mailer/confirm_email.html.erb
+  Rendered signup_mailer/confirm_email.html.erb (1.1ms)
+  Rendering signup_mailer/confirm_email.text.erb
+  Rendered signup_mailer/confirm_email.text.erb (1.7ms)
+SignupMailer#confirm_email: processed outbound mail in 13.2ms
+Sent mail to teste@email.com (13.6ms)
+Date: Tue, 11 Jul 2017 11:52:14 -0300
+From: no-reply@colcho.net
+To: teste@email.com
+Message-ID: <5964e61e1bf9a_1ab32ac4fd6c4804463c@PC-DSV-SULLYVAN.mail>
+Subject: Colcho.net - Confirme seu email
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_5964e61e1b289_1ab32ac4fd6c48044556";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_5964e61e1b289_1ab32ac4fd6c48044556
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+Seja bem vindo ao Colcho.net!
+Seja bem vindo ao Colcho.net, Sulk. O Colcho.net =C3=A9 o lugar ideal par=
+a voc=C3=AA alugar aquele quarto sobrando na sua casa e ainda conhecer ge=
+nte do mundo inteiro.
+Para voc=C3=AA come=C3=A7ar a usar o site, acesse o link: http://localhos=
+t:3000/
+Obrigado por se cadastrar no http://localhost:3000/.
+
+----==_mimepart_5964e61e1b289_1ab32ac4fd6c48044556
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+<h1>Seja bem vindo ao Colcho.net! </h1>
+<p>
+Seja bem vindo ao Colcho.net, Sulk. O Colcho.net =C3=A9 o lugar ideal par=
+a voc=C3=AA alugar aquele quarto sobrando na sua casa e ainda conhecer ge=
+nte do mundo inteiro.
+</p>
+<p>
+Para voc=C3=AA come=C3=A7ar a usar o site, acesse o link: <a href=3D"http=
+://localhost:3000/">http://localhost:3000/</a>
+</p>
+<p>
+Obrigado por se cadastrar no <a href=3D"http://localhost:3000/">Colcho.ne=
+t</a>.
+</p>
+
+----==_mimepart_5964e61e1b289_1ab32ac4fd6c48044556--
+
+Redirected to http://localhost:3000/pt-BR/users/8
+Completed 302 Found in 321ms (ActiveRecord: 206.4ms)
+
+
+Started GET "/pt-BR/users/8" for 127.0.0.1 at 2017-07-11 11:52:14 -0300
+Processing by UsersController#show as HTML
+  Parameters: {"locale"=>"pt-BR", "id"=>"8"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 25ms (Views: 21.3ms | ActiveRecord: 0.3ms)
+
+
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? AND ("users"."id" != ?) LIMIT ?[0m  [["email", "teste@email.com"], ["id", 8], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+Started GET "/en/users/8" for 127.0.0.1 at 2017-07-11 13:23:37 -0300
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#show as HTML
+  Parameters: {"locale"=>"en", "id"=>"8"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (8.2ms)
+Completed 200 OK in 59ms (Views: 37.3ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/pt-BR/users" for 127.0.0.1 at 2017-07-11 13:24:35 -0300
+Processing by UsersController#index as HTML
+  Parameters: {"locale"=>"pt-BR"}
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (5.5ms)
+Completed 200 OK in 29ms (Views: 27.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/pt-BR/users/4/edit" for 127.0.0.1 at 2017-07-11 13:24:38 -0300
+Processing by UsersController#edit as HTML
+  Parameters: {"locale"=>"pt-BR", "id"=>"4"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/_form.html.erb (3.3ms)
+  Rendered users/edit.html.erb within layouts/application (4.7ms)
+Completed 200 OK in 87ms (Views: 21.8ms | ActiveRecord: 0.2ms)
+
+
+Started PATCH "/pt-BR/users/4" for 127.0.0.1 at 2017-07-11 13:24:44 -0300
+Processing by UsersController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"JAMXMJ8wCXjh2rajWiOj5IzsE/wd24N917+yR9D34jB1mO9IgFEEc9R2ZgDXj4d0eVNbP28XlIvAfCIz+uDEkA==", "user"=>{"full_name"=>"sullyvan", "location"=>"rio", "email"=>"sul1@yahoo.com.br", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "bio"=>"tamasdfsdflmdgbkmsdgnbsodfnvbjnósdnfvpjsandfojvnasidfvipsadfhguisehropigfvnsdjkacvn pn"}, "commit"=>"Atualizar Usuário", "locale"=>"pt-BR", "id"=>"4"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? AND ("users"."id" != ?) LIMIT ?[0m  [["email", "sul1@yahoo.com.br"], ["id", 4], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "users" SET "password_digest" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["password_digest", "$2a$10$QMHT67VruavTWBMpMBVJKOr2LBG4B2vZySJRm/LNTLokWS.eElXqG"], ["updated_at", "2017-07-11 16:24:44.263568"], ["id", 4]]
+  [1m[35m (114.9ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/pt-BR/users/4
+Completed 302 Found in 201ms (ActiveRecord: 115.7ms)
+
+
+Started GET "/pt-BR/users/4" for 127.0.0.1 at 2017-07-11 13:24:44 -0300
+Processing by UsersController#show as HTML
+  Parameters: {"locale"=>"pt-BR", "id"=>"4"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 24ms (Views: 22.7ms | ActiveRecord: 0.1ms)
+
+

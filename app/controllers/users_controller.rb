@@ -17,11 +17,12 @@ class UsersController < ApplicationController
 			.require(:user)
 			.permit(:full_name, :location, :email, :password, :password_confirmation, :bio)
 		if @user.save
+			SignupMailer.confirm_email(@user).deliver
 			redirect_to @user, :notice => 'Cadastro realizado com sucesso!'
-	
-		else 
+
+		else
 			render :new
-		end	
+		end
 
 	end
 
@@ -37,7 +38,7 @@ class UsersController < ApplicationController
 	end
 
 	def update
-		@user = User.find(params[:id]) 
+		@user = User.find(params[:id])
 		if @user.update_attributes params.require(:user).permit(:full_name,:location, :email, :password, :password_confirmation, :bio)
 			redirect_to @user, :notice => 'Cadastro atualizado com sucesso!'
 		else
