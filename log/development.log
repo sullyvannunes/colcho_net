@@ -19260,3 +19260,21 @@ NoMethodError (undefined method `id' for true:TrueClass):
 app/models/user_session.rb:34:in `store'
 app/models/user_session.rb:21:in `authenticate'
 app/controllers/user_sessions_controller.rb:8:in `create'
+Started GET "/" for 127.0.0.1 at 2017-07-11 20:18:56 -0300
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#index as HTML
+  [1m[36mRoom Load (0.2ms)[0m  [1m[34mSELECT  "rooms".* FROM "rooms" ORDER BY "rooms"."id" ASC LIMIT ?[0m  [["LIMIT", 3]]
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 378ms (Views: 338.1ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/pt-BR/rooms" for 127.0.0.1 at 2017-07-11 20:19:58 -0300
+Processing by RoomsController#index as HTML
+  Parameters: {"locale"=>"pt-BR"}
+  Rendering rooms/index.html.erb within layouts/application
+  [1m[36mRoom Load (1.1ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms"[0m
+  Rendered rooms/index.html.erb within layouts/application (11.0ms)
+Completed 200 OK in 53ms (Views: 35.3ms | ActiveRecord: 1.7ms)
+
+
