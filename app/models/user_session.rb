@@ -1,5 +1,4 @@
 class UserSession
-  include BCrypt
   include ActiveModel::Validations
   include ActiveModel::Conversion
 
@@ -31,7 +30,18 @@ class UserSession
     false
   end
 
+  #Guarda o id do usuario na sessão
   def store(user)
     @session[:user_id] = user.id
+  end
+
+  #Retorna o objeto da classe User que esta logado no momento
+  def current_user
+    User.find(@session[:user_id])
+  end
+
+  #Retorna true se o usuário estiver logado
+  def user_signed_in?
+    @session[:user_id].present?
   end
 end
