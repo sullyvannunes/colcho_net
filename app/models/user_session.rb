@@ -1,4 +1,5 @@
 class UserSession
+  include BCrypt
   include ActiveModel::Validations
   include ActiveModel::Conversion
 

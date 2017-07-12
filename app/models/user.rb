@@ -24,7 +24,11 @@ class User < ApplicationRecord
 		confirmed_at.present?
 	end
 
-	def User.authenticate(email, password)
-		true
+	scope :confirmed, ->{
+		where('confirmed_at IS NOT NULL')
+	}
+
+	def self.authenticate(email, password)
+		confirmed.find_by_email(email).try(:authenticate, password)
 	end
 end
