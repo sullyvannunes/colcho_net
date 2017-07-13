@@ -20165,3 +20165,135 @@ SyntaxError (/home/sullyvan/workspace-sullyvan/proj/colcho_net/app/views/layouts
                 ^):
   
 app/views/layouts/application.html.erb:40: syntax error, unexpected keyword_ensure, expecting end-of-input
+Started GET "/" for 127.0.0.1 at 2017-07-13 10:15:10 -0300
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#index as HTML
+  [1m[36mRoom Load (0.2ms)[0m  [1m[34mSELECT  "rooms".* FROM "rooms" ORDER BY "rooms"."id" ASC LIMIT ?[0m  [["LIMIT", 3]]
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (1.7ms)
+Completed 500 Internal Server Error in 62ms (ActiveRecord: 0.9ms)
+
+
+  
+SyntaxError (/home/sullyvan/workspace-sullyvan/proj/colcho_net/app/views/layouts/application.html.erb:40: syntax error, unexpected keyword_ensure, expecting end-of-input
+          ensure
+                ^):
+  
+app/views/layouts/application.html.erb:40: syntax error, unexpected keyword_ensure, expecting end-of-input
+Started GET "/" for 127.0.0.1 at 2017-07-13 10:16:55 -0300
+Processing by HomeController#index as HTML
+  [1m[36mRoom Load (0.2ms)[0m  [1m[34mSELECT  "rooms".* FROM "rooms" ORDER BY "rooms"."id" ASC LIMIT ?[0m  [["LIMIT", 3]]
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (1.1ms)
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.6ms)
+
+
+  
+SyntaxError (/home/sullyvan/workspace-sullyvan/proj/colcho_net/app/views/layouts/application.html.erb:40: syntax error, unexpected keyword_ensure, expecting end-of-input
+          ensure
+                ^):
+  
+app/views/layouts/application.html.erb:40: syntax error, unexpected keyword_ensure, expecting end-of-input
+Started GET "/" for 127.0.0.1 at 2017-07-13 10:16:56 -0300
+Processing by HomeController#index as HTML
+  [1m[36mRoom Load (0.3ms)[0m  [1m[34mSELECT  "rooms".* FROM "rooms" ORDER BY "rooms"."id" ASC LIMIT ?[0m  [["LIMIT", 3]]
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (1.0ms)
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.3ms)
+
+
+  
+SyntaxError (/home/sullyvan/workspace-sullyvan/proj/colcho_net/app/views/layouts/application.html.erb:40: syntax error, unexpected keyword_ensure, expecting end-of-input
+          ensure
+                ^):
+  
+app/views/layouts/application.html.erb:40: syntax error, unexpected keyword_ensure, expecting end-of-input
+Started GET "/" for 127.0.0.1 at 2017-07-13 10:18:12 -0300
+Processing by HomeController#index as HTML
+  [1m[36mRoom Load (0.3ms)[0m  [1m[34mSELECT  "rooms".* FROM "rooms" ORDER BY "rooms"."id" ASC LIMIT ?[0m  [["LIMIT", 3]]
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (1.5ms)
+Completed 500 Internal Server Error in 567ms (ActiveRecord: 0.3ms)
+
+
+  
+ActionView::Template::Error (Missing partial layouts/_visitor_navbar with {:locale=>[:"pt-BR"], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "/home/sullyvan/workspace-sullyvan/proj/colcho_net/app/views"
+):
+    17: 					<% if user_signed_in?%>
+    18: 						<%= render 'layouts/user_navbar' %>
+    19: 					<% else %>
+    20: 						<%= render 'layouts/visitor_navbar' %>
+    21: 					<% end %>
+    22: 			</div>
+    23: 		</header>
+  
+app/views/layouts/application.html.erb:20:in `_app_views_layouts_application_html_erb__400229210873756380_70180476587600'
+Started GET "/" for 127.0.0.1 at 2017-07-13 10:19:43 -0300
+Processing by HomeController#index as HTML
+  [1m[36mRoom Load (0.3ms)[0m  [1m[34mSELECT  "rooms".* FROM "rooms" ORDER BY "rooms"."id" ASC LIMIT ?[0m  [["LIMIT", 3]]
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (1.1ms)
+  Rendered layouts/_visitor_navbar.html.erb (133.5ms)
+Completed 200 OK in 161ms (Views: 158.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-07-13 10:21:13 -0300
+Processing by HomeController#index as HTML
+  [1m[36mRoom Load (0.2ms)[0m  [1m[34mSELECT  "rooms".* FROM "rooms" ORDER BY "rooms"."id" ASC LIMIT ?[0m  [["LIMIT", 3]]
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (1.2ms)
+  Rendered layouts/_visitor_navbar.html.erb (9.8ms)
+Completed 200 OK in 73ms (Views: 56.5ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/pt-BR/user_sessions/new" for 127.0.0.1 at 2017-07-13 10:21:19 -0300
+Processing by UserSessionsController#new as HTML
+  Parameters: {"locale"=>"pt-BR"}
+  Rendering user_sessions/new.html.erb within layouts/application
+  Rendered user_sessions/new.html.erb within layouts/application (43.9ms)
+  Rendered layouts/_visitor_navbar.html.erb (1.3ms)
+Completed 200 OK in 144ms (Views: 77.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/pt-BR/user_sessions" for 127.0.0.1 at 2017-07-13 10:21:28 -0300
+Processing by UserSessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"VJA1emOSg9vKWnqWtHjOGaVHDAEG4dsG8bOJlmddWivfI80LhrToFllwlPZSo83JjlqNNSr8JvAiTRu9T66A9g==", "user_session"=>{"email"=>"slv@com.br", "password"=>"[FILTERED]"}, "commit"=>"Criar User session", "locale"=>"pt-BR"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE (confirmed_at IS NOT NULL) AND "users"."email" = ? LIMIT ?[0m  [["email", "slv@com.br"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/?locale=pt-BR
+Completed 302 Found in 192ms (ActiveRecord: 0.8ms)
+
+
+Started GET "/?locale=pt-BR" for 127.0.0.1 at 2017-07-13 10:21:28 -0300
+Processing by HomeController#index as HTML
+  Parameters: {"locale"=>"pt-BR"}
+  [1m[36mRoom Load (0.3ms)[0m  [1m[34mSELECT  "rooms".* FROM "rooms" ORDER BY "rooms"."id" ASC LIMIT ?[0m  [["LIMIT", 3]]
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (1.5ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  Rendered layouts/_user_navbar.html.erb (18.7ms)
+Completed 200 OK in 62ms (Views: 59.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/?locale=pt-BR" for 127.0.0.1 at 2017-07-13 10:23:54 -0300
+Processing by HomeController#index as HTML
+  Parameters: {"locale"=>"pt-BR"}
+  [1m[36mRoom Load (0.2ms)[0m  [1m[34mSELECT  "rooms".* FROM "rooms" ORDER BY "rooms"."id" ASC LIMIT ?[0m  [["LIMIT", 3]]
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (1.3ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  Rendered layouts/_user_navbar.html.erb (30.9ms)
+Completed 200 OK in 74ms (Views: 55.8ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/pt-BR/rooms/new" for 127.0.0.1 at 2017-07-13 10:24:04 -0300
+Processing by RoomsController#new as HTML
+  Parameters: {"locale"=>"pt-BR"}
+  Rendering rooms/new.html.erb within layouts/application
+  Rendered rooms/_form.html.erb (61.2ms)
+  Rendered rooms/new.html.erb within layouts/application (103.5ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  Rendered layouts/_user_navbar.html.erb (2.5ms)
+Completed 200 OK in 163ms (Views: 130.9ms | ActiveRecord: 0.2ms)
+
+

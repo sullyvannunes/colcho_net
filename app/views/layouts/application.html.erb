@@ -16,7 +16,6 @@
 				<h1><%= link_to "colcho.net", root_path %> </h1>
 					<% if user_signed_in?%>
 						<%= render 'layouts/user_navbar' %>
-					<%end%>
 					<% else %>
 						<%= render 'layouts/visitor_navbar' %>
 					<% end %>
@@ -31,7 +30,7 @@
 			<p id="alert"><%= alert %> </p>
 			<% end %>
 
-	  		<%= yield %>
-	  	</div>
+	  	<%= yield %>
+	  </div>
 	</body>
 </html>

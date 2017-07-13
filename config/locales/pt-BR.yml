@@ -31,7 +31,10 @@ pt-BR:
   layout:
     rooms: Quartos
     signup: Cadastro
-    ola: Ola mundo
+    signin: Entrar
+    new_room: Cadastre seu Quarto!
+    my_profile: Meu Perfil
+    signout: Sair
 
     general:
       form_error: Há errors no formulario, por favor verifique.
