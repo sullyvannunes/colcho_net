@@ -1,7 +1,9 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   before_action :set_locale
+  #delega a implementação da função
   delegate :current_user, :user_signed_in?, to: :user_session
+  #helper_method disponibiliza esses metodos para as views usarem
   helper_method :current_user, :user_signed_in?
 
   def set_locale
