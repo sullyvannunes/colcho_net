@@ -1,4 +1,5 @@
 class User < ApplicationRecord
+	has_many :rooms
 	validates_presence_of :email, :full_name, :location, :password, on: :create
 	validates_confirmation_of :password, on: :create
 
