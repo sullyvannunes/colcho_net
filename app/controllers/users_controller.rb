@@ -54,7 +54,7 @@ class UsersController < ApplicationController
 		#se o usuario não estiver logado ou acesssar o perfil de outro usuario
 		#redireiona para a paginal inicial correspondente ao params[:id]
 		unless user_signed_in? && current_user == user
-			redirect_to user_path(params[:id])
+			redirect_to user_path(params[:id]), :notice => 'Sem autorização para alterar outro perfil'
 		end
 	end
 
