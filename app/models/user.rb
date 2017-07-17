@@ -1,5 +1,6 @@
 class User < ApplicationRecord
-	has_many :rooms
+	has_many :rooms, :dependent => :destroy
+	has_many :reviews, :dependent => :destroy
 	validates_presence_of :email, :full_name, :location, :password, on: :create
 	validates_confirmation_of :password, on: :create
 

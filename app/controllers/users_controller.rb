@@ -4,7 +4,6 @@ class UsersController < ApplicationController
 	include ActiveModel::ForbiddenAttributesProtection
 	def new
 		@user = User.new
-
 	end
 
 	def index
