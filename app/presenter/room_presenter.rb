@@ -1,5 +1,5 @@
 class RoomPresenter
-  delegate :user, :created_at, :description, :location., :title, :to => :@room
+   delegate :user, :created_at, :description, :location, :title, :to => :@room
 
   def initialize(room, context, show_form=true)
     @context = context
@@ -8,6 +8,10 @@ class RoomPresenter
   end
 
   def can_review?
+    @show_form
+  end
+
+  def show_form?
     @show_form
   end
 

@@ -24454,3 +24454,415 @@ Started PUT "/__web_console/repl_sessions/7e7f927f8d363b38f8a0bf8d1a7c8526" for 
 Started PUT "/__web_console/repl_sessions/7e7f927f8d363b38f8a0bf8d1a7c8526" for 127.0.0.1 at 2017-07-20 00:29:43 -0300
 Started PUT "/__web_console/repl_sessions/7e7f927f8d363b38f8a0bf8d1a7c8526" for 127.0.0.1 at 2017-07-20 00:29:45 -0300
 Started PUT "/__web_console/repl_sessions/7e7f927f8d363b38f8a0bf8d1a7c8526" for 127.0.0.1 at 2017-07-20 00:29:55 -0300
+Started GET "/" for 127.0.0.1 at 2017-07-20 15:10:28 -0300
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#index as HTML
+  [1m[36mRoom Load (0.2ms)[0m  [1m[34mSELECT  "rooms".* FROM "rooms" ORDER BY "rooms"."id" ASC LIMIT ?[0m  [["LIMIT", 3]]
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (1.6ms)
+DEPRECATION WARNING: Extra .css in SCSS file is unnecessary. Rename /home/sullyvan/workspace-sullyvan/proj/colcho_net/app/assets/stylesheets/shadow.css.scss to /home/sullyvan/workspace-sullyvan/proj/colcho_net/app/assets/stylesheets/shadow.scss. (called from _app_views_layouts_application_html_erb___468955581052689754_47328240684420 at /home/sullyvan/workspace-sullyvan/proj/colcho_net/app/views/layouts/application.html.erb:7)
+DEPRECATION WARNING: Extra .css in SCSS file is unnecessary. Rename /home/sullyvan/workspace-sullyvan/proj/colcho_net/app/assets/stylesheets/shadow.css.scss to /home/sullyvan/workspace-sullyvan/proj/colcho_net/app/assets/stylesheets/shadow.scss. (called from _app_views_layouts_application_html_erb___468955581052689754_47328240684420 at /home/sullyvan/workspace-sullyvan/proj/colcho_net/app/views/layouts/application.html.erb:7)
+DEPRECATION WARNING: Extra .css in SCSS file is unnecessary. Rename /home/sullyvan/workspace-sullyvan/proj/colcho_net/app/assets/stylesheets/shadow.css.scss to /home/sullyvan/workspace-sullyvan/proj/colcho_net/app/assets/stylesheets/shadow.scss. (called from _app_views_layouts_application_html_erb___468955581052689754_47328240684420 at /home/sullyvan/workspace-sullyvan/proj/colcho_net/app/views/layouts/application.html.erb:7)
+DEPRECATION WARNING: Extra .css in SCSS file is unnecessary. Rename /home/sullyvan/workspace-sullyvan/proj/colcho_net/app/assets/stylesheets/shadow.css.scss to /home/sullyvan/workspace-sullyvan/proj/colcho_net/app/assets/stylesheets/shadow.scss. (called from _app_views_layouts_application_html_erb___468955581052689754_47328240684420 at /home/sullyvan/workspace-sullyvan/proj/colcho_net/app/views/layouts/application.html.erb:7)
+  Rendered layouts/_visitor_navbar.html.erb (33.1ms)
+Completed 200 OK in 490ms (Views: 460.4ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/pt-BR/rooms/12" for 127.0.0.1 at 2017-07-20 15:10:32 -0300
+Processing by RoomsController#show as HTML
+  Parameters: {"locale"=>"pt-BR", "id"=>"12"}
+  [1m[36mRoom Load (0.4ms)[0m  [1m[34mSELECT  "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mCACHE Room Load (0.0ms)[0m  [1m[34mSELECT  "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.4ms)
+
+
+  
+SyntaxError (/home/sullyvan/workspace-sullyvan/proj/colcho_net/app/presenter/room_presenter.rb:2: syntax error, unexpected ',', expecting '('
+_at, :description, :location., :title, :to => :@room
+                              ^):
+  
+app/presenter/room_presenter.rb:2: syntax error, unexpected ',', expecting '('
+app/controllers/rooms_controller.rb:18:in `show'
+Started GET "/pt-BR/rooms" for 127.0.0.1 at 2017-07-20 15:10:38 -0300
+Processing by RoomsController#index as HTML
+  Parameters: {"locale"=>"pt-BR"}
+  [1m[36mRoom Load (0.4ms)[0m  [1m[34mSELECT  "rooms".* FROM "rooms" LIMIT ?[0m  [["LIMIT", 3]]
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.4ms)
+
+
+  
+SyntaxError (/home/sullyvan/workspace-sullyvan/proj/colcho_net/app/presenter/room_presenter.rb:2: syntax error, unexpected ',', expecting '('
+_at, :description, :location., :title, :to => :@room
+                              ^):
+  
+app/presenter/room_presenter.rb:2: syntax error, unexpected ',', expecting '('
+app/controllers/rooms_controller.rb:10:in `block in index'
+app/controllers/rooms_controller.rb:9:in `map'
+app/controllers/rooms_controller.rb:9:in `index'
+Started GET "/pt-BR/rooms" for 127.0.0.1 at 2017-07-20 15:22:24 -0300
+Processing by RoomsController#index as HTML
+  Parameters: {"locale"=>"pt-BR"}
+  [1m[36mRoom Load (0.3ms)[0m  [1m[34mSELECT  "rooms".* FROM "rooms" LIMIT ?[0m  [["LIMIT", 3]]
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.3ms)
+
+
+  
+SyntaxError (/home/sullyvan/workspace-sullyvan/proj/colcho_net/app/presenter/room_presenter.rb:2: syntax error, unexpected ',', expecting '('
+_at, :description, :location., :title, :to => :@room
+                              ^):
+  
+app/presenter/room_presenter.rb:2: syntax error, unexpected ',', expecting '('
+app/controllers/rooms_controller.rb:10:in `block in index'
+app/controllers/rooms_controller.rb:9:in `map'
+app/controllers/rooms_controller.rb:9:in `index'
+Started GET "/pt-BR/rooms" for 127.0.0.1 at 2017-07-20 15:24:09 -0300
+Processing by RoomsController#index as HTML
+  Parameters: {"locale"=>"pt-BR"}
+  [1m[36mRoom Load (0.1ms)[0m  [1m[34mSELECT  "rooms".* FROM "rooms" LIMIT ?[0m  [["LIMIT", 3]]
+  Rendering rooms/index.html.erb within layouts/application
+  Rendered collection of rooms/_room.html.erb [1 times] (66.1ms)
+  Rendered rooms/index.html.erb within layouts/application (67.2ms)
+Completed 500 Internal Server Error in 92ms (ActiveRecord: 1.4ms)
+
+
+  
+ActionView::Template::Error (undefined method `title' for #<RoomPresenter:0x007fba5cf4a718>):
+    1: <article class="room">
+    2:   <h2> <%= link_to room.title, room %> </h2>
+    3: 
+    4:   <%= render :partial => 'review', local: {:room => room} %>
+    5: 
+  
+app/views/rooms/_room.html.erb:2:in `_app_views_rooms__room_html_erb___1065763905575926152_70219199932080'
+app/views/rooms/index.html.erb:2:in `_app_views_rooms_index_html_erb__656554367438870567_70219200068800'
+Started GET "/pt-BR/rooms" for 127.0.0.1 at 2017-07-20 15:26:51 -0300
+Processing by RoomsController#index as HTML
+  Parameters: {"locale"=>"pt-BR"}
+  [1m[36mRoom Load (0.2ms)[0m  [1m[34mSELECT  "rooms".* FROM "rooms" LIMIT ?[0m  [["LIMIT", 3]]
+  Rendering rooms/index.html.erb within layouts/application
+  Rendered rooms/index.html.erb within layouts/application (0.6ms)
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.2ms)
+
+
+  
+SyntaxError (/home/sullyvan/workspace-sullyvan/proj/colcho_net/app/views/rooms/index.html.erb:2: syntax error, unexpected ':', expecting '}'
+nd=(render @rooms, local{room: room});@output_buffer.safe_ap
+                              ^
+/home/sullyvan/workspace-sullyvan/proj/colcho_net/app/views/rooms/index.html.erb:6: syntax error, unexpected keyword_ensure, expecting ')'
+          ensure
+                ^
+/home/sullyvan/workspace-sullyvan/proj/colcho_net/app/views/rooms/index.html.erb:8: syntax error, unexpected keyword_end, expecting ')'
+          end
+             ^):
+  
+app/views/rooms/index.html.erb:2: syntax error, unexpected ':', expecting '}'
+app/views/rooms/index.html.erb:6: syntax error, unexpected keyword_ensure, expecting ')'
+app/views/rooms/index.html.erb:8: syntax error, unexpected keyword_end, expecting ')'
+Started GET "/" for 127.0.0.1 at 2017-07-20 15:27:04 -0300
+Processing by HomeController#index as HTML
+  [1m[36mRoom Load (0.3ms)[0m  [1m[34mSELECT  "rooms".* FROM "rooms" ORDER BY "rooms"."id" ASC LIMIT ?[0m  [["LIMIT", 3]]
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (0.9ms)
+  Rendered layouts/_visitor_navbar.html.erb (0.9ms)
+Completed 200 OK in 68ms (Views: 65.0ms | ActiveRecord: 0.3ms)
+
+
+Started PUT "/__web_console/repl_sessions/158ae3a70e47b296500457da66dc1fa2" for 127.0.0.1 at 2017-07-20 15:28:04 -0300
+Started PUT "/__web_console/repl_sessions/158ae3a70e47b296500457da66dc1fa2" for 127.0.0.1 at 2017-07-20 15:28:05 -0300
+Started PUT "/__web_console/repl_sessions/158ae3a70e47b296500457da66dc1fa2" for 127.0.0.1 at 2017-07-20 15:28:14 -0300
+Started PUT "/__web_console/repl_sessions/158ae3a70e47b296500457da66dc1fa2" for 127.0.0.1 at 2017-07-20 15:28:19 -0300
+Started PUT "/__web_console/repl_sessions/158ae3a70e47b296500457da66dc1fa2" for 127.0.0.1 at 2017-07-20 15:31:46 -0300
+Started PUT "/__web_console/repl_sessions/158ae3a70e47b296500457da66dc1fa2" for 127.0.0.1 at 2017-07-20 15:31:47 -0300
+  [1m[36mRoom Load (0.4ms)[0m  [1m[34mSELECT  "rooms".* FROM "rooms" LIMIT ?[0m  [["LIMIT", 11]]
+Started PUT "/__web_console/repl_sessions/158ae3a70e47b296500457da66dc1fa2" for 127.0.0.1 at 2017-07-20 15:31:54 -0300
+Started PUT "/__web_console/repl_sessions/158ae3a70e47b296500457da66dc1fa2" for 127.0.0.1 at 2017-07-20 15:31:57 -0300
+  [1m[36mRoom Load (0.5ms)[0m  [1m[34mSELECT  "rooms".* FROM "rooms" LIMIT ?[0m  [["LIMIT", 3]]
+Started PUT "/__web_console/repl_sessions/158ae3a70e47b296500457da66dc1fa2" for 127.0.0.1 at 2017-07-20 15:32:04 -0300
+Started PUT "/__web_console/repl_sessions/158ae3a70e47b296500457da66dc1fa2" for 127.0.0.1 at 2017-07-20 15:32:11 -0300
+Started PUT "/__web_console/repl_sessions/158ae3a70e47b296500457da66dc1fa2" for 127.0.0.1 at 2017-07-20 15:32:12 -0300
+  [1m[36mRoom Load (0.4ms)[0m  [1m[34mSELECT  "rooms".* FROM "rooms" LIMIT ?[0m  [["LIMIT", 3]]
+Started PUT "/__web_console/repl_sessions/158ae3a70e47b296500457da66dc1fa2" for 127.0.0.1 at 2017-07-20 15:35:08 -0300
+Started PUT "/__web_console/repl_sessions/158ae3a70e47b296500457da66dc1fa2" for 127.0.0.1 at 2017-07-20 15:35:08 -0300
+Started PUT "/__web_console/repl_sessions/158ae3a70e47b296500457da66dc1fa2" for 127.0.0.1 at 2017-07-20 15:35:08 -0300
+Started PUT "/__web_console/repl_sessions/158ae3a70e47b296500457da66dc1fa2" for 127.0.0.1 at 2017-07-20 15:35:09 -0300
+Started PUT "/__web_console/repl_sessions/158ae3a70e47b296500457da66dc1fa2" for 127.0.0.1 at 2017-07-20 15:35:09 -0300
+Started PUT "/__web_console/repl_sessions/158ae3a70e47b296500457da66dc1fa2" for 127.0.0.1 at 2017-07-20 15:48:11 -0300
+Started PUT "/__web_console/repl_sessions/158ae3a70e47b296500457da66dc1fa2" for 127.0.0.1 at 2017-07-20 15:48:11 -0300
+Started PUT "/__web_console/repl_sessions/158ae3a70e47b296500457da66dc1fa2" for 127.0.0.1 at 2017-07-20 15:48:11 -0300
+Started PUT "/__web_console/repl_sessions/158ae3a70e47b296500457da66dc1fa2" for 127.0.0.1 at 2017-07-20 15:48:12 -0300
+Started PUT "/__web_console/repl_sessions/158ae3a70e47b296500457da66dc1fa2" for 127.0.0.1 at 2017-07-20 15:48:23 -0300
+Started PUT "/__web_console/repl_sessions/158ae3a70e47b296500457da66dc1fa2" for 127.0.0.1 at 2017-07-20 15:48:25 -0300
+Started GET "/pt-BR/rooms" for 127.0.0.1 at 2017-07-20 15:50:29 -0300
+Processing by RoomsController#index as HTML
+  Parameters: {"locale"=>"pt-BR"}
+  [1m[36mRoom Load (0.1ms)[0m  [1m[34mSELECT  "rooms".* FROM "rooms" LIMIT ?[0m  [["LIMIT", 3]]
+Completed 500 Internal Server Error in 17ms (ActiveRecord: 1.1ms)
+
+
+  
+SyntaxError (/home/sullyvan/workspace-sullyvan/proj/colcho_net/app/presenter/room_presenter.rb:2: syntax error, unexpected ',', expecting '('
+_at, :description, :location., :title, :to => :room
+                              ^):
+  
+app/presenter/room_presenter.rb:2: syntax error, unexpected ',', expecting '('
+app/controllers/rooms_controller.rb:10:in `block in index'
+app/controllers/rooms_controller.rb:9:in `map'
+app/controllers/rooms_controller.rb:9:in `index'
+Started GET "/pt-BR/rooms" for 127.0.0.1 at 2017-07-20 15:51:32 -0300
+Processing by RoomsController#index as HTML
+  Parameters: {"locale"=>"pt-BR"}
+  [1m[36mRoom Load (0.1ms)[0m  [1m[34mSELECT  "rooms".* FROM "rooms" LIMIT ?[0m  [["LIMIT", 3]]
+  Rendering rooms/index.html.erb within layouts/application
+  Rendered rooms/index.html.erb within layouts/application (0.6ms)
+Completed 500 Internal Server Error in 19ms (ActiveRecord: 1.1ms)
+
+
+  
+SyntaxError (/home/sullyvan/workspace-sullyvan/proj/colcho_net/app/views/rooms/index.html.erb:2: syntax error, unexpected ':', expecting '}'
+nd=(render @rooms, local{room: room});@output_buffer.safe_ap
+                              ^
+/home/sullyvan/workspace-sullyvan/proj/colcho_net/app/views/rooms/index.html.erb:6: syntax error, unexpected keyword_ensure, expecting ')'
+          ensure
+                ^
+/home/sullyvan/workspace-sullyvan/proj/colcho_net/app/views/rooms/index.html.erb:8: syntax error, unexpected keyword_end, expecting ')'
+          end
+             ^):
+  
+app/views/rooms/index.html.erb:2: syntax error, unexpected ':', expecting '}'
+app/views/rooms/index.html.erb:6: syntax error, unexpected keyword_ensure, expecting ')'
+app/views/rooms/index.html.erb:8: syntax error, unexpected keyword_end, expecting ')'
+Started GET "/pt-BR/rooms" for 127.0.0.1 at 2017-07-20 15:51:50 -0300
+Processing by RoomsController#index as HTML
+  Parameters: {"locale"=>"pt-BR"}
+  [1m[36mRoom Load (0.2ms)[0m  [1m[34mSELECT  "rooms".* FROM "rooms" LIMIT ?[0m  [["LIMIT", 3]]
+  Rendering rooms/index.html.erb within layouts/application
+  Rendered collection of rooms/_room.html.erb [1 times] (58.8ms)
+  Rendered rooms/index.html.erb within layouts/application (60.0ms)
+Completed 500 Internal Server Error in 64ms (ActiveRecord: 0.2ms)
+
+
+  
+ActionView::Template::Error (undefined method `to_model' for #<RoomPresenter:0x007fba5d497ab8>
+Did you mean?  to_yaml):
+    1: <article class="room">
+    2:   <h2> <%= link_to room.title, room %> </h2>
+    3: 
+    4:   <%= render :partial => 'review' %>
+    5: 
+  
+app/views/rooms/_room.html.erb:2:in `_app_views_rooms__room_html_erb___1065763905575926152_70219202696620'
+app/views/rooms/index.html.erb:2:in `_app_views_rooms_index_html_erb__656554367438870567_70219202864980'
+Started GET "/pt-BR/rooms" for 127.0.0.1 at 2017-07-20 15:57:26 -0300
+Processing by RoomsController#index as HTML
+  Parameters: {"locale"=>"pt-BR"}
+  [1m[36mRoom Load (0.4ms)[0m  [1m[34mSELECT  "rooms".* FROM "rooms" LIMIT ?[0m  [["LIMIT", 3]]
+  Rendering rooms/index.html.erb within layouts/application
+  Rendered collection of rooms/_room.html.erb [1 times] (91.2ms)
+  Rendered rooms/index.html.erb within layouts/application (92.7ms)
+Completed 500 Internal Server Error in 98ms (ActiveRecord: 0.4ms)
+
+
+  
+ActionView::Template::Error (undefined method `to_model' for #<RoomPresenter:0x007fba5d289f50>
+Did you mean?  to_yaml):
+    1: <article class="room">
+    2:   <h2> <%= link_to room.title, room %> </h2>
+    3: 
+    4:   <%= render :partial => 'review' %>
+    5: 
+  
+app/views/rooms/_room.html.erb:2:in `_app_views_rooms__room_html_erb___1065763905575926152_70219201419640'
+app/views/rooms/index.html.erb:2:in `_app_views_rooms_index_html_erb__656554367438870567_70219201744720'
+Started GET "/pt-BR/rooms" for 127.0.0.1 at 2017-07-20 16:07:03 -0300
+Processing by RoomsController#index as HTML
+  Parameters: {"locale"=>"pt-BR"}
+  [1m[36mRoom Load (0.3ms)[0m  [1m[34mSELECT  "rooms".* FROM "rooms" LIMIT ?[0m  [["LIMIT", 3]]
+  Rendering rooms/index.html.erb within layouts/application
+  Rendered collection of rooms/_room.html.erb [1 times] (0.7ms)
+  Rendered rooms/index.html.erb within layouts/application (2.1ms)
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.3ms)
+
+
+  
+SyntaxError (/home/sullyvan/workspace-sullyvan/proj/colcho_net/app/views/rooms/_room.html.erb:16: syntax error, unexpected keyword_ensure, expecting end-of-input
+          ensure
+                ^):
+  
+app/views/rooms/_room.html.erb:16: syntax error, unexpected keyword_ensure, expecting end-of-input
+app/views/rooms/index.html.erb:2:in `_app_views_rooms_index_html_erb__656554367438870567_70219210172680'
+Started GET "/pt-BR/rooms" for 127.0.0.1 at 2017-07-20 16:08:54 -0300
+Processing by RoomsController#index as HTML
+  Parameters: {"locale"=>"pt-BR"}
+  [1m[36mRoom Load (0.3ms)[0m  [1m[34mSELECT  "rooms".* FROM "rooms" LIMIT ?[0m  [["LIMIT", 3]]
+  Rendering rooms/index.html.erb within layouts/application
+  Rendered rooms/_review.html.erb (59.8ms)
+  Rendered collection of rooms/_room.html.erb [1 times] (61.8ms)
+  Rendered rooms/index.html.erb within layouts/application (62.8ms)
+Completed 500 Internal Server Error in 67ms (ActiveRecord: 0.3ms)
+
+
+  
+ActionView::Template::Error (undefined method `show_form?' for #<RoomPresenter:0x007fba5db2a8a8>):
+    1: <section class="review">
+    2:   <% if room.show_form? %>
+    3:     <%= render :partial => 'review_form', :locals => {:room => room} %>
+    4:   <% end %>
+    5: </section>
+  
+app/views/rooms/_review.html.erb:2:in `_app_views_rooms__review_html_erb__439416897051042734_70219206226720'
+app/views/rooms/_room.html.erb:3:in `_app_views_rooms__room_html_erb___1065763905575926152_70219206269940'
+app/views/rooms/index.html.erb:2:in `_app_views_rooms_index_html_erb__656554367438870567_70219206314540'
+Started GET "/pt-BR/rooms" for 127.0.0.1 at 2017-07-20 16:09:40 -0300
+Processing by RoomsController#index as HTML
+  Parameters: {"locale"=>"pt-BR"}
+  [1m[36mRoom Load (0.1ms)[0m  [1m[34mSELECT  "rooms".* FROM "rooms" LIMIT ?[0m  [["LIMIT", 3]]
+  Rendering rooms/index.html.erb within layouts/application
+  Rendered rooms/_review.html.erb (0.4ms)
+  Rendered collection of rooms/_room.html.erb [1 times] (4.0ms)
+  Rendered rooms/index.html.erb within layouts/application (5.1ms)
+  Rendered layouts/_visitor_navbar.html.erb (1.5ms)
+Completed 200 OK in 68ms (Views: 50.0ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/pt-BR/rooms" for 127.0.0.1 at 2017-07-20 16:09:45 -0300
+Processing by RoomsController#index as HTML
+  Parameters: {"locale"=>"pt-BR"}
+  [1m[36mRoom Load (0.3ms)[0m  [1m[34mSELECT  "rooms".* FROM "rooms" LIMIT ?[0m  [["LIMIT", 3]]
+  Rendering rooms/index.html.erb within layouts/application
+  Rendered rooms/_review.html.erb (0.3ms)
+  Rendered collection of rooms/_room.html.erb [1 times] (2.1ms)
+  Rendered rooms/index.html.erb within layouts/application (3.5ms)
+  Rendered layouts/_visitor_navbar.html.erb (1.0ms)
+Completed 200 OK in 34ms (Views: 32.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/pt-BR/rooms/12" for 127.0.0.1 at 2017-07-20 16:09:46 -0300
+Processing by RoomsController#show as HTML
+  Parameters: {"locale"=>"pt-BR", "id"=>"12"}
+  [1m[36mRoom Load (0.2ms)[0m  [1m[34mSELECT  "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mCACHE Room Load (0.0ms)[0m  [1m[34mSELECT  "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  Rendering rooms/show.html.erb within layouts/application
+  Rendered rooms/show.html.erb within layouts/application (1.1ms)
+  Rendered layouts/_visitor_navbar.html.erb (0.9ms)
+Completed 200 OK in 24ms (Views: 21.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/pt-BR/user_sessions/new" for 127.0.0.1 at 2017-07-20 16:09:52 -0300
+Processing by UserSessionsController#new as HTML
+  Parameters: {"locale"=>"pt-BR"}
+  Rendering user_sessions/new.html.erb within layouts/application
+  Rendered user_sessions/new.html.erb within layouts/application (39.5ms)
+  Rendered layouts/_visitor_navbar.html.erb (1.3ms)
+Completed 200 OK in 91ms (Views: 89.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/pt-BR/user_sessions" for 127.0.0.1 at 2017-07-20 16:09:54 -0300
+Processing by UserSessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"gewL6aDAloiKLaslXsbC21KdnzAmwL7Q+VSckSJ13VokBnU2/VgljQZsdRSkbr1HD4l/aNPkrqpY5rJwK7ao0w==", "user_session"=>{"email"=>"slv@com.br", "password"=>"[FILTERED]"}, "commit"=>"Entrar", "locale"=>"pt-BR"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE (confirmed_at IS NOT NULL) AND "users"."email" = ? LIMIT ?[0m  [["email", "slv@com.br"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/?locale=pt-BR
+Completed 302 Found in 115ms (ActiveRecord: 1.0ms)
+
+
+Started GET "/?locale=pt-BR" for 127.0.0.1 at 2017-07-20 16:09:54 -0300
+Processing by HomeController#index as HTML
+  Parameters: {"locale"=>"pt-BR"}
+  [1m[36mRoom Load (0.7ms)[0m  [1m[34mSELECT  "rooms".* FROM "rooms" ORDER BY "rooms"."id" ASC LIMIT ?[0m  [["LIMIT", 3]]
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (1.1ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  Rendered layouts/_user_navbar.html.erb (3.8ms)
+Completed 200 OK in 47ms (Views: 43.9ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/pt-BR/rooms" for 127.0.0.1 at 2017-07-20 16:09:56 -0300
+Processing by RoomsController#index as HTML
+  Parameters: {"locale"=>"pt-BR"}
+  [1m[36mRoom Load (0.3ms)[0m  [1m[34mSELECT  "rooms".* FROM "rooms" LIMIT ?[0m  [["LIMIT", 3]]
+  Rendering rooms/index.html.erb within layouts/application
+  Rendered rooms/_review.html.erb (0.4ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  Rendered collection of rooms/_room.html.erb [1 times] (88.3ms)
+  Rendered rooms/index.html.erb within layouts/application (91.1ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  Rendered layouts/_user_navbar.html.erb (1.5ms)
+Completed 200 OK in 113ms (Views: 110.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/pt-BR/rooms/12" for 127.0.0.1 at 2017-07-20 16:09:58 -0300
+Processing by RoomsController#show as HTML
+  Parameters: {"locale"=>"pt-BR", "id"=>"12"}
+  [1m[36mRoom Load (0.1ms)[0m  [1m[34mSELECT  "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mCACHE Room Load (0.0ms)[0m  [1m[34mSELECT  "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  Rendering rooms/show.html.erb within layouts/application
+  Rendered rooms/show.html.erb within layouts/application (0.9ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  Rendered layouts/_user_navbar.html.erb (1.8ms)
+Completed 200 OK in 23ms (Views: 20.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/pt-BR/rooms/12/edit" for 127.0.0.1 at 2017-07-20 16:10:04 -0300
+Processing by RoomsController#edit as HTML
+  Parameters: {"locale"=>"pt-BR", "id"=>"12"}
+  [1m[36mRoom Load (0.2ms)[0m  [1m[34mSELECT  "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  Rendering rooms/edit.html.erb within layouts/application
+  Rendered rooms/_form.html.erb (23.2ms)
+  Rendered rooms/edit.html.erb within layouts/application (25.3ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  Rendered layouts/_user_navbar.html.erb (1.7ms)
+Completed 200 OK in 49ms (Views: 46.1ms | ActiveRecord: 0.4ms)
+
+
+Started PATCH "/pt-BR/rooms/12" for 127.0.0.1 at 2017-07-20 16:10:06 -0300
+Processing by RoomsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"77KLCqJ7k1VmxNHM9uIGwxWiHHjPkCmxkH4IjwCb80IVuAq2Izw9U9GLi5TVAlYX1Ou8vaMwQl4M078GRc16ww==", "room"=>{"title"=>"Quarto em são joão de Meriti", "location"=>"São joão de Meriti", "description"=>"Belíssimo Qaurto na beira da praia"}, "commit"=>"Atualizar Quarto", "locale"=>"pt-BR", "id"=>"12"}
+  [1m[36mRoom Load (0.2ms)[0m  [1m[34mSELECT  "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mCACHE Room Load (0.0ms)[0m  [1m[34mSELECT  "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mCACHE Room Load (0.0ms)[0m  [1m[34mSELECT  "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/pt-BR/rooms/12
+Completed 302 Found in 8ms (ActiveRecord: 0.5ms)
+
+
+Started GET "/pt-BR/rooms/12" for 127.0.0.1 at 2017-07-20 16:10:06 -0300
+Processing by RoomsController#show as HTML
+  Parameters: {"locale"=>"pt-BR", "id"=>"12"}
+  [1m[36mRoom Load (0.2ms)[0m  [1m[34mSELECT  "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mCACHE Room Load (0.0ms)[0m  [1m[34mSELECT  "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  Rendering rooms/show.html.erb within layouts/application
+  Rendered rooms/show.html.erb within layouts/application (1.4ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  Rendered layouts/_user_navbar.html.erb (1.7ms)
+Completed 200 OK in 26ms (Views: 23.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/pt-BR/rooms/new" for 127.0.0.1 at 2017-07-20 16:10:08 -0300
+Processing by RoomsController#new as HTML
+  Parameters: {"locale"=>"pt-BR"}
+  Rendering rooms/new.html.erb within layouts/application
+  Rendered rooms/_form.html.erb (2.2ms)
+  Rendered rooms/new.html.erb within layouts/application (3.5ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  Rendered layouts/_user_navbar.html.erb (1.7ms)
+Completed 200 OK in 25ms (Views: 23.3ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/pt-BR/rooms" for 127.0.0.1 at 2017-07-20 16:10:10 -0300
+Processing by RoomsController#index as HTML
+  Parameters: {"locale"=>"pt-BR"}
+  [1m[36mRoom Load (0.4ms)[0m  [1m[34mSELECT  "rooms".* FROM "rooms" LIMIT ?[0m  [["LIMIT", 3]]
+  Rendering rooms/index.html.erb within layouts/application
+  Rendered rooms/_review.html.erb (0.4ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  Rendered collection of rooms/_room.html.erb [1 times] (4.2ms)
+  Rendered rooms/index.html.erb within layouts/application (5.3ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  Rendered layouts/_user_navbar.html.erb (2.0ms)
+Completed 200 OK in 30ms (Views: 27.6ms | ActiveRecord: 0.6ms)
+
+
