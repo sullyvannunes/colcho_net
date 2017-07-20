@@ -22135,3 +22135,2322 @@ puma (3.9.1) lib/puma/server.rb:602:in `handle_request'
 puma (3.9.1) lib/puma/server.rb:435:in `process_client'
 puma (3.9.1) lib/puma/server.rb:299:in `block in run'
 puma (3.9.1) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/" for 127.0.0.1 at 2017-07-18 22:20:49 -0300
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#index as HTML
+  [1m[36mRoom Load (0.2ms)[0m  [1m[34mSELECT  "rooms".* FROM "rooms" ORDER BY "rooms"."id" ASC LIMIT ?[0m  [["LIMIT", 3]]
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (133.4ms)
+Completed 500 Internal Server Error in 219ms (ActiveRecord: 1.8ms)
+
+
+  
+ActionView::Template::Error (undefined method `room_path' for #<#<Class:0x007f7e909d7630>:0x007f7e906d2430>
+Did you mean?  root_path):
+    1: <h1> Quartos recém postados</h1>
+    2: <ul>
+    3: <% @rooms.each do |room| %>
+    4: <li><%= link_to room.complete_name, room_path("pt-BR", room) %> </li>
+    5: <% end %>
+    6: </ul>
+  
+app/views/home/index.html.erb:4:in `block in _app_views_home_index_html_erb___2874230129589997345_70090782860240'
+app/views/home/index.html.erb:3:in `each'
+app/views/home/index.html.erb:3:in `_app_views_home_index_html_erb___2874230129589997345_70090782860240'
+Started GET "/" for 127.0.0.1 at 2017-07-18 22:22:52 -0300
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#index as HTML
+  [1m[36mRoom Load (0.3ms)[0m  [1m[34mSELECT  "rooms".* FROM "rooms" ORDER BY "rooms"."id" ASC LIMIT ?[0m  [["LIMIT", 3]]
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (1.6ms)
+  Rendered layouts/_visitor_navbar.html.erb (13.2ms)
+Completed 200 OK in 378ms (Views: 339.2ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/pt-BR/user_sessions/new" for 127.0.0.1 at 2017-07-18 22:22:56 -0300
+Processing by UserSessionsController#new as HTML
+  Parameters: {"locale"=>"pt-BR"}
+  Rendering user_sessions/new.html.erb within layouts/application
+  Rendered user_sessions/new.html.erb within layouts/application (44.1ms)
+  Rendered layouts/_visitor_navbar.html.erb (1.0ms)
+Completed 200 OK in 85ms (Views: 68.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/pt-BR/user_sessions" for 127.0.0.1 at 2017-07-18 22:22:58 -0300
+Processing by UserSessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"CqnL+/lsr6KeVs9FWz88xJfDNySRwFiWGqEndqS7Q+GbqeRKNUW8ZW4SpnstQTKVzUEzIjXozosc7Mr4jBC2xA==", "user_session"=>{"email"=>"slv@com.br", "password"=>"[FILTERED]"}, "commit"=>"Entrar", "locale"=>"pt-BR"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE (confirmed_at IS NOT NULL) AND "users"."email" = ? LIMIT ?[0m  [["email", "slv@com.br"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/?locale=pt-BR
+Completed 302 Found in 205ms (ActiveRecord: 1.5ms)
+
+
+Started GET "/?locale=pt-BR" for 127.0.0.1 at 2017-07-18 22:22:58 -0300
+Processing by HomeController#index as HTML
+  Parameters: {"locale"=>"pt-BR"}
+  [1m[36mRoom Load (0.4ms)[0m  [1m[34mSELECT  "rooms".* FROM "rooms" ORDER BY "rooms"."id" ASC LIMIT ?[0m  [["LIMIT", 3]]
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (3.5ms)
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  Rendered layouts/_user_navbar.html.erb (23.2ms)
+Completed 200 OK in 66ms (Views: 62.4ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/pt-BR/rooms" for 127.0.0.1 at 2017-07-18 22:23:00 -0300
+Processing by RoomsController#index as HTML
+  Parameters: {"locale"=>"pt-BR"}
+  Rendering rooms/index.html.erb within layouts/application
+  [1m[36mRoom Load (0.3ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms"[0m
+  Rendered rooms/_review.html.erb (7.0ms)
+  Rendered collection of rooms/_room.html.erb [8 times] (9.4ms)
+  Rendered rooms/index.html.erb within layouts/application (12.5ms)
+Completed 500 Internal Server Error in 16ms (ActiveRecord: 0.3ms)
+
+
+  
+ActionView::Template::Error (undefined method `rooms' for nil:NilClass):
+    1: <section class="review">
+    2:   <% if user_signed_in? %>
+    3:     <%= form_for [review.rooms, review] do |f| %>
+    4:       <% Review::POINTS.each do |point| %>
+    5:         <%= f.radio_button :points, point %>
+    6:         <%= f.label :points, point, :value => point %>
+  
+app/views/rooms/_review.html.erb:3:in `_app_views_rooms__review_html_erb___1852548878953131131_70277276495960'
+app/views/rooms/_room.html.erb:4:in `_app_views_rooms__room_html_erb__1650201696538153331_70277276614760'
+app/views/rooms/index.html.erb:2:in `_app_views_rooms_index_html_erb___1104302862019577683_70277276759460'
+Started PUT "/__web_console/repl_sessions/81d46c7de9a89f26a9894afd1d39db84" for 127.0.0.1 at 2017-07-18 22:23:09 -0300
+Started PUT "/__web_console/repl_sessions/81d46c7de9a89f26a9894afd1d39db84" for 127.0.0.1 at 2017-07-18 22:23:13 -0300
+Started PUT "/__web_console/repl_sessions/81d46c7de9a89f26a9894afd1d39db84" for 127.0.0.1 at 2017-07-18 22:23:23 -0300
+Started PUT "/__web_console/repl_sessions/81d46c7de9a89f26a9894afd1d39db84" for 127.0.0.1 at 2017-07-18 22:23:43 -0300
+Started PUT "/__web_console/repl_sessions/81d46c7de9a89f26a9894afd1d39db84" for 127.0.0.1 at 2017-07-18 22:23:51 -0300
+Started PUT "/__web_console/repl_sessions/81d46c7de9a89f26a9894afd1d39db84" for 127.0.0.1 at 2017-07-18 22:23:51 -0300
+Started PUT "/__web_console/repl_sessions/81d46c7de9a89f26a9894afd1d39db84" for 127.0.0.1 at 2017-07-18 22:23:52 -0300
+Started PUT "/__web_console/repl_sessions/81d46c7de9a89f26a9894afd1d39db84" for 127.0.0.1 at 2017-07-18 22:23:59 -0300
+Started PUT "/__web_console/repl_sessions/81d46c7de9a89f26a9894afd1d39db84" for 127.0.0.1 at 2017-07-18 22:24:56 -0300
+Started PUT "/__web_console/repl_sessions/81d46c7de9a89f26a9894afd1d39db84" for 127.0.0.1 at 2017-07-18 22:25:00 -0300
+  [1m[36mRoom Load (0.5ms)[0m  [1m[34mSELECT  "rooms".* FROM "rooms" WHERE "rooms"."user_id" = ? LIMIT ?[0m  [["user_id", nil], ["LIMIT", 11]]
+Started PUT "/__web_console/repl_sessions/81d46c7de9a89f26a9894afd1d39db84" for 127.0.0.1 at 2017-07-18 22:25:45 -0300
+  [1m[36mRoom Load (0.6ms)[0m  [1m[34mSELECT  "rooms".* FROM "rooms" WHERE (user_id = 'current_user') LIMIT ?[0m  [["LIMIT", 11]]
+Started PUT "/__web_console/repl_sessions/81d46c7de9a89f26a9894afd1d39db84" for 127.0.0.1 at 2017-07-18 22:25:53 -0300
+  [1m[36mRoom Load (0.4ms)[0m  [1m[34mSELECT  "rooms".* FROM "rooms" WHERE (user_id = 'urrent_user') LIMIT ?[0m  [["LIMIT", 11]]
+Started PUT "/__web_console/repl_sessions/81d46c7de9a89f26a9894afd1d39db84" for 127.0.0.1 at 2017-07-18 22:25:58 -0300
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mRoom Load (0.4ms)[0m  [1m[34mSELECT  "rooms".* FROM "rooms" WHERE (user_id = 11) LIMIT ?[0m  [["LIMIT", 11]]
+Started PUT "/__web_console/repl_sessions/81d46c7de9a89f26a9894afd1d39db84" for 127.0.0.1 at 2017-07-18 22:26:16 -0300
+Started PUT "/__web_console/repl_sessions/81d46c7de9a89f26a9894afd1d39db84" for 127.0.0.1 at 2017-07-18 22:26:17 -0300
+  [1m[36mRoom Load (0.5ms)[0m  [1m[34mSELECT  "rooms".* FROM "rooms" LIMIT ?[0m  [["LIMIT", 11]]
+Started PUT "/__web_console/repl_sessions/81d46c7de9a89f26a9894afd1d39db84" for 127.0.0.1 at 2017-07-18 22:26:22 -0300
+  [1m[36mRoom Load (0.4ms)[0m  [1m[34mSELECT  "rooms".* FROM "rooms" ORDER BY "rooms"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+Started PUT "/__web_console/repl_sessions/81d46c7de9a89f26a9894afd1d39db84" for 127.0.0.1 at 2017-07-18 22:26:32 -0300
+Started PUT "/__web_console/repl_sessions/81d46c7de9a89f26a9894afd1d39db84" for 127.0.0.1 at 2017-07-18 22:26:37 -0300
+Started PUT "/__web_console/repl_sessions/81d46c7de9a89f26a9894afd1d39db84" for 127.0.0.1 at 2017-07-18 22:26:39 -0300
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT  "reviews".* FROM "reviews" WHERE "reviews"."room_id" = ? LIMIT ?[0m  [["room_id", 10], ["LIMIT", 11]]
+Started GET "/pt-BR/rooms" for 127.0.0.1 at 2017-07-18 22:47:43 -0300
+Processing by RoomsController#index as HTML
+  Parameters: {"locale"=>"pt-BR"}
+  Rendering rooms/index.html.erb within layouts/application
+  [1m[36mRoom Load (0.3ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms"[0m
+  Rendered rooms/_review.html.erb (4.1ms)
+  Rendered collection of rooms/_room.html.erb [8 times] (6.4ms)
+  Rendered rooms/index.html.erb within layouts/application (9.2ms)
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 0.3ms)
+
+
+  
+ActionView::Template::Error (undefined method `rooms' for nil:NilClass):
+    1: <section class="review">
+    2:   <% if user_signed_in? %>
+    3:     <%= form_for [review.rooms, review] do |f| %>
+    4:       <% Review::POINTS.each do |point| %>
+    5:         <%= f.radio_button :points, point %>
+    6:         <%= f.label :points, point, :value => point %>
+  
+app/views/rooms/_review.html.erb:3:in `_app_views_rooms__review_html_erb___1852548878953131131_70277257201380'
+app/views/rooms/_room.html.erb:4:in `_app_views_rooms__room_html_erb__1650201696538153331_70277257235700'
+app/views/rooms/index.html.erb:2:in `_app_views_rooms_index_html_erb___1104302862019577683_70277257292660'
+Started GET "/?locale=pt-BR" for 127.0.0.1 at 2017-07-18 22:47:46 -0300
+Processing by HomeController#index as HTML
+  Parameters: {"locale"=>"pt-BR"}
+  [1m[36mRoom Load (1.1ms)[0m  [1m[34mSELECT  "rooms".* FROM "rooms" ORDER BY "rooms"."id" ASC LIMIT ?[0m  [["LIMIT", 3]]
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (1.6ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  Rendered layouts/_user_navbar.html.erb (2.9ms)
+Completed 200 OK in 67ms (Views: 61.0ms | ActiveRecord: 1.3ms)
+
+
+  [1m[36mRoom Load (0.2ms)[0m  [1m[34mSELECT  "rooms".* FROM "rooms" ORDER BY "rooms"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mRoom Load (0.3ms)[0m  [1m[34mSELECT  "rooms".* FROM "rooms" ORDER BY "rooms"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+Started GET "/?locale=pt-BR/rooms/4/reviews/new" for 127.0.0.1 at 2017-07-18 23:04:23 -0300
+Processing by HomeController#index as HTML
+  Parameters: {"locale"=>"pt-BR/rooms/4/reviews/new"}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+I18n::InvalidLocale ("pt-BR/rooms/4/reviews/new" is not a valid locale):
+  
+app/controllers/application_controller.rb:10:in `set_locale'
+Started GET "/rooms/4/reviews/new" for 127.0.0.1 at 2017-07-18 23:04:32 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/rooms/4/reviews/new"):
+  
+actionpack (5.1.2) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.2) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.2) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.2) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.2) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.2) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.2) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.2) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.2) lib/rails/engine.rb:522:in `call'
+puma (3.9.1) lib/puma/configuration.rb:224:in `call'
+puma (3.9.1) lib/puma/server.rb:602:in `handle_request'
+puma (3.9.1) lib/puma/server.rb:435:in `process_client'
+puma (3.9.1) lib/puma/server.rb:299:in `block in run'
+puma (3.9.1) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/rooms/4/reviews" for 127.0.0.1 at 2017-07-18 23:04:52 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/rooms/4/reviews"):
+  
+actionpack (5.1.2) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.2) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.2) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.2) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.2) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.2) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.2) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.2) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.2) lib/rails/engine.rb:522:in `call'
+puma (3.9.1) lib/puma/configuration.rb:224:in `call'
+puma (3.9.1) lib/puma/server.rb:602:in `handle_request'
+puma (3.9.1) lib/puma/server.rb:435:in `process_client'
+puma (3.9.1) lib/puma/server.rb:299:in `block in run'
+puma (3.9.1) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started PUT "/__web_console/repl_sessions/93ae9e16bfd4fad77d1c15af90906591" for 127.0.0.1 at 2017-07-18 23:05:21 -0300
+Started PUT "/__web_console/repl_sessions/93ae9e16bfd4fad77d1c15af90906591" for 127.0.0.1 at 2017-07-18 23:05:23 -0300
+Started PUT "/__web_console/repl_sessions/93ae9e16bfd4fad77d1c15af90906591" for 127.0.0.1 at 2017-07-18 23:05:32 -0300
+Started GET "/rooms/4/" for 127.0.0.1 at 2017-07-18 23:06:30 -0300
+Processing by RoomsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mRoom Load (0.4ms)[0m  [1m[34mSELECT  "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mCACHE Room Load (0.0ms)[0m  [1m[34mSELECT  "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mReview Load (0.6ms)[0m  [1m[34mSELECT  "reviews".* FROM "reviews" WHERE "reviews"."room_id" = ? AND "reviews"."user_id" = ? LIMIT ?[0m  [["room_id", 4], ["user_id", 11], ["LIMIT", 1]]
+  Rendering rooms/show.html.erb within layouts/application
+  Rendered rooms/show.html.erb within layouts/application (2.1ms)
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  Rendered layouts/_user_navbar.html.erb (3.3ms)
+Completed 200 OK in 73ms (Views: 49.5ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/rooms/4/reviews" for 127.0.0.1 at 2017-07-18 23:06:36 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/rooms/4/reviews"):
+  
+actionpack (5.1.2) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.2) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.2) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.2) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.2) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.2) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.2) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.2) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.2) lib/rails/engine.rb:522:in `call'
+puma (3.9.1) lib/puma/configuration.rb:224:in `call'
+puma (3.9.1) lib/puma/server.rb:602:in `handle_request'
+puma (3.9.1) lib/puma/server.rb:435:in `process_client'
+puma (3.9.1) lib/puma/server.rb:299:in `block in run'
+puma (3.9.1) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/pt-BR/rooms" for 127.0.0.1 at 2017-07-18 23:29:04 -0300
+Processing by RoomsController#index as HTML
+  Parameters: {"locale"=>"pt-BR"}
+  Rendering rooms/index.html.erb within layouts/application
+  [1m[36mRoom Load (0.2ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms"[0m
+  Rendered rooms/_review.html.erb (5.9ms)
+  Rendered collection of rooms/_room.html.erb [8 times] (8.3ms)
+  Rendered rooms/index.html.erb within layouts/application (189.6ms)
+Completed 500 Internal Server Error in 204ms (ActiveRecord: 1.3ms)
+
+
+  
+ActionView::Template::Error (undefined method `rooms' for nil:NilClass):
+    1: <section class="review">
+    2:   <% if user_signed_in? %>
+    3:     <%= form_for ([review.rooms, review]) do |f| %>
+    4:       <% Review::POINTS.each do |point| %>
+    5:         <%= f.radio_button :points, point %>
+    6:         <%= f.label :points, point, :value => point %>
+  
+app/views/rooms/_review.html.erb:3:in `_app_views_rooms__review_html_erb___1852548878953131131_70277257071260'
+app/views/rooms/_room.html.erb:4:in `_app_views_rooms__room_html_erb__1650201696538153331_70277257175600'
+app/views/rooms/index.html.erb:2:in `_app_views_rooms_index_html_erb___1104302862019577683_70277258785000'
+Started PUT "/__web_console/repl_sessions/4973bc26745ea383af5bdcc39b435d0b" for 127.0.0.1 at 2017-07-18 23:33:00 -0300
+Started GET "/pt-BR/rooms" for 127.0.0.1 at 2017-07-18 23:33:03 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/pt-BR/rooms"):
+  
+actionpack (5.1.2) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.2) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.2) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.2) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.2) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.2) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.2) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.2) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.2) lib/rails/engine.rb:522:in `call'
+puma (3.9.1) lib/puma/configuration.rb:224:in `call'
+puma (3.9.1) lib/puma/server.rb:602:in `handle_request'
+puma (3.9.1) lib/puma/server.rb:435:in `process_client'
+puma (3.9.1) lib/puma/server.rb:299:in `block in run'
+puma (3.9.1) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started PUT "/__web_console/repl_sessions/d8265b357fb15f13c0b77d8d67e69a9a" for 127.0.0.1 at 2017-07-18 23:34:52 -0300
+Started PUT "/__web_console/repl_sessions/d8265b357fb15f13c0b77d8d67e69a9a" for 127.0.0.1 at 2017-07-18 23:34:53 -0300
+Started PUT "/__web_console/repl_sessions/d8265b357fb15f13c0b77d8d67e69a9a" for 127.0.0.1 at 2017-07-18 23:34:58 -0300
+Started PUT "/__web_console/repl_sessions/d8265b357fb15f13c0b77d8d67e69a9a" for 127.0.0.1 at 2017-07-18 23:35:17 -0300
+Started PUT "/__web_console/repl_sessions/d8265b357fb15f13c0b77d8d67e69a9a" for 127.0.0.1 at 2017-07-18 23:35:18 -0300
+Started PUT "/__web_console/repl_sessions/d8265b357fb15f13c0b77d8d67e69a9a" for 127.0.0.1 at 2017-07-18 23:35:31 -0300
+Started PUT "/__web_console/repl_sessions/d8265b357fb15f13c0b77d8d67e69a9a" for 127.0.0.1 at 2017-07-18 23:35:37 -0300
+Started PUT "/__web_console/repl_sessions/d8265b357fb15f13c0b77d8d67e69a9a" for 127.0.0.1 at 2017-07-18 23:35:41 -0300
+Started GET "/pt-BR/rooms" for 127.0.0.1 at 2017-07-18 23:37:26 -0300
+Processing by RoomsController#index as HTML
+  Parameters: {"locale"=>"pt-BR"}
+  Rendering rooms/index.html.erb within layouts/application
+  [1m[36mRoom Load (0.3ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms"[0m
+  Rendered rooms/_review.html.erb (7.3ms)
+  Rendered collection of rooms/_room.html.erb [8 times] (10.8ms)
+  Rendered rooms/index.html.erb within layouts/application (32.6ms)
+Completed 500 Internal Server Error in 46ms (ActiveRecord: 2.2ms)
+
+
+  
+ActionView::Template::Error (undefined method `rooms' for nil:NilClass):
+    1: <section class="review">
+    2:   <% if user_signed_in? %>
+    3:     <%= form_for [review.rooms, review] do |f| %>
+    4:       <% Review::POINTS.each do |point| %>
+    5:         <%= f.radio_button :points, point %>
+    6:         <%= f.label :points, point, :value => point %>
+  
+app/views/rooms/_review.html.erb:3:in `_app_views_rooms__review_html_erb___1852548878953131131_70277275664480'
+app/views/rooms/_room.html.erb:4:in `_app_views_rooms__room_html_erb__1650201696538153331_70277275711860'
+app/views/rooms/index.html.erb:2:in `_app_views_rooms_index_html_erb___1104302862019577683_70277276195280'
+Started PUT "/__web_console/repl_sessions/422f5cc123b1ca5c2e8cfa5b58837898" for 127.0.0.1 at 2017-07-18 23:37:46 -0300
+Started PUT "/__web_console/repl_sessions/422f5cc123b1ca5c2e8cfa5b58837898" for 127.0.0.1 at 2017-07-18 23:37:49 -0300
+Started PUT "/__web_console/repl_sessions/422f5cc123b1ca5c2e8cfa5b58837898" for 127.0.0.1 at 2017-07-18 23:38:41 -0300
+Started PUT "/__web_console/repl_sessions/422f5cc123b1ca5c2e8cfa5b58837898" for 127.0.0.1 at 2017-07-18 23:45:13 -0300
+Started PUT "/__web_console/repl_sessions/422f5cc123b1ca5c2e8cfa5b58837898" for 127.0.0.1 at 2017-07-18 23:46:09 -0300
+Started PUT "/__web_console/repl_sessions/422f5cc123b1ca5c2e8cfa5b58837898" for 127.0.0.1 at 2017-07-18 23:46:13 -0300
+Started PUT "/__web_console/repl_sessions/422f5cc123b1ca5c2e8cfa5b58837898" for 127.0.0.1 at 2017-07-18 23:46:15 -0300
+Started PUT "/__web_console/repl_sessions/422f5cc123b1ca5c2e8cfa5b58837898" for 127.0.0.1 at 2017-07-18 23:46:32 -0300
+Started PUT "/__web_console/repl_sessions/422f5cc123b1ca5c2e8cfa5b58837898" for 127.0.0.1 at 2017-07-18 23:47:03 -0300
+Started PUT "/__web_console/repl_sessions/422f5cc123b1ca5c2e8cfa5b58837898" for 127.0.0.1 at 2017-07-18 23:47:08 -0300
+Started PUT "/__web_console/repl_sessions/422f5cc123b1ca5c2e8cfa5b58837898" for 127.0.0.1 at 2017-07-18 23:47:10 -0300
+Started PUT "/__web_console/repl_sessions/422f5cc123b1ca5c2e8cfa5b58837898" for 127.0.0.1 at 2017-07-18 23:47:16 -0300
+Started PUT "/__web_console/repl_sessions/422f5cc123b1ca5c2e8cfa5b58837898" for 127.0.0.1 at 2017-07-18 23:47:29 -0300
+Started PUT "/__web_console/repl_sessions/422f5cc123b1ca5c2e8cfa5b58837898" for 127.0.0.1 at 2017-07-18 23:47:30 -0300
+Started PUT "/__web_console/repl_sessions/422f5cc123b1ca5c2e8cfa5b58837898" for 127.0.0.1 at 2017-07-18 23:47:35 -0300
+Started PUT "/__web_console/repl_sessions/422f5cc123b1ca5c2e8cfa5b58837898" for 127.0.0.1 at 2017-07-18 23:47:50 -0300
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT  "reviews".* FROM "reviews" WHERE "reviews"."room_id" = ? AND "reviews"."user_id" = ? LIMIT ?[0m  [["room_id", 10], ["user_id", 11], ["LIMIT", 1]]
+Started PUT "/__web_console/repl_sessions/422f5cc123b1ca5c2e8cfa5b58837898" for 127.0.0.1 at 2017-07-18 23:48:43 -0300
+Started PUT "/__web_console/repl_sessions/422f5cc123b1ca5c2e8cfa5b58837898" for 127.0.0.1 at 2017-07-18 23:48:44 -0300
+Started PUT "/__web_console/repl_sessions/422f5cc123b1ca5c2e8cfa5b58837898" for 127.0.0.1 at 2017-07-18 23:48:50 -0300
+Started PUT "/__web_console/repl_sessions/422f5cc123b1ca5c2e8cfa5b58837898" for 127.0.0.1 at 2017-07-18 23:48:52 -0300
+Started PUT "/__web_console/repl_sessions/422f5cc123b1ca5c2e8cfa5b58837898" for 127.0.0.1 at 2017-07-18 23:48:56 -0300
+Started PUT "/__web_console/repl_sessions/422f5cc123b1ca5c2e8cfa5b58837898" for 127.0.0.1 at 2017-07-18 23:48:56 -0300
+Started GET "/pt-BR/rooms" for 127.0.0.1 at 2017-07-18 23:49:01 -0300
+Processing by RoomsController#index as HTML
+  Parameters: {"locale"=>"pt-BR"}
+  Rendering rooms/index.html.erb within layouts/application
+  [1m[36mRoom Load (0.3ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms"[0m
+  Rendered rooms/_review.html.erb (3.5ms)
+  Rendered collection of rooms/_room.html.erb [1 times] (5.6ms)
+  Rendered rooms/index.html.erb within layouts/application (8.2ms)
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 0.3ms)
+
+
+  
+ActionView::Template::Error (undefined method `rooms' for nil:NilClass):
+    1: <section class="review">
+    2:   <% if user_signed_in? %>
+    3:     <%= form_for [review.rooms, review] do |f| %>
+    4:       <% Review::POINTS.each do |point| %>
+    5:         <%= f.radio_button :points, point %>
+    6:         <%= f.label :points, point, :value => point %>
+  
+app/views/rooms/_review.html.erb:3:in `_app_views_rooms__review_html_erb___1852548878953131131_47400487832120'
+app/views/rooms/_room.html.erb:4:in `_app_views_rooms__room_html_erb__1650201696538153331_47400488747700'
+app/views/rooms/index.html.erb:2:in `_app_views_rooms_index_html_erb___1104302862019577683_70277244410300'
+Started PUT "/__web_console/repl_sessions/43bfaf383fe9b07aeb6386133d9b600a" for 127.0.0.1 at 2017-07-18 23:49:05 -0300
+Started PUT "/__web_console/repl_sessions/43bfaf383fe9b07aeb6386133d9b600a" for 127.0.0.1 at 2017-07-18 23:49:06 -0300
+Started PUT "/__web_console/repl_sessions/43bfaf383fe9b07aeb6386133d9b600a" for 127.0.0.1 at 2017-07-18 23:49:22 -0300
+Started PUT "/__web_console/repl_sessions/43bfaf383fe9b07aeb6386133d9b600a" for 127.0.0.1 at 2017-07-18 23:49:27 -0300
+Started PUT "/__web_console/repl_sessions/43bfaf383fe9b07aeb6386133d9b600a" for 127.0.0.1 at 2017-07-18 23:50:22 -0300
+Started PUT "/__web_console/repl_sessions/43bfaf383fe9b07aeb6386133d9b600a" for 127.0.0.1 at 2017-07-18 23:50:27 -0300
+Started PUT "/__web_console/repl_sessions/43bfaf383fe9b07aeb6386133d9b600a" for 127.0.0.1 at 2017-07-18 23:50:28 -0300
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+Started PUT "/__web_console/repl_sessions/43bfaf383fe9b07aeb6386133d9b600a" for 127.0.0.1 at 2017-07-18 23:50:30 -0300
+Started GET "/pt-BR/rooms" for 127.0.0.1 at 2017-07-18 23:51:36 -0300
+Processing by RoomsController#index as HTML
+  Parameters: {"locale"=>"pt-BR"}
+  [1m[36mRoom Load (0.6ms)[0m  [1m[34mSELECT  "rooms".* FROM "rooms" LIMIT ?[0m  [["LIMIT", 11]]
+Completed 500 Internal Server Error in 27ms
+
+
+  
+  [1m[36mCACHE Room Load (0.0ms)[0m  [1m[34mSELECT  "rooms".* FROM "rooms" LIMIT ?[0m  [["LIMIT", 11]]
+NoMethodError (undefined method `reviews' for #<Room::ActiveRecord_Relation:0x007fd5681bf400>
+Did you mean?  reverse):
+  
+app/controllers/rooms_controller.rb:10:in `index'
+Started GET "/pt-BR/rooms" for 127.0.0.1 at 2017-07-18 23:52:05 -0300
+Processing by RoomsController#index as HTML
+  Parameters: {"locale"=>"pt-BR"}
+  [1m[36mRoom Load (0.1ms)[0m  [1m[34mSELECT  "rooms".* FROM "rooms" LIMIT ?[0m  [["LIMIT", 11]]
+Completed 500 Internal Server Error in 22ms
+
+
+  
+  [1m[36mCACHE Room Load (0.1ms)[0m  [1m[34mSELECT  "rooms".* FROM "rooms" LIMIT ?[0m  [["LIMIT", 11]]
+NoMethodError (undefined method `reviews' for #<Room::ActiveRecord_Relation:0x007fd5656b8130>
+Did you mean?  reverse):
+  
+app/controllers/rooms_controller.rb:10:in `index'
+  [1m[36mRoom Load (0.2ms)[0m  [1m[34mSELECT  "rooms".* FROM "rooms" ORDER BY "rooms"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT  "reviews".* FROM "reviews" WHERE "reviews"."room_id" = ? LIMIT ?[0m  [["room_id", 10], ["LIMIT", 11]]
+  [1m[36mRoom Load (0.4ms)[0m  [1m[34mSELECT  "rooms".* FROM "rooms" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mRoom Load (0.8ms)[0m  [1m[34mSELECT  "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mRoom Load (0.3ms)[0m  [1m[34mSELECT  "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT  "reviews".* FROM "reviews" WHERE "reviews"."room_id" = ? LIMIT ?[0m  [["room_id", 10], ["LIMIT", 11]]
+Started PUT "/__web_console/repl_sessions/5e4972765e8068d04aacd855ed328591" for 127.0.0.1 at 2017-07-18 23:53:58 -0300
+Started PUT "/__web_console/repl_sessions/5e4972765e8068d04aacd855ed328591" for 127.0.0.1 at 2017-07-18 23:54:01 -0300
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+Started PUT "/__web_console/repl_sessions/5e4972765e8068d04aacd855ed328591" for 127.0.0.1 at 2017-07-18 23:54:01 -0300
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mRoom Load (0.3ms)[0m  [1m[34mSELECT  "rooms".* FROM "rooms" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mRoom Load (0.3ms)[0m  [1m[34mSELECT  "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+Started GET "/pt-BR/rooms" for 127.0.0.1 at 2017-07-19 00:00:37 -0300
+Processing by RoomsController#index as HTML
+  Parameters: {"locale"=>"pt-BR"}
+  Rendering rooms/index.html.erb within layouts/application
+  Rendered rooms/index.html.erb within layouts/application (1.7ms)
+Completed 500 Internal Server Error in 16ms
+
+
+  
+ActionView::Template::Error ('nil' is not an ActiveModel-compatible object. It must implement :to_partial_path.):
+    1: <h1><%= t '.title' %> </h1>
+    2: <%= render @rooms %>
+    3: <footer style="padding: 20px;"></footer>
+  
+app/views/rooms/index.html.erb:2:in `_app_views_rooms_index_html_erb___1104302862019577683_70277255655840'
+Started GET "/pt-BR/rooms" for 127.0.0.1 at 2017-07-19 00:01:30 -0300
+Processing by RoomsController#index as HTML
+  Parameters: {"locale"=>"pt-BR"}
+  Rendering rooms/index.html.erb within layouts/application
+  [1m[36mRoom Load (0.1ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms"[0m
+  Rendered rooms/_review.html.erb (9.0ms)
+  Rendered collection of rooms/_room.html.erb [1 times] (11.4ms)
+  Rendered rooms/index.html.erb within layouts/application (26.1ms)
+Completed 500 Internal Server Error in 40ms (ActiveRecord: 1.1ms)
+
+
+  
+ActionView::Template::Error (undefined method `to_key' for #<Room::ActiveRecord_Relation:0x007fd565b6aa20>
+Did you mean?  to_set
+               to_ary):
+    1: <section class="review">
+    2:   <% if user_signed_in? %>
+    3:     <%= form_for @rooms do |f| %>
+    4:       <% Review::POINTS.each do |point| %>
+    5:         <%= f.radio_button :points, point %>
+    6:         <%= f.label :points, point, :value => point %>
+  
+app/views/rooms/_review.html.erb:3:in `_app_views_rooms__review_html_erb___1852548878953131131_70277253709740'
+app/views/rooms/_room.html.erb:4:in `_app_views_rooms__room_html_erb__1650201696538153331_70277253894000'
+app/views/rooms/index.html.erb:2:in `_app_views_rooms_index_html_erb___1104302862019577683_70277255591380'
+Started PUT "/__web_console/repl_sessions/e406a456035aae9926f6c8e9a63db04c" for 127.0.0.1 at 2017-07-19 00:02:12 -0300
+Started PUT "/__web_console/repl_sessions/e406a456035aae9926f6c8e9a63db04c" for 127.0.0.1 at 2017-07-19 00:02:13 -0300
+Started GET "/pt-BR/rooms" for 127.0.0.1 at 2017-07-19 00:03:33 -0300
+Processing by RoomsController#index as HTML
+  Parameters: {"locale"=>"pt-BR"}
+  Rendering rooms/index.html.erb within layouts/application
+  [1m[36mRoom Load (0.3ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms"[0m
+  Rendered rooms/_review.html.erb (7.2ms)
+  Rendered collection of rooms/_room.html.erb [1 times] (9.8ms)
+  Rendered rooms/index.html.erb within layouts/application (13.1ms)
+Completed 500 Internal Server Error in 17ms (ActiveRecord: 0.3ms)
+
+
+  
+ActionView::Template::Error (undefined method `model_name' for #<Enumerator:0x007fd56630df48>):
+    1: <section class="review">
+    2:   <% if user_signed_in? %>
+    3:     <%= form_for @rooms.each do |f| %>
+    4:       <% Review::POINTS.each do |point| %>
+    5:         <%= f.radio_button :points, point %>
+    6:         <%= f.label :points, point, :value => point %>
+  
+app/views/rooms/_review.html.erb:3:in `_app_views_rooms__review_html_erb___1852548878953131131_70277259640760'
+app/views/rooms/_room.html.erb:4:in `_app_views_rooms__room_html_erb__1650201696538153331_70277259715740'
+app/views/rooms/index.html.erb:2:in `_app_views_rooms_index_html_erb___1104302862019577683_70277259762160'
+Started GET "/pt-BR/rooms" for 127.0.0.1 at 2017-07-19 00:05:41 -0300
+Processing by RoomsController#index as HTML
+  Parameters: {"locale"=>"pt-BR"}
+  Rendering rooms/index.html.erb within layouts/application
+  [1m[36mRoom Load (0.3ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms"[0m
+  Rendered rooms/_review.html.erb (10.4ms)
+  Rendered collection of rooms/_room.html.erb [1 times] (13.4ms)
+  Rendered rooms/index.html.erb within layouts/application (15.9ms)
+Completed 500 Internal Server Error in 19ms (ActiveRecord: 0.3ms)
+
+
+  
+ActionView::Template::Error (undefined method `to_key' for #<Room::ActiveRecord_Relation:0x007fd565b50f08>
+Did you mean?  to_set
+               to_ary):
+    1: <section class="review">
+    2:   <% if user_signed_in? %>
+    3:     <%= form_for @rooms do |f| %>
+    4:       <% Review::POINTS.each do |point| %>
+    5:         <%= f.radio_button :points, point %>
+    6:         <%= f.label :points, point, :value => point %>
+  
+app/views/rooms/_review.html.erb:3:in `_app_views_rooms__review_html_erb___1852548878953131131_70277255017080'
+app/views/rooms/_room.html.erb:4:in `_app_views_rooms__room_html_erb__1650201696538153331_70277255227640'
+app/views/rooms/index.html.erb:2:in `_app_views_rooms_index_html_erb___1104302862019577683_70277255527660'
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" LIMIT ?[0m  [["LIMIT", 11]]
+Started GET "/pt-BR/rooms" for 127.0.0.1 at 2017-07-19 00:20:01 -0300
+Processing by RoomsController#index as HTML
+  Parameters: {"locale"=>"pt-BR"}
+  Rendering rooms/index.html.erb within layouts/application
+  [1m[36mRoom Load (1.0ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms"[0m
+  Rendered rooms/_review.html.erb (9.9ms)
+  Rendered collection of rooms/_room.html.erb [1 times] (12.6ms)
+  Rendered rooms/index.html.erb within layouts/application (17.3ms)
+Completed 500 Internal Server Error in 22ms (ActiveRecord: 1.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `to_key' for #<Room::ActiveRecord_Relation:0x007fd5680b20f8>
+Did you mean?  to_set
+               to_ary):
+    1: <section class="review">
+    2:   <% if user_signed_in? %>
+    3:     <%= form_for @rooms do |f| %>
+    4:       <% Review::POINTS.each do |point| %>
+    5:         <%= f.radio_button :points, point %>
+    6:         <%= f.label :points, point, :value => point %>
+  
+app/views/rooms/_review.html.erb:3:in `_app_views_rooms__review_html_erb___1852548878953131131_70277275012740'
+app/views/rooms/_room.html.erb:4:in `_app_views_rooms__room_html_erb__1650201696538153331_70277275040440'
+app/views/rooms/index.html.erb:2:in `_app_views_rooms_index_html_erb___1104302862019577683_70277275158280'
+Started GET "/pt-BR/users" for 127.0.0.1 at 2017-07-19 00:20:09 -0300
+Processing by UsersController#index as HTML
+  Parameters: {"locale"=>"pt-BR"}
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (22.6ms)
+DEPRECATION WARNING: Extra .css in SCSS file is unnecessary. Rename /home/sullyvan/workspace-sullyvan/colcho_net/app/assets/stylesheets/shadow.css.scss to /home/sullyvan/workspace-sullyvan/colcho_net/app/assets/stylesheets/shadow.scss. (called from _app_views_layouts_application_html_erb___1240178515916995506_70277253440040 at /home/sullyvan/workspace-sullyvan/colcho_net/app/views/layouts/application.html.erb:7)
+DEPRECATION WARNING: Extra .css in SCSS file is unnecessary. Rename /home/sullyvan/workspace-sullyvan/colcho_net/app/assets/stylesheets/shadow.css.scss to /home/sullyvan/workspace-sullyvan/colcho_net/app/assets/stylesheets/shadow.scss. (called from _app_views_layouts_application_html_erb___1240178515916995506_70277253440040 at /home/sullyvan/workspace-sullyvan/colcho_net/app/views/layouts/application.html.erb:7)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  Rendered layouts/_user_navbar.html.erb (4.5ms)
+Completed 200 OK in 370ms (Views: 351.9ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/pt-BR/rooms" for 127.0.0.1 at 2017-07-19 00:20:28 -0300
+Processing by RoomsController#index as HTML
+  Parameters: {"locale"=>"pt-BR"}
+  Rendering rooms/index.html.erb within layouts/application
+  [1m[36mRoom Load (0.2ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms"[0m
+  Rendered rooms/_review.html.erb (9.4ms)
+  Rendered collection of rooms/_room.html.erb [1 times] (11.5ms)
+  Rendered rooms/index.html.erb within layouts/application (13.6ms)
+Completed 500 Internal Server Error in 17ms (ActiveRecord: 0.2ms)
+
+
+  
+ActionView::Template::Error (undefined method `to_key' for #<Room::ActiveRecord_Relation:0x007fd568192270>
+Did you mean?  to_set
+               to_ary):
+    1: <section class="review">
+    2:   <% if user_signed_in? %>
+    3:     <%= form_for @rooms do |f| %>
+    4:       <% Review::POINTS.each do |point| %>
+    5:         <%= f.radio_button :points, point %>
+    6:         <%= f.label :points, point, :value => point %>
+  
+app/views/rooms/_review.html.erb:3:in `_app_views_rooms__review_html_erb___1852548878953131131_70277275441700'
+app/views/rooms/_room.html.erb:4:in `_app_views_rooms__room_html_erb__1650201696538153331_70277275531340'
+app/views/rooms/index.html.erb:2:in `_app_views_rooms_index_html_erb___1104302862019577683_70277275616680'
+Started PUT "/__web_console/repl_sessions/8ba083751df7fbf02f8c09b2982bec0d" for 127.0.0.1 at 2017-07-19 00:22:58 -0300
+Started PUT "/__web_console/repl_sessions/8ba083751df7fbf02f8c09b2982bec0d" for 127.0.0.1 at 2017-07-19 00:22:58 -0300
+Started PUT "/__web_console/repl_sessions/8ba083751df7fbf02f8c09b2982bec0d" for 127.0.0.1 at 2017-07-19 00:23:06 -0300
+Started PUT "/__web_console/repl_sessions/8ba083751df7fbf02f8c09b2982bec0d" for 127.0.0.1 at 2017-07-19 00:23:16 -0300
+Started PUT "/__web_console/repl_sessions/8ba083751df7fbf02f8c09b2982bec0d" for 127.0.0.1 at 2017-07-19 00:23:16 -0300
+Started PUT "/__web_console/repl_sessions/8ba083751df7fbf02f8c09b2982bec0d" for 127.0.0.1 at 2017-07-19 00:23:30 -0300
+Started PUT "/__web_console/repl_sessions/8ba083751df7fbf02f8c09b2982bec0d" for 127.0.0.1 at 2017-07-19 00:23:52 -0300
+Started PUT "/__web_console/repl_sessions/8ba083751df7fbf02f8c09b2982bec0d" for 127.0.0.1 at 2017-07-19 00:24:03 -0300
+Started PUT "/__web_console/repl_sessions/8ba083751df7fbf02f8c09b2982bec0d" for 127.0.0.1 at 2017-07-19 00:24:26 -0300
+  [1m[36mUser Load (5.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" LIMIT ?[0m  [["LIMIT", 11]]
+Started PUT "/__web_console/repl_sessions/8ba083751df7fbf02f8c09b2982bec0d" for 127.0.0.1 at 2017-07-19 00:28:24 -0300
+Started PUT "/__web_console/repl_sessions/8ba083751df7fbf02f8c09b2982bec0d" for 127.0.0.1 at 2017-07-19 00:28:28 -0300
+Started PUT "/__web_console/repl_sessions/8ba083751df7fbf02f8c09b2982bec0d" for 127.0.0.1 at 2017-07-19 00:28:28 -0300
+Started PUT "/__web_console/repl_sessions/8ba083751df7fbf02f8c09b2982bec0d" for 127.0.0.1 at 2017-07-19 00:28:28 -0300
+Started PUT "/__web_console/repl_sessions/8ba083751df7fbf02f8c09b2982bec0d" for 127.0.0.1 at 2017-07-19 00:28:28 -0300
+Started PUT "/__web_console/repl_sessions/8ba083751df7fbf02f8c09b2982bec0d" for 127.0.0.1 at 2017-07-19 00:28:28 -0300
+Started PUT "/__web_console/repl_sessions/8ba083751df7fbf02f8c09b2982bec0d" for 127.0.0.1 at 2017-07-19 00:28:29 -0300
+Started PUT "/__web_console/repl_sessions/8ba083751df7fbf02f8c09b2982bec0d" for 127.0.0.1 at 2017-07-19 00:28:29 -0300
+Started PUT "/__web_console/repl_sessions/8ba083751df7fbf02f8c09b2982bec0d" for 127.0.0.1 at 2017-07-19 00:28:30 -0300
+Started PUT "/__web_console/repl_sessions/8ba083751df7fbf02f8c09b2982bec0d" for 127.0.0.1 at 2017-07-19 00:28:31 -0300
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" LIMIT ?[0m  [["LIMIT", 11]]
+Started PUT "/__web_console/repl_sessions/8ba083751df7fbf02f8c09b2982bec0d" for 127.0.0.1 at 2017-07-19 00:28:34 -0300
+Started PUT "/__web_console/repl_sessions/8ba083751df7fbf02f8c09b2982bec0d" for 127.0.0.1 at 2017-07-19 00:28:47 -0300
+Started PUT "/__web_console/repl_sessions/8ba083751df7fbf02f8c09b2982bec0d" for 127.0.0.1 at 2017-07-19 00:28:54 -0300
+Started PUT "/__web_console/repl_sessions/8ba083751df7fbf02f8c09b2982bec0d" for 127.0.0.1 at 2017-07-19 00:29:04 -0300
+Started PUT "/__web_console/repl_sessions/8ba083751df7fbf02f8c09b2982bec0d" for 127.0.0.1 at 2017-07-19 00:29:19 -0300
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" LIMIT ?[0m  [["LIMIT", 11]]
+Started PUT "/__web_console/repl_sessions/8ba083751df7fbf02f8c09b2982bec0d" for 127.0.0.1 at 2017-07-19 00:29:31 -0300
+Started PUT "/__web_console/repl_sessions/8ba083751df7fbf02f8c09b2982bec0d" for 127.0.0.1 at 2017-07-19 00:30:06 -0300
+Started PUT "/__web_console/repl_sessions/8ba083751df7fbf02f8c09b2982bec0d" for 127.0.0.1 at 2017-07-19 00:30:07 -0300
+Started PUT "/__web_console/repl_sessions/8ba083751df7fbf02f8c09b2982bec0d" for 127.0.0.1 at 2017-07-19 00:31:34 -0300
+Started PUT "/__web_console/repl_sessions/8ba083751df7fbf02f8c09b2982bec0d" for 127.0.0.1 at 2017-07-19 00:31:48 -0300
+Started PUT "/__web_console/repl_sessions/8ba083751df7fbf02f8c09b2982bec0d" for 127.0.0.1 at 2017-07-19 00:31:50 -0300
+Started PUT "/__web_console/repl_sessions/8ba083751df7fbf02f8c09b2982bec0d" for 127.0.0.1 at 2017-07-19 00:31:50 -0300
+Started PUT "/__web_console/repl_sessions/8ba083751df7fbf02f8c09b2982bec0d" for 127.0.0.1 at 2017-07-19 00:31:54 -0300
+Started PUT "/__web_console/repl_sessions/8ba083751df7fbf02f8c09b2982bec0d" for 127.0.0.1 at 2017-07-19 00:31:55 -0300
+Started PUT "/__web_console/repl_sessions/8ba083751df7fbf02f8c09b2982bec0d" for 127.0.0.1 at 2017-07-19 00:31:57 -0300
+Started PUT "/__web_console/repl_sessions/8ba083751df7fbf02f8c09b2982bec0d" for 127.0.0.1 at 2017-07-19 00:31:58 -0300
+Started GET "/pt-BR/rooms" for 127.0.0.1 at 2017-07-19 00:32:51 -0300
+Processing by RoomsController#index as HTML
+  Parameters: {"locale"=>"pt-BR"}
+  Rendering rooms/index.html.erb within layouts/application
+  [1m[36mRoom Load (0.3ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms"[0m
+  Rendered rooms/_review.html.erb (8.3ms)
+  Rendered collection of rooms/_room.html.erb [1 times] (10.8ms)
+  Rendered rooms/index.html.erb within layouts/application (13.8ms)
+Completed 500 Internal Server Error in 19ms (ActiveRecord: 0.3ms)
+
+
+  
+ActionView::Template::Error (undefined method `to_key' for #<Room::ActiveRecord_Relation:0x007fd56568c940>
+Did you mean?  to_set
+               to_ary):
+    1: <section class="review">
+    2:   <% if user_signed_in? %>
+    3:     <%= form_for @rooms do |f| %>
+    4:       <% Review::POINTS.each do |point| %>
+    5:         <%= f.radio_button :points, point %>
+    6:         <%= f.label :points, point, :value => point %>
+  
+app/views/rooms/_review.html.erb:3:in `_app_views_rooms__review_html_erb___1852548878953131131_70277252537960'
+app/views/rooms/_room.html.erb:4:in `_app_views_rooms__room_html_erb__1650201696538153331_70277252731900'
+app/views/rooms/index.html.erb:2:in `_app_views_rooms_index_html_erb___1104302862019577683_70277253039160'
+Started GET "/rooms" for 127.0.0.1 at 2017-07-19 00:38:36 -0300
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by RoomsController#index as HTML
+  Rendering rooms/index.html.erb within layouts/application
+  [1m[36mRoom Load (0.3ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms"[0m
+  Rendered rooms/_review.html.erb (27.6ms)
+  Rendered collection of rooms/_room.html.erb [1 times] (29.9ms)
+  Rendered rooms/index.html.erb within layouts/application (124.5ms)
+Completed 500 Internal Server Error in 149ms (ActiveRecord: 1.3ms)
+
+
+  
+ActionView::Template::Error (undefined method `to_key' for #<Room::ActiveRecord_Relation:0x007f7fa08ecf70>
+Did you mean?  to_set
+               to_ary):
+    1: <section class="review">
+    2:   <% if user_signed_in? %>
+    3:     <%= form_for @rooms do |f| %>
+    4:       <% Review::POINTS.each do |point| %>
+    5:         <%= f.radio_button :points, point %>
+    6:         <%= f.label :points, point, :value => point %>
+  
+app/views/rooms/_review.html.erb:3:in `_app_views_rooms__review_html_erb___2672533009737504896_47351198060780'
+app/views/rooms/_room.html.erb:4:in `_app_views_rooms__room_html_erb__1432387925645037947_70093066753100'
+app/views/rooms/index.html.erb:2:in `_app_views_rooms_index_html_erb__1338837808372117446_47351198693620'
+  [1m[36mReview Load (2.1ms)[0m  [1m[34mSELECT  "reviews".* FROM "reviews" LIMIT ?[0m  [["LIMIT", 11]]
+Started GET "/" for 127.0.0.1 at 2017-07-19 22:31:24 -0300
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#index as HTML
+  [1m[36mRoom Load (0.2ms)[0m  [1m[34mSELECT  "rooms".* FROM "rooms" ORDER BY "rooms"."id" ASC LIMIT ?[0m  [["LIMIT", 3]]
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (2.2ms)
+  Rendered layouts/_visitor_navbar.html.erb (82.8ms)
+Completed 200 OK in 696ms (Views: 642.9ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/pt-BR/rooms" for 127.0.0.1 at 2017-07-19 22:31:35 -0300
+Processing by RoomsController#index as HTML
+  Parameters: {"locale"=>"pt-BR"}
+  Rendering rooms/index.html.erb within layouts/application
+  [1m[36mRoom Load (0.3ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms"[0m
+  Rendered rooms/_review.html.erb (0.9ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  Rendered collection of rooms/_room.html.erb [1 times] (186.1ms)
+  Rendered rooms/index.html.erb within layouts/application (190.6ms)
+  Rendered layouts/_visitor_navbar.html.erb (1.1ms)
+Completed 200 OK in 342ms (Views: 218.3ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/pt-BR/user_sessions/new" for 127.0.0.1 at 2017-07-19 22:31:50 -0300
+Processing by UserSessionsController#new as HTML
+  Parameters: {"locale"=>"pt-BR"}
+  Rendering user_sessions/new.html.erb within layouts/application
+  Rendered user_sessions/new.html.erb within layouts/application (41.4ms)
+  Rendered layouts/_visitor_navbar.html.erb (1.1ms)
+Completed 200 OK in 90ms (Views: 75.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/pt-BR/user_sessions" for 127.0.0.1 at 2017-07-19 22:31:52 -0300
+Processing by UserSessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"WNcrHIvaq520AXWbZi5NIEJ0WeSGHfTenweyz+TXc4KwIEInirImD4jZdOCw9riao1dy2/XUf6inVU5cOBQwSQ==", "user_session"=>{"email"=>"slv@com.br", "password"=>"[FILTERED]"}, "commit"=>"Entrar", "locale"=>"pt-BR"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE (confirmed_at IS NOT NULL) AND "users"."email" = ? LIMIT ?[0m  [["email", "slv@com.br"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/?locale=pt-BR
+Completed 302 Found in 126ms (ActiveRecord: 0.5ms)
+
+
+Started GET "/?locale=pt-BR" for 127.0.0.1 at 2017-07-19 22:31:52 -0300
+Processing by HomeController#index as HTML
+  Parameters: {"locale"=>"pt-BR"}
+  [1m[36mRoom Load (0.3ms)[0m  [1m[34mSELECT  "rooms".* FROM "rooms" ORDER BY "rooms"."id" ASC LIMIT ?[0m  [["LIMIT", 3]]
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (0.9ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  Rendered layouts/_user_navbar.html.erb (3.0ms)
+Completed 200 OK in 84ms (Views: 80.0ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/pt-BR/rooms" for 127.0.0.1 at 2017-07-19 22:31:54 -0300
+Processing by RoomsController#index as HTML
+  Parameters: {"locale"=>"pt-BR"}
+  Rendering rooms/index.html.erb within layouts/application
+  [1m[36mRoom Load (0.4ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms"[0m
+  Rendered rooms/_review.html.erb (32.7ms)
+  Rendered collection of rooms/_room.html.erb [1 times] (35.7ms)
+  Rendered rooms/index.html.erb within layouts/application (40.1ms)
+Completed 500 Internal Server Error in 45ms (ActiveRecord: 0.4ms)
+
+
+  
+ActionView::Template::Error (undefined method `to_key' for #<Room::ActiveRecord_Relation:0x007f5ac0467888>
+Did you mean?  to_set
+               to_ary):
+    1: <section class="review">
+    2:   <% if user_signed_in? %>
+    3:     <%= form_for @rooms do |f| %>
+    4:       <% Review::POINTS.each do |point| %>
+    5:         <%= f.radio_button :points, point %>
+    6:         <%= f.label :points, point, :value => point %>
+  
+app/views/rooms/_review.html.erb:3:in `_app_views_rooms__review_html_erb__4427249466364102011_70013874582860'
+app/views/rooms/_room.html.erb:4:in `_app_views_rooms__room_html_erb___4550144078288569833_70013874665860'
+app/views/rooms/index.html.erb:2:in `_app_views_rooms_index_html_erb___1768513598441688942_70013874811560'
+Started PUT "/__web_console/repl_sessions/a0f27f02f6488fe9c9f5f137e0b10c23" for 127.0.0.1 at 2017-07-19 22:35:41 -0300
+Started PUT "/__web_console/repl_sessions/a0f27f02f6488fe9c9f5f137e0b10c23" for 127.0.0.1 at 2017-07-19 22:35:41 -0300
+Started PUT "/__web_console/repl_sessions/a0f27f02f6488fe9c9f5f137e0b10c23" for 127.0.0.1 at 2017-07-19 22:35:46 -0300
+Started PUT "/__web_console/repl_sessions/a0f27f02f6488fe9c9f5f137e0b10c23" for 127.0.0.1 at 2017-07-19 22:35:51 -0300
+Started PUT "/__web_console/repl_sessions/a0f27f02f6488fe9c9f5f137e0b10c23" for 127.0.0.1 at 2017-07-19 22:35:53 -0300
+Started PUT "/__web_console/repl_sessions/a0f27f02f6488fe9c9f5f137e0b10c23" for 127.0.0.1 at 2017-07-19 22:36:09 -0300
+Started PUT "/__web_console/repl_sessions/a0f27f02f6488fe9c9f5f137e0b10c23" for 127.0.0.1 at 2017-07-19 22:36:10 -0300
+Started PUT "/__web_console/repl_sessions/a0f27f02f6488fe9c9f5f137e0b10c23" for 127.0.0.1 at 2017-07-19 22:36:10 -0300
+Started PUT "/__web_console/repl_sessions/a0f27f02f6488fe9c9f5f137e0b10c23" for 127.0.0.1 at 2017-07-19 22:36:11 -0300
+Started PUT "/__web_console/repl_sessions/a0f27f02f6488fe9c9f5f137e0b10c23" for 127.0.0.1 at 2017-07-19 22:36:11 -0300
+Started PUT "/__web_console/repl_sessions/a0f27f02f6488fe9c9f5f137e0b10c23" for 127.0.0.1 at 2017-07-19 22:36:15 -0300
+Started PUT "/__web_console/repl_sessions/a0f27f02f6488fe9c9f5f137e0b10c23" for 127.0.0.1 at 2017-07-19 22:36:20 -0300
+Started PUT "/__web_console/repl_sessions/a0f27f02f6488fe9c9f5f137e0b10c23" for 127.0.0.1 at 2017-07-19 22:36:21 -0300
+Started PUT "/__web_console/repl_sessions/a0f27f02f6488fe9c9f5f137e0b10c23" for 127.0.0.1 at 2017-07-19 22:37:46 -0300
+Started PUT "/__web_console/repl_sessions/a0f27f02f6488fe9c9f5f137e0b10c23" for 127.0.0.1 at 2017-07-19 22:37:53 -0300
+Started PUT "/__web_console/repl_sessions/a0f27f02f6488fe9c9f5f137e0b10c23" for 127.0.0.1 at 2017-07-19 22:37:58 -0300
+Started PUT "/__web_console/repl_sessions/a0f27f02f6488fe9c9f5f137e0b10c23" for 127.0.0.1 at 2017-07-19 22:38:09 -0300
+Started PUT "/__web_console/repl_sessions/a0f27f02f6488fe9c9f5f137e0b10c23" for 127.0.0.1 at 2017-07-19 22:38:11 -0300
+Started PUT "/__web_console/repl_sessions/a0f27f02f6488fe9c9f5f137e0b10c23" for 127.0.0.1 at 2017-07-19 22:38:11 -0300
+Started GET "/pt-BR/rooms" for 127.0.0.1 at 2017-07-19 22:39:15 -0300
+Processing by RoomsController#index as HTML
+  Parameters: {"locale"=>"pt-BR"}
+  Rendering rooms/index.html.erb within layouts/application
+  [1m[36mRoom Load (0.3ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms"[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  Rendered collection of rooms/_room.html.erb [1 times] (7.5ms)
+  Rendered rooms/index.html.erb within layouts/application (10.7ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  Rendered layouts/_user_navbar.html.erb (1.6ms)
+Completed 200 OK in 38ms (Views: 35.8ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/pt-BR/rooms" for 127.0.0.1 at 2017-07-19 22:39:28 -0300
+Processing by RoomsController#index as HTML
+  Parameters: {"locale"=>"pt-BR"}
+  Rendering rooms/index.html.erb within layouts/application
+  [1m[36mRoom Load (0.3ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms"[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  Rendered collection of rooms/_room.html.erb [1 times] (4.1ms)
+  Rendered rooms/index.html.erb within layouts/application (6.4ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  Rendered layouts/_user_navbar.html.erb (3.0ms)
+Completed 200 OK in 50ms (Views: 47.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/pt-BR/rooms" for 127.0.0.1 at 2017-07-19 22:39:30 -0300
+Processing by RoomsController#index as HTML
+  Parameters: {"locale"=>"pt-BR"}
+  Rendering rooms/index.html.erb within layouts/application
+  [1m[36mRoom Load (0.3ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms"[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  Rendered collection of rooms/_room.html.erb [1 times] (5.3ms)
+  Rendered rooms/index.html.erb within layouts/application (7.9ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  Rendered layouts/_user_navbar.html.erb (3.1ms)
+Completed 200 OK in 51ms (Views: 48.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/pt-BR/rooms" for 127.0.0.1 at 2017-07-19 22:39:31 -0300
+Processing by RoomsController#index as HTML
+  Parameters: {"locale"=>"pt-BR"}
+  Rendering rooms/index.html.erb within layouts/application
+  [1m[36mRoom Load (0.2ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms"[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  Rendered collection of rooms/_room.html.erb [1 times] (4.8ms)
+  Rendered rooms/index.html.erb within layouts/application (7.3ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  Rendered layouts/_user_navbar.html.erb (1.9ms)
+Completed 200 OK in 49ms (Views: 47.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/pt-BR/rooms" for 127.0.0.1 at 2017-07-19 22:39:31 -0300
+Processing by RoomsController#index as HTML
+  Parameters: {"locale"=>"pt-BR"}
+  Rendering rooms/index.html.erb within layouts/application
+  [1m[36mRoom Load (0.2ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms"[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  Rendered collection of rooms/_room.html.erb [1 times] (4.2ms)
+  Rendered rooms/index.html.erb within layouts/application (6.4ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  Rendered layouts/_user_navbar.html.erb (2.5ms)
+Completed 200 OK in 49ms (Views: 47.3ms | ActiveRecord: 0.4ms)
+
+
+  [1m[36mRoom Load (0.2ms)[0m  [1m[34mSELECT  "rooms".* FROM "rooms" ORDER BY "rooms"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+Started GET "/pt-BR/rooms/10/edit" for 127.0.0.1 at 2017-07-19 22:40:21 -0300
+Processing by RoomsController#edit as HTML
+  Parameters: {"locale"=>"pt-BR", "id"=>"10"}
+  [1m[36mRoom Load (0.3ms)[0m  [1m[34mSELECT  "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  Rendering rooms/edit.html.erb within layouts/application
+  Rendered rooms/_form.html.erb (12.9ms)
+  Rendered rooms/edit.html.erb within layouts/application (18.9ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  Rendered layouts/_user_navbar.html.erb (2.7ms)
+Completed 200 OK in 56ms (Views: 44.3ms | ActiveRecord: 0.5ms)
+
+
+Started PATCH "/pt-BR/rooms/10" for 127.0.0.1 at 2017-07-19 22:40:31 -0300
+Processing by RoomsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"KTE5yvIhhXkuD8YP+9EqMxMrbYBcf6+/00R3ydYRiy5vXeDLb8Rvksv/8v71cgiR2mf/gMMIwtfuxuKwn3DRpQ==", "room"=>{"title"=>"teste de token", "location"=>"rio ", "description"=>"bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"}, "commit"=>"Atualizar Quarto", "locale"=>"pt-BR", "id"=>"10"}
+  [1m[36mRoom Load (0.3ms)[0m  [1m[34mSELECT  "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mCACHE Room Load (0.0ms)[0m  [1m[34mSELECT  "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mCACHE Room Load (0.0ms)[0m  [1m[34mSELECT  "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[35mSQL (0.7ms)[0m  [1m[33mUPDATE "rooms" SET "description" = ?, "updated_at" = ? WHERE "rooms"."id" = ?[0m  [["description", "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"], ["updated_at", "2017-07-20 01:40:31.417773"], ["id", 10]]
+  [1m[35m (91.4ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/pt-BR/rooms/10
+Completed 302 Found in 122ms (ActiveRecord: 92.9ms)
+
+
+Started GET "/pt-BR/rooms/10" for 127.0.0.1 at 2017-07-19 22:40:31 -0300
+Processing by RoomsController#show as HTML
+  Parameters: {"locale"=>"pt-BR", "id"=>"10"}
+  [1m[36mRoom Load (0.2ms)[0m  [1m[34mSELECT  "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mCACHE Room Load (0.0ms)[0m  [1m[34mSELECT  "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT  "reviews".* FROM "reviews" WHERE "reviews"."room_id" = ? AND "reviews"."user_id" = ? LIMIT ?[0m  [["room_id", 10], ["user_id", 11], ["LIMIT", 1]]
+  Rendering rooms/show.html.erb within layouts/application
+  Rendered rooms/show.html.erb within layouts/application (2.0ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  Rendered layouts/_user_navbar.html.erb (2.0ms)
+Completed 200 OK in 81ms (Views: 29.0ms | ActiveRecord: 1.4ms)
+
+
+  [1m[36mRoom Load (0.4ms)[0m  [1m[34mSELECT  "rooms".* FROM "rooms" LIMIT ?[0m  [["LIMIT", 11]]
+Started GET "/pt-BR/rooms" for 127.0.0.1 at 2017-07-19 22:40:45 -0300
+Processing by RoomsController#index as HTML
+  Parameters: {"locale"=>"pt-BR"}
+  Rendering rooms/index.html.erb within layouts/application
+  [1m[36mRoom Load (0.3ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms"[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  Rendered collection of rooms/_room.html.erb [1 times] (8.8ms)
+  Rendered rooms/index.html.erb within layouts/application (12.1ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  Rendered layouts/_user_navbar.html.erb (1.9ms)
+Completed 200 OK in 80ms (Views: 77.3ms | ActiveRecord: 0.9ms)
+
+
+Started DELETE "/pt-BR/user_sessions" for 127.0.0.1 at 2017-07-19 22:41:44 -0300
+Processing by UserSessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"etbqUu0SioyX+SN/iLjmIBA4XVUs6DqYWs1sTtSFEvY8ujNTcPdgZ3IJF46GG8SC2XTPVbOfV/BnT/k3neRIfQ==", "locale"=>"pt-BR"}
+Redirected to http://localhost:3000/?locale=pt-BR
+Completed 302 Found in 4ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/?locale=pt-BR" for 127.0.0.1 at 2017-07-19 22:41:44 -0300
+Processing by HomeController#index as HTML
+  Parameters: {"locale"=>"pt-BR"}
+  [1m[36mRoom Load (0.3ms)[0m  [1m[34mSELECT  "rooms".* FROM "rooms" ORDER BY "rooms"."id" ASC LIMIT ?[0m  [["LIMIT", 3]]
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (1.8ms)
+  Rendered layouts/_visitor_navbar.html.erb (1.5ms)
+Completed 200 OK in 38ms (Views: 35.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/pt-BR/rooms" for 127.0.0.1 at 2017-07-19 22:41:46 -0300
+Processing by RoomsController#index as HTML
+  Parameters: {"locale"=>"pt-BR"}
+  Rendering rooms/index.html.erb within layouts/application
+  [1m[36mRoom Load (0.2ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms"[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  Rendered collection of rooms/_room.html.erb [1 times] (6.7ms)
+  Rendered rooms/index.html.erb within layouts/application (9.2ms)
+  Rendered layouts/_visitor_navbar.html.erb (0.9ms)
+Completed 200 OK in 40ms (Views: 38.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/pt-BR/rooms/10" for 127.0.0.1 at 2017-07-19 22:41:53 -0300
+Processing by RoomsController#show as HTML
+  Parameters: {"locale"=>"pt-BR", "id"=>"10"}
+  [1m[36mRoom Load (0.1ms)[0m  [1m[34mSELECT  "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mCACHE Room Load (0.0ms)[0m  [1m[34mSELECT  "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  Rendering rooms/show.html.erb within layouts/application
+  Rendered rooms/show.html.erb within layouts/application (1.0ms)
+  Rendered layouts/_visitor_navbar.html.erb (1.0ms)
+Completed 200 OK in 34ms (Views: 32.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/pt-BR/users/new" for 127.0.0.1 at 2017-07-19 22:41:58 -0300
+Processing by UsersController#new as HTML
+  Parameters: {"locale"=>"pt-BR"}
+Completed 500 Internal Server Error in 97ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `require_no_authentication' for #<UsersController:0x007f5ace089de8>
+Did you mean?  require_no_authenticate
+               require_authenticate):
+  
+activesupport (5.1.2) lib/active_support/callbacks.rb:413:in `block in make_lambda'
+activesupport (5.1.2) lib/active_support/callbacks.rb:178:in `block (2 levels) in halting_and_conditional'
+actionpack (5.1.2) lib/abstract_controller/callbacks.rb:12:in `block (2 levels) in <module:Callbacks>'
+activesupport (5.1.2) lib/active_support/callbacks.rb:179:in `block in halting_and_conditional'
+activesupport (5.1.2) lib/active_support/callbacks.rb:507:in `block in invoke_before'
+activesupport (5.1.2) lib/active_support/callbacks.rb:507:in `each'
+activesupport (5.1.2) lib/active_support/callbacks.rb:507:in `invoke_before'
+activesupport (5.1.2) lib/active_support/callbacks.rb:130:in `run_callbacks'
+actionpack (5.1.2) lib/abstract_controller/callbacks.rb:19:in `process_action'
+actionpack (5.1.2) lib/action_controller/metal/rescue.rb:20:in `process_action'
+actionpack (5.1.2) lib/action_controller/metal/instrumentation.rb:32:in `block in process_action'
+activesupport (5.1.2) lib/active_support/notifications.rb:166:in `block in instrument'
+activesupport (5.1.2) lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+activesupport (5.1.2) lib/active_support/notifications.rb:166:in `instrument'
+actionpack (5.1.2) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+actionpack (5.1.2) lib/action_controller/metal/params_wrapper.rb:252:in `process_action'
+activerecord (5.1.2) lib/active_record/railties/controller_runtime.rb:22:in `process_action'
+actionpack (5.1.2) lib/abstract_controller/base.rb:124:in `process'
+actionview (5.1.2) lib/action_view/rendering.rb:30:in `process'
+actionpack (5.1.2) lib/action_controller/metal.rb:189:in `dispatch'
+actionpack (5.1.2) lib/action_controller/metal.rb:253:in `dispatch'
+actionpack (5.1.2) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (5.1.2) lib/action_dispatch/routing/route_set.rb:31:in `serve'
+actionpack (5.1.2) lib/action_dispatch/journey/router.rb:46:in `block in serve'
+actionpack (5.1.2) lib/action_dispatch/journey/router.rb:33:in `each'
+actionpack (5.1.2) lib/action_dispatch/journey/router.rb:33:in `serve'
+actionpack (5.1.2) lib/action_dispatch/routing/route_set.rb:832:in `call'
+rack (2.0.3) lib/rack/etag.rb:25:in `call'
+rack (2.0.3) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.3) lib/rack/head.rb:12:in `call'
+rack (2.0.3) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.3) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/cookies.rb:613:in `call'
+activerecord (5.1.2) lib/active_record/migration.rb:556:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+activesupport (5.1.2) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.2) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.2) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.2) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.2) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.2) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.2) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.2) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.2) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.2) lib/rails/engine.rb:522:in `call'
+puma (3.9.1) lib/puma/configuration.rb:224:in `call'
+puma (3.9.1) lib/puma/server.rb:602:in `handle_request'
+puma (3.9.1) lib/puma/server.rb:435:in `process_client'
+puma (3.9.1) lib/puma/server.rb:299:in `block in run'
+puma (3.9.1) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/pt-BR/rooms/10" for 127.0.0.1 at 2017-07-19 22:42:04 -0300
+Processing by RoomsController#show as HTML
+  Parameters: {"locale"=>"pt-BR", "id"=>"10"}
+  [1m[36mRoom Load (0.2ms)[0m  [1m[34mSELECT  "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mCACHE Room Load (0.1ms)[0m  [1m[34mSELECT  "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  Rendering rooms/show.html.erb within layouts/application
+  Rendered rooms/show.html.erb within layouts/application (1.6ms)
+  Rendered layouts/_visitor_navbar.html.erb (0.9ms)
+Completed 200 OK in 34ms (Views: 30.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/pt-BR/user_sessions/new" for 127.0.0.1 at 2017-07-19 22:42:05 -0300
+Processing by UserSessionsController#new as HTML
+  Parameters: {"locale"=>"pt-BR"}
+  Rendering user_sessions/new.html.erb within layouts/application
+  Rendered user_sessions/new.html.erb within layouts/application (4.9ms)
+  Rendered layouts/_visitor_navbar.html.erb (0.9ms)
+Completed 200 OK in 38ms (Views: 36.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/pt-BR/user_sessions" for 127.0.0.1 at 2017-07-19 22:42:07 -0300
+Processing by UserSessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"QrJbkRBnCvaQra50zGUjw3XgnC61ec4aDIkGUPYwzNeqRTKqEQ+HZKx1rw8avdZ5lMO3EcawRWw02/rDKvOPHA==", "user_session"=>{"email"=>"slv@com.br", "password"=>"[FILTERED]"}, "commit"=>"Entrar", "locale"=>"pt-BR"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE (confirmed_at IS NOT NULL) AND "users"."email" = ? LIMIT ?[0m  [["email", "slv@com.br"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/?locale=pt-BR
+Completed 302 Found in 92ms (ActiveRecord: 0.5ms)
+
+
+Started GET "/?locale=pt-BR" for 127.0.0.1 at 2017-07-19 22:42:07 -0300
+Processing by HomeController#index as HTML
+  Parameters: {"locale"=>"pt-BR"}
+  [1m[36mRoom Load (0.3ms)[0m  [1m[34mSELECT  "rooms".* FROM "rooms" ORDER BY "rooms"."id" ASC LIMIT ?[0m  [["LIMIT", 3]]
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (1.0ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  Rendered layouts/_user_navbar.html.erb (2.0ms)
+Completed 200 OK in 34ms (Views: 31.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/pt-BR/rooms" for 127.0.0.1 at 2017-07-19 22:42:09 -0300
+Processing by RoomsController#index as HTML
+  Parameters: {"locale"=>"pt-BR"}
+  Rendering rooms/index.html.erb within layouts/application
+  [1m[36mRoom Load (0.2ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms"[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  Rendered collection of rooms/_room.html.erb [1 times] (6.2ms)
+  Rendered rooms/index.html.erb within layouts/application (9.0ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  Rendered layouts/_user_navbar.html.erb (2.5ms)
+Completed 200 OK in 44ms (Views: 41.9ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/pt-BR/rooms/new" for 127.0.0.1 at 2017-07-19 22:42:11 -0300
+Processing by RoomsController#new as HTML
+  Parameters: {"locale"=>"pt-BR"}
+  Rendering rooms/new.html.erb within layouts/application
+  Rendered rooms/_form.html.erb (5.2ms)
+  Rendered rooms/new.html.erb within layouts/application (7.5ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  Rendered layouts/_user_navbar.html.erb (2.2ms)
+Completed 200 OK in 63ms (Views: 37.3ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/pt-BR/rooms" for 127.0.0.1 at 2017-07-19 22:42:59 -0300
+Processing by RoomsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"wL1o2QxbYYBAcXR9BXdWd3AZfWpev2z2XqTkDzHmZ2tenPTI3U0fN4GepY4fZTtbzzklsr0MEtqEQYI3s4tiwQ==", "room"=>{"title"=>"Quarto em são joão de Meriti", "location"=>"São joão de Meriti", "description"=>"Belíssimo quarto em são joão de Meriti com vista para o maravilhoso prezunic"}, "commit"=>"Criar Quarto", "locale"=>"pt-BR"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "rooms" ("title", "location", "description", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "Quarto em são joão de Meriti"], ["location", "São joão de Meriti"], ["description", "Belíssimo quarto em são joão de Meriti com vista para o maravilhoso prezunic"], ["created_at", "2017-07-20 01:42:59.761630"], ["updated_at", "2017-07-20 01:42:59.761630"], ["user_id", 11]]
+  [1m[35m (195.8ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/pt-BR/rooms/11
+Completed 302 Found in 208ms (ActiveRecord: 197.1ms)
+
+
+Started GET "/pt-BR/rooms/11" for 127.0.0.1 at 2017-07-19 22:42:59 -0300
+Processing by RoomsController#show as HTML
+  Parameters: {"locale"=>"pt-BR", "id"=>"11"}
+  [1m[36mRoom Load (0.2ms)[0m  [1m[34mSELECT  "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mCACHE Room Load (0.0ms)[0m  [1m[34mSELECT  "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT  "reviews".* FROM "reviews" WHERE "reviews"."room_id" = ? AND "reviews"."user_id" = ? LIMIT ?[0m  [["room_id", 11], ["user_id", 11], ["LIMIT", 1]]
+  Rendering rooms/show.html.erb within layouts/application
+  Rendered rooms/show.html.erb within layouts/application (2.1ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  Rendered layouts/_user_navbar.html.erb (1.7ms)
+Completed 200 OK in 35ms (Views: 29.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/pt-BR/rooms" for 127.0.0.1 at 2017-07-19 22:43:02 -0300
+Processing by RoomsController#index as HTML
+  Parameters: {"locale"=>"pt-BR"}
+  Rendering rooms/index.html.erb within layouts/application
+  [1m[36mRoom Load (0.2ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms"[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  Rendered collection of rooms/_room.html.erb [2 times] (9.8ms)
+  Rendered rooms/index.html.erb within layouts/application (12.2ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  Rendered layouts/_user_navbar.html.erb (2.4ms)
+Completed 200 OK in 48ms (Views: 46.0ms | ActiveRecord: 0.5ms)
+
+
+Started DELETE "/pt-BR/user_sessions" for 127.0.0.1 at 2017-07-19 22:45:09 -0300
+Processing by UserSessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"Ivn28qSVNMi9WYEA+ewupGWFTMDUpBonhabwIwHItlBklS/zOXDeI1iptfH3TwwGrMnewEvTd0+4JGVaSKns2w==", "locale"=>"pt-BR"}
+Redirected to http://localhost:3000/?locale=pt-BR
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/?locale=pt-BR" for 127.0.0.1 at 2017-07-19 22:45:09 -0300
+Processing by HomeController#index as HTML
+  Parameters: {"locale"=>"pt-BR"}
+  [1m[36mRoom Load (0.3ms)[0m  [1m[34mSELECT  "rooms".* FROM "rooms" ORDER BY "rooms"."id" ASC LIMIT ?[0m  [["LIMIT", 3]]
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (1.1ms)
+  Rendered layouts/_visitor_navbar.html.erb (1.1ms)
+Completed 200 OK in 53ms (Views: 51.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/pt-BR/rooms" for 127.0.0.1 at 2017-07-19 22:45:12 -0300
+Processing by RoomsController#index as HTML
+  Parameters: {"locale"=>"pt-BR"}
+  Rendering rooms/index.html.erb within layouts/application
+  [1m[36mRoom Load (0.2ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms"[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  Rendered collection of rooms/_room.html.erb [2 times] (5.5ms)
+  Rendered rooms/index.html.erb within layouts/application (7.7ms)
+  Rendered layouts/_visitor_navbar.html.erb (0.9ms)
+Completed 200 OK in 38ms (Views: 36.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/pt-BR/rooms" for 127.0.0.1 at 2017-07-19 22:45:30 -0300
+Processing by RoomsController#index as HTML
+  Parameters: {"locale"=>"pt-BR"}
+  Rendering rooms/index.html.erb within layouts/application
+  [1m[36mRoom Load (0.4ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms"[0m
+  Rendered rooms/_review.html.erb (1.4ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  Rendered rooms/_review.html.erb (0.1ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  Rendered collection of rooms/_room.html.erb [2 times] (9.6ms)
+  Rendered rooms/index.html.erb within layouts/application (13.5ms)
+  Rendered layouts/_visitor_navbar.html.erb (1.3ms)
+Completed 200 OK in 42ms (Views: 39.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/pt-BR/user_sessions/new" for 127.0.0.1 at 2017-07-19 22:47:36 -0300
+Processing by UserSessionsController#new as HTML
+  Parameters: {"locale"=>"pt-BR"}
+  Rendering user_sessions/new.html.erb within layouts/application
+  Rendered user_sessions/new.html.erb within layouts/application (2.7ms)
+  Rendered layouts/_visitor_navbar.html.erb (1.0ms)
+Completed 200 OK in 38ms (Views: 36.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/pt-BR/user_sessions" for 127.0.0.1 at 2017-07-19 22:47:38 -0300
+Processing by UserSessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"5L1z6pLCvCi1/FEKtPfkvmRXboSukjzKECdp4ptFwn8MShrRk6oxuokkUHFiLxEEhXRFu91bt7wodZVxR4aBtA==", "user_session"=>{"email"=>"slv@com.br", "password"=>"[FILTERED]"}, "commit"=>"Entrar", "locale"=>"pt-BR"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE (confirmed_at IS NOT NULL) AND "users"."email" = ? LIMIT ?[0m  [["email", "slv@com.br"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/?locale=pt-BR
+Completed 302 Found in 91ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/?locale=pt-BR" for 127.0.0.1 at 2017-07-19 22:47:38 -0300
+Processing by HomeController#index as HTML
+  Parameters: {"locale"=>"pt-BR"}
+  [1m[36mRoom Load (0.8ms)[0m  [1m[34mSELECT  "rooms".* FROM "rooms" ORDER BY "rooms"."id" ASC LIMIT ?[0m  [["LIMIT", 3]]
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (1.4ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  Rendered layouts/_user_navbar.html.erb (3.5ms)
+Completed 200 OK in 36ms (Views: 31.4ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/pt-BR/rooms" for 127.0.0.1 at 2017-07-19 22:47:59 -0300
+Processing by RoomsController#index as HTML
+  Parameters: {"locale"=>"pt-BR"}
+  Rendering rooms/index.html.erb within layouts/application
+  [1m[36mRoom Load (0.4ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms"[0m
+  Rendered rooms/_review.html.erb (15.7ms)
+  Rendered collection of rooms/_room.html.erb [2 times] (18.6ms)
+  Rendered rooms/index.html.erb within layouts/application (21.9ms)
+Completed 500 Internal Server Error in 26ms (ActiveRecord: 0.4ms)
+
+
+  
+ActionView::Template::Error (undefined method `to_key' for #<Room::ActiveRecord_Relation:0x0055a4cf7bd4b8>
+Did you mean?  to_set
+               to_ary):
+    1: <section class="review">
+    2:   <% if user_signed_in? %>
+    3:     byebug
+    4:     <%= form_for @rooms do |f| %>
+    5:       <% Review::POINTS.each do |point| %>
+    6:         <%= f.radio_button :points, point %>
+    7:         <%= f.label :points, point, :value => point %>
+  
+app/views/rooms/_review.html.erb:4:in `_app_views_rooms__review_html_erb__4427249466364102011_47083170937640'
+app/views/rooms/_room.html.erb:5:in `_app_views_rooms__room_html_erb___4550144078288569833_47083171338580'
+app/views/rooms/index.html.erb:2:in `_app_views_rooms_index_html_erb___1768513598441688942_47083171919240'
+Started GET "/pt-BR/rooms" for 127.0.0.1 at 2017-07-19 22:48:36 -0300
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by RoomsController#index as HTML
+  Parameters: {"locale"=>"pt-BR"}
+  Rendering rooms/index.html.erb within layouts/application
+  [1m[36mRoom Load (0.2ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms"[0m
+  Rendered rooms/_review.html.erb (15.1ms)
+  Rendered collection of rooms/_room.html.erb [2 times] (19.3ms)
+  Rendered rooms/index.html.erb within layouts/application (45.0ms)
+Completed 500 Internal Server Error in 76ms (ActiveRecord: 0.9ms)
+
+
+  
+ActionView::Template::Error (undefined method `to_key' for #<Room::ActiveRecord_Relation:0x007f8350cbd380>
+Did you mean?  to_set
+               to_ary):
+    1: <section class="review">
+    2:   <% if user_signed_in? %>
+    3:     byebug
+    4:     <%= form_for @rooms do |f| %>
+    5:       <% Review::POINTS.each do |point| %>
+    6:         <%= f.radio_button :points, point %>
+    7:         <%= f.label :points, point, :value => point %>
+  
+app/views/rooms/_review.html.erb:4:in `_app_views_rooms__review_html_erb__405418655393836907_47456352904340'
+app/views/rooms/_room.html.erb:5:in `_app_views_rooms__room_html_erb___3230783122314297287_47456353168180'
+app/views/rooms/index.html.erb:2:in `_app_views_rooms_index_html_erb___2843511991752206789_47456358708900'
+  [1m[36mRoom Load (0.5ms)[0m  [1m[34mSELECT  "rooms".* FROM "rooms" ORDER BY "rooms"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT  "reviews".* FROM "reviews" WHERE "reviews"."room_id" = ? LIMIT ?[0m  [["room_id", 10], ["LIMIT", 11]]
+  [1m[36mRoom Load (0.4ms)[0m  [1m[34mSELECT  "rooms".* FROM "rooms" ORDER BY "rooms"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mRoom Load (0.4ms)[0m  [1m[34mSELECT  "rooms".* FROM "rooms" ORDER BY "rooms"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT  "reviews".* FROM "reviews" WHERE "reviews"."room_id" = ? LIMIT ?[0m  [["room_id", 11], ["LIMIT", 11]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT  "reviews".* FROM "reviews" WHERE "reviews"."room_id" = ? LIMIT ?[0m  [["room_id", 10], ["LIMIT", 11]]
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT  "reviews".* FROM "reviews" WHERE "reviews"."room_id" = ? LIMIT ?[0m  [["room_id", 10], ["LIMIT", 11]]
+  [1m[36mReview Load (0.5ms)[0m  [1m[34mSELECT  "reviews".* FROM "reviews" WHERE "reviews"."room_id" = ? ORDER BY "reviews"."id" ASC LIMIT ?[0m  [["room_id", 10], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mReview Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "reviews" WHERE "reviews"."user_id" = ? AND ("reviews"."id" != ?) AND "reviews"."room_id" = ? LIMIT ?[0m  [["user_id", 11], ["id", 1], ["room_id", 10], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mRoom Load (0.2ms)[0m  [1m[34mSELECT  "rooms".* FROM "rooms" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mReview Load (0.4ms)[0m  [1m[34mSELECT  "reviews".* FROM "reviews" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mReview Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "reviews" WHERE "reviews"."user_id" = ? AND ("reviews"."id" != ?) AND "reviews"."room_id" = ? LIMIT ?[0m  [["user_id", 11], ["id", 1], ["room_id", 10], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mReview Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "reviews" WHERE "reviews"."user_id" = ? AND "reviews"."room_id" = ? LIMIT ?[0m  [["user_id", 11], ["room_id", 11], ["LIMIT", 1]]
+  [1m[35mSQL (10.7ms)[0m  [1m[32mINSERT INTO "reviews" ("user_id", "room_id", "points", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 11], ["room_id", 11], ["points", 2], ["created_at", "2017-07-20 01:55:40.146948"], ["updated_at", "2017-07-20 01:55:40.146948"]]
+  [1m[35mSQL (0.6ms)[0m  [1m[33mUPDATE "rooms" SET "reviews_count" = COALESCE("reviews_count", 0) + 1 WHERE "rooms"."id" = ?[0m  [["id", 11]]
+  [1m[35m (108.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mRoom Load (0.2ms)[0m  [1m[34mSELECT  "rooms".* FROM "rooms" LIMIT ?[0m  [["LIMIT", 11]]
+Started GET "/pt-BR/rooms" for 127.0.0.1 at 2017-07-19 23:08:43 -0300
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by RoomsController#index as HTML
+  Parameters: {"locale"=>"pt-BR"}
+  Rendering rooms/index.html.erb within layouts/application
+  [1m[36mRoom Load (0.2ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms"[0m
+  Rendered rooms/_review.html.erb (10.1ms)
+  Rendered collection of rooms/_room.html.erb [2 times] (13.0ms)
+  Rendered rooms/index.html.erb within layouts/application (35.9ms)
+Completed 500 Internal Server Error in 58ms (ActiveRecord: 0.9ms)
+
+
+  
+ActionView::Template::Error (undefined method `to_key' for #<Room::ActiveRecord_Relation:0x007f95e49437f8>
+Did you mean?  to_set
+               to_ary):
+    1: <section class="review">
+    2:   <% if user_signed_in? %>
+    3:     <%= form_for @rooms do |f| %>
+    4:       <% Review::POINTS.each do |point| %>
+    5:         <%= f.radio_button :points, point %>
+    6:         <%= f.label :points, point, :value => point %>
+  
+app/views/rooms/_review.html.erb:3:in `_app_views_rooms__review_html_erb__4236138064152353276_70140882021800'
+app/views/rooms/_room.html.erb:5:in `_app_views_rooms__room_html_erb__2528789486123580504_70140881973780'
+app/views/rooms/index.html.erb:2:in `_app_views_rooms_index_html_erb___2696521641432854554_70140880884080'
+Started GET "/pt-BR/rooms" for 127.0.0.1 at 2017-07-19 23:09:09 -0300
+Processing by RoomsController#index as HTML
+  Parameters: {"locale"=>"pt-BR"}
+  Rendering rooms/index.html.erb within layouts/application
+  [1m[36mRoom Load (0.3ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms"[0m
+  Rendered rooms/_review.html.erb (11.9ms)
+  Rendered collection of rooms/_room.html.erb [2 times] (17.0ms)
+  Rendered rooms/index.html.erb within layouts/application (21.7ms)
+Completed 500 Internal Server Error in 26ms (ActiveRecord: 0.9ms)
+
+
+  
+ActionView::Template::Error (undefined method `to_key' for #<Room::ActiveRecord_Relation:0x00558899188ef0>
+Did you mean?  to_set
+               to_ary):
+    1: <section class="review">
+    2:   <!-- <% if user_signed_in? %>
+    3:     <%= form_for @rooms do |f| %>
+    4:       <% Review::POINTS.each do |point| %>
+    5:         <%= f.radio_button :points, point %>
+    6:         <%= f.label :points, point, :value => point %>
+  
+app/views/rooms/_review.html.erb:3:in `_app_views_rooms__review_html_erb__4236138064152353276_47022585910980'
+app/views/rooms/_room.html.erb:5:in `_app_views_rooms__room_html_erb__2528789486123580504_47022586071580'
+app/views/rooms/index.html.erb:2:in `_app_views_rooms_index_html_erb___2696521641432854554_47022586197520'
+Started GET "/pt-BR/rooms" for 127.0.0.1 at 2017-07-19 23:09:43 -0300
+Processing by RoomsController#index as HTML
+  Parameters: {"locale"=>"pt-BR"}
+  Rendering rooms/index.html.erb within layouts/application
+  [1m[36mRoom Load (0.3ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms"[0m
+  Rendered rooms/_review.html.erb (0.9ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  Rendered rooms/_review.html.erb (0.0ms)
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  Rendered collection of rooms/_room.html.erb [2 times] (54.6ms)
+  Rendered rooms/index.html.erb within layouts/application (58.0ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  Rendered layouts/_user_navbar.html.erb (2.1ms)
+Completed 200 OK in 352ms (Views: 348.9ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/pt-BR/rooms/11/edit" for 127.0.0.1 at 2017-07-19 23:09:53 -0300
+Processing by RoomsController#edit as HTML
+  Parameters: {"locale"=>"pt-BR", "id"=>"11"}
+  [1m[36mRoom Load (0.4ms)[0m  [1m[34mSELECT  "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  Rendering rooms/edit.html.erb within layouts/application
+  Rendered rooms/_form.html.erb (54.0ms)
+  Rendered rooms/edit.html.erb within layouts/application (56.4ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  Rendered layouts/_user_navbar.html.erb (2.0ms)
+Completed 200 OK in 101ms (Views: 97.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/pt-BR/rooms/10/edit" for 127.0.0.1 at 2017-07-19 23:09:58 -0300
+Processing by RoomsController#edit as HTML
+  Parameters: {"locale"=>"pt-BR", "id"=>"10"}
+  [1m[36mRoom Load (0.3ms)[0m  [1m[34mSELECT  "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  Rendering rooms/edit.html.erb within layouts/application
+  Rendered rooms/_form.html.erb (2.7ms)
+  Rendered rooms/edit.html.erb within layouts/application (4.4ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  Rendered layouts/_user_navbar.html.erb (2.3ms)
+Completed 200 OK in 43ms (Views: 40.9ms | ActiveRecord: 0.6ms)
+
+
+Started PATCH "/pt-BR/rooms/10" for 127.0.0.1 at 2017-07-19 23:10:15 -0300
+Processing by RoomsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"GGoT8WPc2d2V/NMAPHGC5++RCNtbVtqkeWU5A67nsezIigTcI+5CGcZlne+P8+jobS2EMj3fTEfxMkzdW9wnZQ==", "room"=>{"title"=>"teste de token", "location"=>"rio ", "description"=>"Teste de passagem de token por requisição de url"}, "commit"=>"Atualizar Quarto", "locale"=>"pt-BR", "id"=>"10"}
+  [1m[36mRoom Load (0.2ms)[0m  [1m[34mSELECT  "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mCACHE Room Load (0.0ms)[0m  [1m[34mSELECT  "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mCACHE Room Load (0.0ms)[0m  [1m[34mSELECT  "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[35mSQL (0.6ms)[0m  [1m[33mUPDATE "rooms" SET "description" = ?, "updated_at" = ? WHERE "rooms"."id" = ?[0m  [["description", "Teste de passagem de token por requisição de url"], ["updated_at", "2017-07-20 02:10:15.374496"], ["id", 10]]
+  [1m[35m (71.8ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/pt-BR/rooms/10
+Completed 302 Found in 83ms (ActiveRecord: 72.9ms)
+
+
+Started GET "/pt-BR/rooms/10" for 127.0.0.1 at 2017-07-19 23:10:15 -0300
+Processing by RoomsController#show as HTML
+  Parameters: {"locale"=>"pt-BR", "id"=>"10"}
+  [1m[36mRoom Load (0.2ms)[0m  [1m[34mSELECT  "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mCACHE Room Load (0.0ms)[0m  [1m[34mSELECT  "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT  "reviews".* FROM "reviews" WHERE "reviews"."room_id" = ? AND "reviews"."user_id" = ? LIMIT ?[0m  [["room_id", 10], ["user_id", 11], ["LIMIT", 1]]
+  Rendering rooms/show.html.erb within layouts/application
+  Rendered rooms/show.html.erb within layouts/application (1.2ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  Rendered layouts/_user_navbar.html.erb (2.3ms)
+Completed 200 OK in 56ms (Views: 26.4ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/pt-BR/rooms" for 127.0.0.1 at 2017-07-19 23:10:17 -0300
+Processing by RoomsController#index as HTML
+  Parameters: {"locale"=>"pt-BR"}
+  Rendering rooms/index.html.erb within layouts/application
+  [1m[36mRoom Load (0.4ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms"[0m
+  Rendered rooms/_review.html.erb (0.8ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  Rendered rooms/_review.html.erb (0.1ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  Rendered collection of rooms/_room.html.erb [2 times] (15.7ms)
+  Rendered rooms/index.html.erb within layouts/application (19.9ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  Rendered layouts/_user_navbar.html.erb (2.5ms)
+Completed 200 OK in 67ms (Views: 64.3ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/pt-BR/rooms/10" for 127.0.0.1 at 2017-07-19 23:22:09 -0300
+Processing by RoomsController#show as HTML
+  Parameters: {"locale"=>"pt-BR", "id"=>"10"}
+  [1m[36mRoom Load (0.2ms)[0m  [1m[34mSELECT  "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mCACHE Room Load (0.0ms)[0m  [1m[34mSELECT  "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT  "reviews".* FROM "reviews" WHERE "reviews"."room_id" = ? AND "reviews"."user_id" = ? LIMIT ?[0m  [["room_id", 10], ["user_id", 11], ["LIMIT", 1]]
+  Rendering rooms/show.html.erb within layouts/application
+  Rendered rooms/show.html.erb within layouts/application (1.0ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  Rendered layouts/_user_navbar.html.erb (1.8ms)
+Completed 200 OK in 36ms (Views: 30.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/pt-BR/rooms" for 127.0.0.1 at 2017-07-19 23:22:47 -0300
+Processing by RoomsController#index as HTML
+  Parameters: {"locale"=>"pt-BR"}
+  Rendering rooms/index.html.erb within layouts/application
+  [1m[36mRoom Load (0.2ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms"[0m
+  Rendered rooms/_review.html.erb (10.5ms)
+  Rendered collection of rooms/_room.html.erb [2 times] (13.0ms)
+  Rendered rooms/index.html.erb within layouts/application (28.9ms)
+Completed 500 Internal Server Error in 41ms (ActiveRecord: 2.2ms)
+
+
+  
+ActionView::Template::Error (undefined method `to_key' for #<Room::ActiveRecord_Relation:0x007f95fc04f9e0>
+Did you mean?  to_set
+               to_ary):
+    1: <section class="review">
+    2:   <% if user_signed_in? %>
+    3:     <%= form_for @rooms do |f| %>
+    4:       <% Review::POINTS.each do |point| %>
+    5:         <%= f.radio_button :points, point %>
+    6:         <%= f.label :points, point, :value => point %>
+  
+app/views/rooms/_review.html.erb:3:in `_app_views_rooms__review_html_erb__4236138064152353276_70140809932160'
+app/views/rooms/_room.html.erb:4:in `_app_views_rooms__room_html_erb__2528789486123580504_70140810001140'
+app/views/rooms/index.html.erb:2:in `_app_views_rooms_index_html_erb___2696521641432854554_70141077517140'
+Started PUT "/__web_console/repl_sessions/f5180fe54456721ee887c2282a9b2f9b" for 127.0.0.1 at 2017-07-19 23:22:50 -0300
+Started PUT "/__web_console/repl_sessions/f5180fe54456721ee887c2282a9b2f9b" for 127.0.0.1 at 2017-07-19 23:22:50 -0300
+Started PUT "/__web_console/repl_sessions/f5180fe54456721ee887c2282a9b2f9b" for 127.0.0.1 at 2017-07-19 23:23:28 -0300
+Started PUT "/__web_console/repl_sessions/f5180fe54456721ee887c2282a9b2f9b" for 127.0.0.1 at 2017-07-19 23:23:47 -0300
+Started PUT "/__web_console/repl_sessions/f5180fe54456721ee887c2282a9b2f9b" for 127.0.0.1 at 2017-07-19 23:23:47 -0300
+Started PUT "/__web_console/repl_sessions/f5180fe54456721ee887c2282a9b2f9b" for 127.0.0.1 at 2017-07-19 23:23:47 -0300
+Started PUT "/__web_console/repl_sessions/f5180fe54456721ee887c2282a9b2f9b" for 127.0.0.1 at 2017-07-19 23:23:47 -0300
+Started PUT "/__web_console/repl_sessions/f5180fe54456721ee887c2282a9b2f9b" for 127.0.0.1 at 2017-07-19 23:23:47 -0300
+Started PUT "/__web_console/repl_sessions/f5180fe54456721ee887c2282a9b2f9b" for 127.0.0.1 at 2017-07-19 23:23:47 -0300
+Started PUT "/__web_console/repl_sessions/f5180fe54456721ee887c2282a9b2f9b" for 127.0.0.1 at 2017-07-19 23:23:47 -0300
+Started PUT "/__web_console/repl_sessions/f5180fe54456721ee887c2282a9b2f9b" for 127.0.0.1 at 2017-07-19 23:23:47 -0300
+Started PUT "/__web_console/repl_sessions/f5180fe54456721ee887c2282a9b2f9b" for 127.0.0.1 at 2017-07-19 23:23:47 -0300
+Started PUT "/__web_console/repl_sessions/f5180fe54456721ee887c2282a9b2f9b" for 127.0.0.1 at 2017-07-19 23:23:47 -0300
+Started PUT "/__web_console/repl_sessions/f5180fe54456721ee887c2282a9b2f9b" for 127.0.0.1 at 2017-07-19 23:23:47 -0300
+Started PUT "/__web_console/repl_sessions/f5180fe54456721ee887c2282a9b2f9b" for 127.0.0.1 at 2017-07-19 23:23:47 -0300
+Started PUT "/__web_console/repl_sessions/f5180fe54456721ee887c2282a9b2f9b" for 127.0.0.1 at 2017-07-19 23:23:47 -0300
+Started PUT "/__web_console/repl_sessions/f5180fe54456721ee887c2282a9b2f9b" for 127.0.0.1 at 2017-07-19 23:23:47 -0300
+Started PUT "/__web_console/repl_sessions/f5180fe54456721ee887c2282a9b2f9b" for 127.0.0.1 at 2017-07-19 23:23:47 -0300
+Started PUT "/__web_console/repl_sessions/f5180fe54456721ee887c2282a9b2f9b" for 127.0.0.1 at 2017-07-19 23:23:47 -0300
+Started PUT "/__web_console/repl_sessions/f5180fe54456721ee887c2282a9b2f9b" for 127.0.0.1 at 2017-07-19 23:23:47 -0300
+Started PUT "/__web_console/repl_sessions/f5180fe54456721ee887c2282a9b2f9b" for 127.0.0.1 at 2017-07-19 23:23:48 -0300
+Started PUT "/__web_console/repl_sessions/f5180fe54456721ee887c2282a9b2f9b" for 127.0.0.1 at 2017-07-19 23:23:48 -0300
+Started PUT "/__web_console/repl_sessions/f5180fe54456721ee887c2282a9b2f9b" for 127.0.0.1 at 2017-07-19 23:23:48 -0300
+Started PUT "/__web_console/repl_sessions/f5180fe54456721ee887c2282a9b2f9b" for 127.0.0.1 at 2017-07-19 23:23:48 -0300
+Started PUT "/__web_console/repl_sessions/f5180fe54456721ee887c2282a9b2f9b" for 127.0.0.1 at 2017-07-19 23:23:48 -0300
+Started PUT "/__web_console/repl_sessions/f5180fe54456721ee887c2282a9b2f9b" for 127.0.0.1 at 2017-07-19 23:23:48 -0300
+Started PUT "/__web_console/repl_sessions/f5180fe54456721ee887c2282a9b2f9b" for 127.0.0.1 at 2017-07-19 23:23:48 -0300
+Started PUT "/__web_console/repl_sessions/f5180fe54456721ee887c2282a9b2f9b" for 127.0.0.1 at 2017-07-19 23:23:48 -0300
+Started PUT "/__web_console/repl_sessions/f5180fe54456721ee887c2282a9b2f9b" for 127.0.0.1 at 2017-07-19 23:23:48 -0300
+Started PUT "/__web_console/repl_sessions/f5180fe54456721ee887c2282a9b2f9b" for 127.0.0.1 at 2017-07-19 23:23:48 -0300
+Started PUT "/__web_console/repl_sessions/f5180fe54456721ee887c2282a9b2f9b" for 127.0.0.1 at 2017-07-19 23:23:48 -0300
+Started PUT "/__web_console/repl_sessions/f5180fe54456721ee887c2282a9b2f9b" for 127.0.0.1 at 2017-07-19 23:23:48 -0300
+Started PUT "/__web_console/repl_sessions/f5180fe54456721ee887c2282a9b2f9b" for 127.0.0.1 at 2017-07-19 23:23:48 -0300
+Started PUT "/__web_console/repl_sessions/f5180fe54456721ee887c2282a9b2f9b" for 127.0.0.1 at 2017-07-19 23:23:48 -0300
+Started PUT "/__web_console/repl_sessions/f5180fe54456721ee887c2282a9b2f9b" for 127.0.0.1 at 2017-07-19 23:23:48 -0300
+Started PUT "/__web_console/repl_sessions/f5180fe54456721ee887c2282a9b2f9b" for 127.0.0.1 at 2017-07-19 23:23:48 -0300
+Started PUT "/__web_console/repl_sessions/f5180fe54456721ee887c2282a9b2f9b" for 127.0.0.1 at 2017-07-19 23:23:48 -0300
+Started PUT "/__web_console/repl_sessions/f5180fe54456721ee887c2282a9b2f9b" for 127.0.0.1 at 2017-07-19 23:23:48 -0300
+Started PUT "/__web_console/repl_sessions/f5180fe54456721ee887c2282a9b2f9b" for 127.0.0.1 at 2017-07-19 23:23:48 -0300
+Started PUT "/__web_console/repl_sessions/f5180fe54456721ee887c2282a9b2f9b" for 127.0.0.1 at 2017-07-19 23:23:48 -0300
+Started PUT "/__web_console/repl_sessions/f5180fe54456721ee887c2282a9b2f9b" for 127.0.0.1 at 2017-07-19 23:23:48 -0300
+Started PUT "/__web_console/repl_sessions/f5180fe54456721ee887c2282a9b2f9b" for 127.0.0.1 at 2017-07-19 23:23:48 -0300
+Started PUT "/__web_console/repl_sessions/f5180fe54456721ee887c2282a9b2f9b" for 127.0.0.1 at 2017-07-19 23:23:48 -0300
+Started PUT "/__web_console/repl_sessions/f5180fe54456721ee887c2282a9b2f9b" for 127.0.0.1 at 2017-07-19 23:23:48 -0300
+Started PUT "/__web_console/repl_sessions/f5180fe54456721ee887c2282a9b2f9b" for 127.0.0.1 at 2017-07-19 23:23:48 -0300
+Started PUT "/__web_console/repl_sessions/f5180fe54456721ee887c2282a9b2f9b" for 127.0.0.1 at 2017-07-19 23:23:48 -0300
+Started PUT "/__web_console/repl_sessions/f5180fe54456721ee887c2282a9b2f9b" for 127.0.0.1 at 2017-07-19 23:23:48 -0300
+Started PUT "/__web_console/repl_sessions/f5180fe54456721ee887c2282a9b2f9b" for 127.0.0.1 at 2017-07-19 23:23:48 -0300
+Started PUT "/__web_console/repl_sessions/f5180fe54456721ee887c2282a9b2f9b" for 127.0.0.1 at 2017-07-19 23:23:48 -0300
+Started PUT "/__web_console/repl_sessions/f5180fe54456721ee887c2282a9b2f9b" for 127.0.0.1 at 2017-07-19 23:23:48 -0300
+Started PUT "/__web_console/repl_sessions/f5180fe54456721ee887c2282a9b2f9b" for 127.0.0.1 at 2017-07-19 23:23:48 -0300
+Started PUT "/__web_console/repl_sessions/f5180fe54456721ee887c2282a9b2f9b" for 127.0.0.1 at 2017-07-19 23:23:48 -0300
+Started PUT "/__web_console/repl_sessions/f5180fe54456721ee887c2282a9b2f9b" for 127.0.0.1 at 2017-07-19 23:23:48 -0300
+Started PUT "/__web_console/repl_sessions/f5180fe54456721ee887c2282a9b2f9b" for 127.0.0.1 at 2017-07-19 23:23:49 -0300
+Started PUT "/__web_console/repl_sessions/f5180fe54456721ee887c2282a9b2f9b" for 127.0.0.1 at 2017-07-19 23:23:49 -0300
+Started PUT "/__web_console/repl_sessions/f5180fe54456721ee887c2282a9b2f9b" for 127.0.0.1 at 2017-07-19 23:23:49 -0300
+Started PUT "/__web_console/repl_sessions/f5180fe54456721ee887c2282a9b2f9b" for 127.0.0.1 at 2017-07-19 23:23:49 -0300
+Started PUT "/__web_console/repl_sessions/f5180fe54456721ee887c2282a9b2f9b" for 127.0.0.1 at 2017-07-19 23:23:49 -0300
+Started PUT "/__web_console/repl_sessions/f5180fe54456721ee887c2282a9b2f9b" for 127.0.0.1 at 2017-07-19 23:23:49 -0300
+Started PUT "/__web_console/repl_sessions/f5180fe54456721ee887c2282a9b2f9b" for 127.0.0.1 at 2017-07-19 23:23:49 -0300
+Started PUT "/__web_console/repl_sessions/f5180fe54456721ee887c2282a9b2f9b" for 127.0.0.1 at 2017-07-19 23:23:49 -0300
+Started PUT "/__web_console/repl_sessions/f5180fe54456721ee887c2282a9b2f9b" for 127.0.0.1 at 2017-07-19 23:23:49 -0300
+Started PUT "/__web_console/repl_sessions/f5180fe54456721ee887c2282a9b2f9b" for 127.0.0.1 at 2017-07-19 23:23:49 -0300
+Started PUT "/__web_console/repl_sessions/f5180fe54456721ee887c2282a9b2f9b" for 127.0.0.1 at 2017-07-19 23:23:49 -0300
+Started PUT "/__web_console/repl_sessions/f5180fe54456721ee887c2282a9b2f9b" for 127.0.0.1 at 2017-07-19 23:23:49 -0300
+Started PUT "/__web_console/repl_sessions/f5180fe54456721ee887c2282a9b2f9b" for 127.0.0.1 at 2017-07-19 23:23:49 -0300
+Started PUT "/__web_console/repl_sessions/f5180fe54456721ee887c2282a9b2f9b" for 127.0.0.1 at 2017-07-19 23:23:49 -0300
+Started PUT "/__web_console/repl_sessions/f5180fe54456721ee887c2282a9b2f9b" for 127.0.0.1 at 2017-07-19 23:23:49 -0300
+Started PUT "/__web_console/repl_sessions/f5180fe54456721ee887c2282a9b2f9b" for 127.0.0.1 at 2017-07-19 23:23:49 -0300
+Started PUT "/__web_console/repl_sessions/f5180fe54456721ee887c2282a9b2f9b" for 127.0.0.1 at 2017-07-19 23:23:49 -0300
+Started PUT "/__web_console/repl_sessions/f5180fe54456721ee887c2282a9b2f9b" for 127.0.0.1 at 2017-07-19 23:23:49 -0300
+Started PUT "/__web_console/repl_sessions/f5180fe54456721ee887c2282a9b2f9b" for 127.0.0.1 at 2017-07-19 23:23:49 -0300
+Started PUT "/__web_console/repl_sessions/f5180fe54456721ee887c2282a9b2f9b" for 127.0.0.1 at 2017-07-19 23:23:49 -0300
+Started PUT "/__web_console/repl_sessions/f5180fe54456721ee887c2282a9b2f9b" for 127.0.0.1 at 2017-07-19 23:23:49 -0300
+Started PUT "/__web_console/repl_sessions/f5180fe54456721ee887c2282a9b2f9b" for 127.0.0.1 at 2017-07-19 23:23:50 -0300
+Started PUT "/__web_console/repl_sessions/f5180fe54456721ee887c2282a9b2f9b" for 127.0.0.1 at 2017-07-19 23:24:01 -0300
+Started PUT "/__web_console/repl_sessions/f5180fe54456721ee887c2282a9b2f9b" for 127.0.0.1 at 2017-07-19 23:24:06 -0300
+Started PUT "/__web_console/repl_sessions/f5180fe54456721ee887c2282a9b2f9b" for 127.0.0.1 at 2017-07-19 23:24:08 -0300
+Started PUT "/__web_console/repl_sessions/f5180fe54456721ee887c2282a9b2f9b" for 127.0.0.1 at 2017-07-19 23:24:10 -0300
+Started GET "/pt-BR/rooms" for 127.0.0.1 at 2017-07-19 23:25:11 -0300
+Processing by RoomsController#index as HTML
+  Parameters: {"locale"=>"pt-BR"}
+  Rendering rooms/index.html.erb within layouts/application
+  [1m[36mRoom Load (1.1ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms"[0m
+  Rendered rooms/_review.html.erb (7.8ms)
+  Rendered collection of rooms/_room.html.erb [2 times] (12.5ms)
+  Rendered rooms/index.html.erb within layouts/application (19.1ms)
+Completed 500 Internal Server Error in 24ms (ActiveRecord: 1.1ms)
+
+
+  
+ActionView::Template::Error (undefined method `to_key' for #<Room::ActiveRecord_Relation:0x007f95e1682da0>
+Did you mean?  to_set
+               to_ary):
+    1: <section class="review">
+    2:   <% if user_signed_in? %>
+    3:     <%= form_for @rooms do |f| %>
+    4:       <% Review::POINTS.each do |point| %>
+    5:         <%= f.radio_button :points, point %>
+    6:         <%= f.label :points, point, :value => point %>
+  
+app/views/rooms/_review.html.erb:3:in `_app_views_rooms__review_html_erb__4236138064152353276_70140776460680'
+app/views/rooms/_room.html.erb:4:in `_app_views_rooms__room_html_erb__2528789486123580504_70140909647400'
+app/views/rooms/index.html.erb:2:in `_app_views_rooms_index_html_erb___2696521641432854554_70140854275480'
+Started PUT "/__web_console/repl_sessions/5539071c2d7dc26d76592d523b7415ed" for 127.0.0.1 at 2017-07-19 23:25:14 -0300
+Started PUT "/__web_console/repl_sessions/5539071c2d7dc26d76592d523b7415ed" for 127.0.0.1 at 2017-07-19 23:25:16 -0300
+Started PUT "/__web_console/repl_sessions/5539071c2d7dc26d76592d523b7415ed" for 127.0.0.1 at 2017-07-19 23:25:19 -0300
+Started PUT "/__web_console/repl_sessions/5539071c2d7dc26d76592d523b7415ed" for 127.0.0.1 at 2017-07-19 23:25:20 -0300
+Started PUT "/__web_console/repl_sessions/5539071c2d7dc26d76592d523b7415ed" for 127.0.0.1 at 2017-07-19 23:25:21 -0300
+Started PUT "/__web_console/repl_sessions/5539071c2d7dc26d76592d523b7415ed" for 127.0.0.1 at 2017-07-19 23:25:21 -0300
+Started PUT "/__web_console/repl_sessions/5539071c2d7dc26d76592d523b7415ed" for 127.0.0.1 at 2017-07-19 23:25:22 -0300
+Started PUT "/__web_console/repl_sessions/5539071c2d7dc26d76592d523b7415ed" for 127.0.0.1 at 2017-07-19 23:25:22 -0300
+Started PUT "/__web_console/repl_sessions/5539071c2d7dc26d76592d523b7415ed" for 127.0.0.1 at 2017-07-19 23:25:23 -0300
+Started PUT "/__web_console/repl_sessions/5539071c2d7dc26d76592d523b7415ed" for 127.0.0.1 at 2017-07-19 23:25:23 -0300
+Started PUT "/__web_console/repl_sessions/5539071c2d7dc26d76592d523b7415ed" for 127.0.0.1 at 2017-07-19 23:25:24 -0300
+Started GET "/pt-BR/rooms" for 127.0.0.1 at 2017-07-19 23:26:48 -0300
+Processing by RoomsController#index as HTML
+  Parameters: {"locale"=>"pt-BR"}
+  Rendering rooms/index.html.erb within layouts/application
+  [1m[36mRoom Load (0.2ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms"[0m
+  Rendered rooms/_room.html.erb (221.4ms)
+  Rendered rooms/index.html.erb within layouts/application (223.6ms)
+Completed 500 Internal Server Error in 226ms (ActiveRecord: 0.2ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `room' for #<#<Class:0x007f95fc04de10>:0x007f95e1777738>
+Did you mean?  @rooms):
+    1: <article class="room">
+    2:   <h2> <%= link_to room.title, room %> </h2>
+    3: 
+    4:   <%= render :partial => 'review'%>
+    5: 
+  
+app/views/rooms/_room.html.erb:2:in `_app_views_rooms__room_html_erb__2528789486123580504_70140854734820'
+app/views/rooms/index.html.erb:4:in `block in _app_views_rooms_index_html_erb___2696521641432854554_70140854788280'
+app/views/rooms/index.html.erb:3:in `_app_views_rooms_index_html_erb___2696521641432854554_70140854788280'
+Started PUT "/__web_console/repl_sessions/acd90ab4c0b09fccb26ad70e2263cef8" for 127.0.0.1 at 2017-07-19 23:27:29 -0300
+Started GET "/pt-BR/rooms" for 127.0.0.1 at 2017-07-19 23:27:32 -0300
+Processing by RoomsController#index as HTML
+  Parameters: {"locale"=>"pt-BR"}
+  Rendering rooms/index.html.erb within layouts/application
+  [1m[36mRoom Load (0.2ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms"[0m
+  Rendered rooms/_review.html.erb (8.5ms)
+  Rendered rooms/_room.html.erb (11.9ms)
+  Rendered rooms/index.html.erb within layouts/application (15.0ms)
+Completed 500 Internal Server Error in 18ms (ActiveRecord: 0.2ms)
+
+
+  
+ActionView::Template::Error (undefined method `to_key' for #<Room::ActiveRecord_Relation:0x007f95dc0a31a0>
+Did you mean?  to_set
+               to_ary):
+    1: <section class="review">
+    2:   <% if user_signed_in? %>
+    3:     <%= form_for @rooms do |f| %>
+    4:       <% Review::POINTS.each do |point| %>
+    5:         <%= f.radio_button :points, point %>
+    6:         <%= f.label :points, point, :value => point %>
+  
+app/views/rooms/_review.html.erb:3:in `_app_views_rooms__review_html_erb__4236138064152353276_70140809425460'
+app/views/rooms/_room.html.erb:4:in `_app_views_rooms__room_html_erb__2528789486123580504_70140809360620'
+app/views/rooms/index.html.erb:4:in `block in _app_views_rooms_index_html_erb___2696521641432854554_70140809252780'
+app/views/rooms/index.html.erb:3:in `_app_views_rooms_index_html_erb___2696521641432854554_70140809252780'
+Started PUT "/__web_console/repl_sessions/f73e3c7676b6a052af26de8ea5600b91" for 127.0.0.1 at 2017-07-19 23:27:35 -0300
+Started PUT "/__web_console/repl_sessions/f73e3c7676b6a052af26de8ea5600b91" for 127.0.0.1 at 2017-07-19 23:27:36 -0300
+Started GET "/pt-BR/rooms" for 127.0.0.1 at 2017-07-19 23:28:14 -0300
+Processing by RoomsController#index as HTML
+  Parameters: {"locale"=>"pt-BR"}
+  Rendering rooms/index.html.erb within layouts/application
+  [1m[36mRoom Load (0.2ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms"[0m
+  Rendered rooms/_review.html.erb (9.0ms)
+  Rendered collection of rooms/_room.html.erb [2 times] (11.2ms)
+  Rendered rooms/index.html.erb within layouts/application (13.5ms)
+Completed 500 Internal Server Error in 16ms (ActiveRecord: 0.2ms)
+
+
+  
+ActionView::Template::Error (undefined method `to_key' for #<Room::ActiveRecord_Relation:0x00558898fe9590>
+Did you mean?  to_set
+               to_ary):
+    1: <section class="review">
+    2:   <% if user_signed_in? %>
+    3:     <%= form_for @rooms do |f| %>
+    4:       <% Review::POINTS.each do |point| %>
+    5:         <%= f.radio_button :points, point %>
+    6:         <%= f.label :points, point, :value => point %>
+  
+app/views/rooms/_review.html.erb:3:in `_app_views_rooms__review_html_erb__4236138064152353276_47022587611340'
+app/views/rooms/_room.html.erb:4:in `_app_views_rooms__room_html_erb__2528789486123580504_47022586482700'
+app/views/rooms/index.html.erb:2:in `_app_views_rooms_index_html_erb___2696521641432854554_47022585472520'
+Started PUT "/__web_console/repl_sessions/d5d24cccaaf1ec0b0cd6b6a62b2a7d64" for 127.0.0.1 at 2017-07-19 23:28:18 -0300
+Started PUT "/__web_console/repl_sessions/d5d24cccaaf1ec0b0cd6b6a62b2a7d64" for 127.0.0.1 at 2017-07-19 23:28:18 -0300
+Started GET "/pt-BR/rooms" for 127.0.0.1 at 2017-07-19 23:28:36 -0300
+Processing by RoomsController#index as HTML
+  Parameters: {"locale"=>"pt-BR"}
+  Rendering rooms/index.html.erb within layouts/application
+  [1m[36mRoom Load (0.3ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms"[0m
+  Rendered rooms/_review.html.erb (10.3ms)
+  Rendered collection of rooms/_room.html.erb [2 times] (12.9ms)
+  Rendered rooms/index.html.erb within layouts/application (15.9ms)
+Completed 500 Internal Server Error in 20ms (ActiveRecord: 0.3ms)
+
+
+  
+ActionView::Template::Error (undefined method `to_key' for #<Room::ActiveRecord_Relation:0x007f95d8289658>
+Did you mean?  to_set
+               to_ary):
+    1: <section class="review">
+    2:   <% if user_signed_in? %>
+    3:     <%= form_for @rooms do |f| %>
+    4:       <% Review::POINTS.each do |point| %>
+    5:         <%= f.radio_button :points, point %>
+    6:         <%= f.label :points, point, :value => point %>
+  
+app/views/rooms/_review.html.erb:3:in `_app_views_rooms__review_html_erb__4236138064152353276_70140779395900'
+app/views/rooms/_room.html.erb:4:in `_app_views_rooms__room_html_erb__2528789486123580504_70140779415920'
+app/views/rooms/index.html.erb:2:in `_app_views_rooms_index_html_erb___2696521641432854554_70140776694260'
+Started PUT "/__web_console/repl_sessions/5ad30c9b4c9c8d53710d0c5cffc1b12b" for 127.0.0.1 at 2017-07-19 23:28:39 -0300
+Started PUT "/__web_console/repl_sessions/5ad30c9b4c9c8d53710d0c5cffc1b12b" for 127.0.0.1 at 2017-07-19 23:28:39 -0300
+Started PUT "/__web_console/repl_sessions/5ad30c9b4c9c8d53710d0c5cffc1b12b" for 127.0.0.1 at 2017-07-19 23:28:42 -0300
+Started PUT "/__web_console/repl_sessions/5ad30c9b4c9c8d53710d0c5cffc1b12b" for 127.0.0.1 at 2017-07-19 23:28:50 -0300
+Started PUT "/__web_console/repl_sessions/5ad30c9b4c9c8d53710d0c5cffc1b12b" for 127.0.0.1 at 2017-07-19 23:28:50 -0300
+Started PUT "/__web_console/repl_sessions/5ad30c9b4c9c8d53710d0c5cffc1b12b" for 127.0.0.1 at 2017-07-19 23:28:50 -0300
+Started PUT "/__web_console/repl_sessions/5ad30c9b4c9c8d53710d0c5cffc1b12b" for 127.0.0.1 at 2017-07-19 23:28:50 -0300
+Started PUT "/__web_console/repl_sessions/5ad30c9b4c9c8d53710d0c5cffc1b12b" for 127.0.0.1 at 2017-07-19 23:28:50 -0300
+Started PUT "/__web_console/repl_sessions/5ad30c9b4c9c8d53710d0c5cffc1b12b" for 127.0.0.1 at 2017-07-19 23:28:50 -0300
+Started PUT "/__web_console/repl_sessions/5ad30c9b4c9c8d53710d0c5cffc1b12b" for 127.0.0.1 at 2017-07-19 23:28:51 -0300
+Started PUT "/__web_console/repl_sessions/5ad30c9b4c9c8d53710d0c5cffc1b12b" for 127.0.0.1 at 2017-07-19 23:28:51 -0300
+Started PUT "/__web_console/repl_sessions/5ad30c9b4c9c8d53710d0c5cffc1b12b" for 127.0.0.1 at 2017-07-19 23:28:51 -0300
+Started PUT "/__web_console/repl_sessions/5ad30c9b4c9c8d53710d0c5cffc1b12b" for 127.0.0.1 at 2017-07-19 23:28:55 -0300
+Started GET "/pt-BR/rooms" for 127.0.0.1 at 2017-07-19 23:29:13 -0300
+Processing by RoomsController#index as HTML
+  Parameters: {"locale"=>"pt-BR"}
+  Rendering rooms/index.html.erb within layouts/application
+  [1m[36mRoom Load (0.4ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms"[0m
+  Rendered rooms/_review.html.erb (9.9ms)
+  Rendered collection of rooms/_room.html.erb [2 times] (12.8ms)
+  Rendered rooms/index.html.erb within layouts/application (15.8ms)
+Completed 500 Internal Server Error in 20ms (ActiveRecord: 0.4ms)
+
+
+  
+ActionView::Template::Error (undefined method `to_key' for #<Room::ActiveRecord_Relation:0x007f95e19e7810>
+Did you mean?  to_set
+               to_ary):
+    1: <section class="review">
+    2:   <% if user_signed_in? %>
+    3:     <%= form_for @rooms do |f| %>
+    4:       <% Review::POINTS.each do |point| %>
+    5:         <%= f.radio_button :points, point %>
+    6:         <%= f.label :points, point, :value => point %>
+  
+app/views/rooms/_review.html.erb:3:in `_app_views_rooms__review_html_erb__4236138064152353276_70140855880580'
+app/views/rooms/_room.html.erb:4:in `_app_views_rooms__room_html_erb__2528789486123580504_70140855939120'
+app/views/rooms/index.html.erb:2:in `_app_views_rooms_index_html_erb___2696521641432854554_70140856054220'
+Started GET "/pt-BR/rooms" for 127.0.0.1 at 2017-07-19 23:29:25 -0300
+Processing by RoomsController#index as HTML
+  Parameters: {"locale"=>"pt-BR"}
+  Rendering rooms/index.html.erb within layouts/application
+  [1m[36mRoom Load (0.2ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms"[0m
+  Rendered rooms/_review.html.erb (10.4ms)
+  Rendered collection of rooms/_room.html.erb [2 times] (13.9ms)
+  Rendered rooms/index.html.erb within layouts/application (16.6ms)
+Completed 500 Internal Server Error in 19ms (ActiveRecord: 0.2ms)
+
+
+  
+ActionView::Template::Error (undefined method `to_key' for #<Room::ActiveRecord_Relation:0x007f95e19dcca8>
+Did you mean?  to_set
+               to_ary):
+    1: <section class="review">
+    2:   <% if user_signed_in? %>
+    3:     <%= form_for @rooms do |f| %>
+    4:       <% Review::POINTS.each do |point| %>
+    5:         <%= f.radio_button :points, point %>
+    6:         <%= f.label :points, point, :value => point %>
+  
+app/views/rooms/_review.html.erb:3:in `_app_views_rooms__review_html_erb__4236138064152353276_70140855921740'
+app/views/rooms/_room.html.erb:4:in `_app_views_rooms__room_html_erb__2528789486123580504_70140855965460'
+app/views/rooms/index.html.erb:2:in `_app_views_rooms_index_html_erb___2696521641432854554_70140856016120'
+Started GET "/pt-BR/rooms" for 127.0.0.1 at 2017-07-19 23:29:51 -0300
+Processing by RoomsController#index as HTML
+  Parameters: {"locale"=>"pt-BR"}
+  Rendering rooms/index.html.erb within layouts/application
+  [1m[36mRoom Load (0.3ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms"[0m
+  Rendered rooms/_review.html.erb (12.0ms)
+  Rendered collection of rooms/_room.html.erb [2 times] (15.0ms)
+  Rendered rooms/index.html.erb within layouts/application (18.2ms)
+Completed 500 Internal Server Error in 22ms (ActiveRecord: 0.3ms)
+
+
+  
+ActionView::Template::Error (undefined method `to_key' for #<Room::ActiveRecord_Relation:0x007f95e18474b0>
+Did you mean?  to_set
+               to_ary):
+    1: <section class="review">
+    2:   <% if user_signed_in? %>
+    3:     <%= form_for @rooms do |f| %>
+    4:       <% Review::POINTS.each do |point| %>
+    5:         <%= f.radio_button :points, point %>
+    6:         <%= f.label :points, point, :value => point %>
+  
+app/views/rooms/_review.html.erb:3:in `_app_views_rooms__review_html_erb__4236138064152353276_70140855066420'
+app/views/rooms/_room.html.erb:4:in `_app_views_rooms__room_html_erb__2528789486123580504_70140855122380'
+app/views/rooms/index.html.erb:2:in `_app_views_rooms_index_html_erb___2696521641432854554_70140855201220'
+Started GET "/pt-BR/rooms" for 127.0.0.1 at 2017-07-19 23:31:21 -0300
+Processing by RoomsController#index as HTML
+  Parameters: {"locale"=>"pt-BR"}
+  Rendering rooms/index.html.erb within layouts/application
+  [1m[36mRoom Load (0.3ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms"[0m
+  Rendered rooms/_review.html.erb (7.5ms)
+  Rendered collection of rooms/_room.html.erb [2 times] (9.4ms)
+  Rendered rooms/index.html.erb within layouts/application (11.7ms)
+Completed 500 Internal Server Error in 15ms (ActiveRecord: 0.3ms)
+
+
+  
+ActionView::Template::Error (undefined method `to_key' for #<Room::ActiveRecord_Relation:0x007f95dc222df0>
+Did you mean?  to_set
+               to_ary):
+    1: <section class="review">
+    2:   <% if user_signed_in? %>
+    3:     <%= form_for @rooms do |f| %>
+    4:       <% Review::POINTS.each do |point| %>
+    5:         <%= f.radio_button :points, point %>
+    6:         <%= f.label :points, point, :value => point %>
+  
+app/views/rooms/_review.html.erb:3:in `_app_views_rooms__review_html_erb__4236138064152353276_70140809895800'
+app/views/rooms/_room.html.erb:4:in `_app_views_rooms__room_html_erb__2528789486123580504_70140809956580'
+app/views/rooms/index.html.erb:2:in `_app_views_rooms_index_html_erb___2696521641432854554_70140810038480'
+Started GET "/pt-BR/rooms" for 127.0.0.1 at 2017-07-19 23:31:53 -0300
+Processing by RoomsController#index as HTML
+  Parameters: {"locale"=>"pt-BR"}
+  Rendering rooms/index.html.erb within layouts/application
+  [1m[36mRoom Load (0.3ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms"[0m
+  Rendered rooms/_review.html.erb (8.1ms)
+  Rendered collection of rooms/_room.html.erb [2 times] (11.3ms)
+  Rendered rooms/index.html.erb within layouts/application (14.4ms)
+Completed 500 Internal Server Error in 19ms (ActiveRecord: 0.3ms)
+
+
+  
+ActionView::Template::Error (undefined method `to_key' for #<Room::ActiveRecord_Relation:0x007f95dc069720>
+Did you mean?  to_set
+               to_ary):
+    1: <section class="review">
+    2:   <% if user_signed_in? %>
+    3:     <%= form_for @rooms do |f| %>
+    4:       <% Review::POINTS.each do |point| %>
+    5:         <%= f.radio_button :points, point %>
+    6:         <%= f.label :points, point, :value => point %>
+  
+app/views/rooms/_review.html.erb:3:in `_app_views_rooms__review_html_erb__4236138064152353276_70140885123400'
+app/views/rooms/_room.html.erb:3:in `_app_views_rooms__room_html_erb__2528789486123580504_70140708284200'
+app/views/rooms/index.html.erb:2:in `_app_views_rooms_index_html_erb___2696521641432854554_70140809134740'
+Started GET "/pt-BR/rooms" for 127.0.0.1 at 2017-07-19 23:36:41 -0300
+Processing by RoomsController#index as HTML
+  Parameters: {"locale"=>"pt-BR"}
+  Rendering rooms/index.html.erb within layouts/application
+  [1m[36mRoom Load (0.3ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms"[0m
+  Rendered rooms/_review.html.erb (9.3ms)
+  Rendered collection of rooms/_room.html.erb [2 times] (11.2ms)
+  Rendered rooms/index.html.erb within layouts/application (13.7ms)
+Completed 500 Internal Server Error in 17ms (ActiveRecord: 0.3ms)
+
+
+  
+ActionView::Template::Error (undefined method `to_key' for #<Room::ActiveRecord_Relation:0x007f95e4f46088>
+Did you mean?  to_set
+               to_ary):
+    1: <section class="review">
+    2:   <% if user_signed_in? %>
+    3:     <%= form_for @rooms do |f| %>
+    4:       <% Review::POINTS.each do |point| %>
+    5:         <%= f.radio_button :points, point %>
+    6:         <%= f.label :points, point, :value => point %>
+  
+app/views/rooms/_review.html.erb:3:in `_app_views_rooms__review_html_erb__4236138064152353276_70140884698100'
+app/views/rooms/_room.html.erb:4:in `_app_views_rooms__room_html_erb__2528789486123580504_70140884159780'
+app/views/rooms/index.html.erb:2:in `_app_views_rooms_index_html_erb___2696521641432854554_70140884035300'
+Started PUT "/__web_console/repl_sessions/7f4c79cec041ff4edc5497abc85012e6" for 127.0.0.1 at 2017-07-19 23:36:43 -0300
+Started PUT "/__web_console/repl_sessions/7f4c79cec041ff4edc5497abc85012e6" for 127.0.0.1 at 2017-07-19 23:36:43 -0300
+Started PUT "/__web_console/repl_sessions/7f4c79cec041ff4edc5497abc85012e6" for 127.0.0.1 at 2017-07-19 23:37:05 -0300
+Started GET "/pt-BR/rooms" for 127.0.0.1 at 2017-07-19 23:39:49 -0300
+Processing by RoomsController#index as HTML
+  Parameters: {"locale"=>"pt-BR"}
+  Rendering rooms/index.html.erb within layouts/application
+  [1m[36mRoom Load (0.2ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms"[0m
+  Rendered rooms/_review.html.erb (72.0ms)
+  Rendered collection of rooms/_room.html.erb [2 times] (73.8ms)
+  Rendered rooms/index.html.erb within layouts/application (76.0ms)
+Completed 500 Internal Server Error in 80ms (ActiveRecord: 0.2ms)
+
+
+  
+ActionView::Template::Error (undefined method `points' for #<Room:0x007f95e14adef8>):
+    2:   <% if user_signed_in? %>
+    3:     <%= form_for room do |f| %>
+    4:       <% Review::POINTS.each do |point| %>
+    5:         <%= f.radio_button :points, point %>
+    6:         <%= f.label :points, point, :value => point %>
+    7:       <% end %>
+    8:       <%= f.submit %>
+  
+app/views/rooms/_review.html.erb:5:in `block (2 levels) in _app_views_rooms__review_html_erb__4236138064152353276_70140853238980'
+app/views/rooms/_review.html.erb:4:in `each'
+app/views/rooms/_review.html.erb:4:in `block in _app_views_rooms__review_html_erb__4236138064152353276_70140853238980'
+app/views/rooms/_review.html.erb:3:in `_app_views_rooms__review_html_erb__4236138064152353276_70140853238980'
+app/views/rooms/_room.html.erb:4:in `_app_views_rooms__room_html_erb__2528789486123580504_70140853314340'
+app/views/rooms/index.html.erb:2:in `_app_views_rooms_index_html_erb___2696521641432854554_70140853493320'
+Started PUT "/__web_console/repl_sessions/5dae6a5ff2d025dec67b37019228b0f9" for 127.0.0.1 at 2017-07-19 23:43:05 -0300
+Started PUT "/__web_console/repl_sessions/5dae6a5ff2d025dec67b37019228b0f9" for 127.0.0.1 at 2017-07-19 23:43:06 -0300
+Started PUT "/__web_console/repl_sessions/5dae6a5ff2d025dec67b37019228b0f9" for 127.0.0.1 at 2017-07-19 23:43:10 -0300
+Started PUT "/__web_console/repl_sessions/5dae6a5ff2d025dec67b37019228b0f9" for 127.0.0.1 at 2017-07-19 23:44:51 -0300
+Started PUT "/__web_console/repl_sessions/5dae6a5ff2d025dec67b37019228b0f9" for 127.0.0.1 at 2017-07-19 23:44:53 -0300
+Started PUT "/__web_console/repl_sessions/5dae6a5ff2d025dec67b37019228b0f9" for 127.0.0.1 at 2017-07-19 23:44:55 -0300
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT  "reviews".* FROM "reviews" WHERE "reviews"."room_id" = ? LIMIT ?[0m  [["room_id", 10], ["LIMIT", 11]]
+Started GET "/pt-BR/rooms" for 127.0.0.1 at 2017-07-19 23:48:48 -0300
+Processing by RoomsController#index as HTML
+  Parameters: {"locale"=>"pt-BR"}
+  Rendering rooms/index.html.erb within layouts/application
+  [1m[36mRoom Load (0.4ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms"[0m
+  Rendered rooms/_review.html.erb (218.7ms)
+  Rendered collection of rooms/_room.html.erb [2 times] (220.7ms)
+  Rendered rooms/index.html.erb within layouts/application (224.1ms)
+Completed 500 Internal Server Error in 228ms (ActiveRecord: 0.4ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `review' for #<#<Class:0x007f95fc04de10>:0x007f95e18bc5a8>):
+    1: <section class="review">
+    2:   <% if user_signed_in? %>
+    3:     <%= form_for [review.room, review] do |f| %>
+    4:       <% Review::POINTS.each do |point| %>
+    5:         <%= f.radio_button :points, point %>
+    6:         <%= f.label :points, point, :value => point %>
+  
+app/views/rooms/_review.html.erb:3:in `_app_views_rooms__review_html_erb__4236138064152353276_70140855305040'
+app/views/rooms/_room.html.erb:4:in `_app_views_rooms__room_html_erb__2528789486123580504_70140855360540'
+app/views/rooms/index.html.erb:2:in `_app_views_rooms_index_html_erb___2696521641432854554_70140855445680'
+Started PUT "/__web_console/repl_sessions/b42caa4e329a7f160a61840db3a6c0ae" for 127.0.0.1 at 2017-07-19 23:49:08 -0300
+Started PUT "/__web_console/repl_sessions/b42caa4e329a7f160a61840db3a6c0ae" for 127.0.0.1 at 2017-07-19 23:49:09 -0300
+Started GET "/pt-BR/rooms" for 127.0.0.1 at 2017-07-19 23:50:04 -0300
+Processing by RoomsController#index as HTML
+  Parameters: {"locale"=>"pt-BR"}
+  Rendering rooms/index.html.erb within layouts/application
+  [1m[36mRoom Load (0.3ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms"[0m
+  Rendered collection of rooms/_room.html.erb [2 times] (1.0ms)
+  Rendered rooms/index.html.erb within layouts/application (3.5ms)
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.3ms)
+
+
+  
+SyntaxError (/home/sullyvan/workspace-sullyvan/colcho_net/app/views/rooms/_room.html.erb:4: syntax error, unexpected =>
+artial => 'review', object: => @user_review, locals: {room: 
+                              ^):
+  
+app/views/rooms/_room.html.erb:4: syntax error, unexpected =>
+app/views/rooms/index.html.erb:2:in `_app_views_rooms_index_html_erb___2696521641432854554_47022585828380'
+Started GET "/pt-BR/rooms" for 127.0.0.1 at 2017-07-19 23:50:18 -0300
+Processing by RoomsController#index as HTML
+  Parameters: {"locale"=>"pt-BR"}
+  Rendering rooms/index.html.erb within layouts/application
+  [1m[36mRoom Load (0.2ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms"[0m
+  Rendered rooms/_review.html.erb (5.2ms)
+  Rendered collection of rooms/_room.html.erb [2 times] (9.3ms)
+  Rendered rooms/index.html.erb within layouts/application (12.2ms)
+Completed 500 Internal Server Error in 16ms (ActiveRecord: 0.2ms)
+
+
+  
+ActionView::Template::Error (undefined method `room' for nil:NilClass):
+    1: <section class="review">
+    2:   <% if user_signed_in? %>
+    3:     <%= form_for [review.room, review] do |f| %>
+    4:       <% Review::POINTS.each do |point| %>
+    5:         <%= f.radio_button :points, point %>
+    6:         <%= f.label :points, point, :value => point %>
+  
+app/views/rooms/_review.html.erb:3:in `_app_views_rooms__review_html_erb__4236138064152353276_70140855824020'
+app/views/rooms/_room.html.erb:4:in `_app_views_rooms__room_html_erb__2528789486123580504_70140855758760'
+app/views/rooms/index.html.erb:2:in `_app_views_rooms_index_html_erb___2696521641432854554_70140855581600'
+Started PUT "/__web_console/repl_sessions/9bef42ce1300aece8cc7c1ff629b2d3a" for 127.0.0.1 at 2017-07-19 23:50:22 -0300
+Started PUT "/__web_console/repl_sessions/9bef42ce1300aece8cc7c1ff629b2d3a" for 127.0.0.1 at 2017-07-19 23:50:23 -0300
+Started PUT "/__web_console/repl_sessions/9bef42ce1300aece8cc7c1ff629b2d3a" for 127.0.0.1 at 2017-07-19 23:50:34 -0300
+Started PUT "/__web_console/repl_sessions/9bef42ce1300aece8cc7c1ff629b2d3a" for 127.0.0.1 at 2017-07-19 23:50:38 -0300
+Started PUT "/__web_console/repl_sessions/9bef42ce1300aece8cc7c1ff629b2d3a" for 127.0.0.1 at 2017-07-19 23:50:42 -0300
+Started GET "/pt-BR/rooms" for 127.0.0.1 at 2017-07-19 23:51:19 -0300
+Processing by RoomsController#index as HTML
+  Parameters: {"locale"=>"pt-BR"}
+Completed 500 Internal Server Error in 25ms
+
+
+  
+NoMethodError (undefined method `reviews' for nil:NilClass):
+  
+app/controllers/rooms_controller.rb:10:in `index'
+Started GET "/pt-BR/rooms" for 127.0.0.1 at 2017-07-19 23:51:55 -0300
+Processing by RoomsController#index as HTML
+  Parameters: {"locale"=>"pt-BR"}
+  Rendering rooms/index.html.erb within layouts/application
+  [1m[36mRoom Load (0.1ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms"[0m
+  Rendered rooms/_review.html.erb (3.7ms)
+  Rendered collection of rooms/_room.html.erb [2 times] (5.7ms)
+  Rendered rooms/index.html.erb within layouts/application (19.6ms)
+Completed 500 Internal Server Error in 30ms (ActiveRecord: 1.1ms)
+
+
+  
+ActionView::Template::Error (undefined method `room' for nil:NilClass):
+    1: <section class="review">
+    2:   <% if user_signed_in? %>
+    3:     <%= form_for [review.room, review] do |f| %>
+    4:       <% Review::POINTS.each do |point| %>
+    5:         <%= f.radio_button :points, point %>
+    6:         <%= f.label :points, point, :value => point %>
+  
+app/views/rooms/_review.html.erb:3:in `_app_views_rooms__review_html_erb__4236138064152353276_70140852138320'
+app/views/rooms/_room.html.erb:4:in `_app_views_rooms__room_html_erb__2528789486123580504_70140852207560'
+app/views/rooms/index.html.erb:2:in `_app_views_rooms_index_html_erb___2696521641432854554_70140853288800'
+Started GET "/pt-BR/rooms" for 127.0.0.1 at 2017-07-19 23:52:24 -0300
+Processing by RoomsController#index as HTML
+  Parameters: {"locale"=>"pt-BR"}
+  Rendering rooms/index.html.erb within layouts/application
+  [1m[36mRoom Load (0.4ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms"[0m
+  Rendered rooms/_review.html.erb (4.5ms)
+  Rendered collection of rooms/_room.html.erb [2 times] (7.1ms)
+  Rendered rooms/index.html.erb within layouts/application (10.1ms)
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 0.4ms)
+
+
+  
+ActionView::Template::Error (undefined method `room' for nil:NilClass):
+    1: <section class="review">
+    2:   <% if user_signed_in? %>
+    3:     <%= form_for [review.room, review] do |f| %>
+    4:       <% Review::POINTS.each do |point| %>
+    5:         <%= f.radio_button :points, point %>
+    6:         <%= f.label :points, point, :value => point %>
+  
+app/views/rooms/_review.html.erb:3:in `_app_views_rooms__review_html_erb__4236138064152353276_70140850064360'
+app/views/rooms/_room.html.erb:4:in `_app_views_rooms__room_html_erb__2528789486123580504_70140850181300'
+app/views/rooms/index.html.erb:2:in `_app_views_rooms_index_html_erb___2696521641432854554_70140850334000'
+  [1m[36mRoom Load (0.2ms)[0m  [1m[34mSELECT  "rooms".* FROM "rooms" ORDER BY "rooms"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+Started GET "/pt-BR/rooms/review" for 127.0.0.1 at 2017-07-19 23:57:17 -0300
+Processing by RoomsController#show as HTML
+  Parameters: {"locale"=>"pt-BR", "id"=>"review"}
+  [1m[36mRoom Load (0.3ms)[0m  [1m[34mSELECT  "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 0], ["LIMIT", 1]]
+Completed 404 Not Found in 3ms (ActiveRecord: 0.3ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Room with 'id'=review):
+  
+app/controllers/rooms_controller.rb:75:in `set_room'
+Started GET "/pt-BR/rooms/10/review" for 127.0.0.1 at 2017-07-19 23:57:26 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/pt-BR/rooms/10/review"):
+  
+actionpack (5.1.2) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.2) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.2) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.2) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.2) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.2) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.2) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.2) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.2) lib/rails/engine.rb:522:in `call'
+puma (3.9.1) lib/puma/configuration.rb:224:in `call'
+puma (3.9.1) lib/puma/server.rb:602:in `handle_request'
+puma (3.9.1) lib/puma/server.rb:435:in `process_client'
+puma (3.9.1) lib/puma/server.rb:299:in `block in run'
+puma (3.9.1) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/pt-BR/rooms/10/reviews" for 127.0.0.1 at 2017-07-19 23:57:39 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/pt-BR/rooms/10/reviews"):
+  
+actionpack (5.1.2) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.2) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.2) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.2) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.2) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.2) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.2) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.2) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.2) lib/rails/engine.rb:522:in `call'
+puma (3.9.1) lib/puma/configuration.rb:224:in `call'
+puma (3.9.1) lib/puma/server.rb:602:in `handle_request'
+puma (3.9.1) lib/puma/server.rb:435:in `process_client'
+puma (3.9.1) lib/puma/server.rb:299:in `block in run'
+puma (3.9.1) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started PUT "/__web_console/repl_sessions/4964050c27fb15c254c9a225c18873f1" for 127.0.0.1 at 2017-07-19 23:57:59 -0300
+Started PUT "/__web_console/repl_sessions/4964050c27fb15c254c9a225c18873f1" for 127.0.0.1 at 2017-07-19 23:58:04 -0300
+  [1m[36mRoom Load (0.3ms)[0m  [1m[34mSELECT  "rooms".* FROM "rooms" ORDER BY "rooms"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mReview Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "reviews" WHERE "reviews"."user_id" = ? AND "reviews"."room_id" = ? LIMIT ?[0m  [["user_id", 3], ["room_id", 11], ["LIMIT", 1]]
+  [1m[35mSQL (16.7ms)[0m  [1m[32mINSERT INTO "reviews" ("user_id", "room_id", "points", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 3], ["room_id", 11], ["points", 5], ["created_at", "2017-07-20 03:00:23.242575"], ["updated_at", "2017-07-20 03:00:23.242575"]]
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "rooms" SET "reviews_count" = COALESCE("reviews_count", 0) + 1 WHERE "rooms"."id" = ?[0m  [["id", 11]]
+  [1m[35m (89.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mReview Load (0.4ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."room_id" = ?[0m  [["room_id", 11]]
+  [1m[35mSQL (1.8ms)[0m  [1m[31mDELETE FROM "reviews" WHERE "reviews"."id" = ?[0m  [["id", 2]]
+  [1m[35mSQL (0.2ms)[0m  [1m[31mDELETE FROM "reviews" WHERE "reviews"."id" = ?[0m  [["id", 3]]
+  [1m[35mSQL (0.4ms)[0m  [1m[31mDELETE FROM "rooms" WHERE "rooms"."id" = ?[0m  [["id", 11]]
+  [1m[35m (75.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mReview Load (0.4ms)[0m  [1m[34mSELECT  "reviews".* FROM "reviews" ORDER BY "reviews"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mRoom Load (0.4ms)[0m  [1m[34mSELECT  "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."room_id" = ?[0m  [["room_id", 10]]
+  [1m[35mSQL (1.8ms)[0m  [1m[31mDELETE FROM "reviews" WHERE "reviews"."id" = ?[0m  [["id", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[31mDELETE FROM "rooms" WHERE "rooms"."id" = ?[0m  [["id", 10]]
+  [1m[35m (76.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mReview Load (0.4ms)[0m  [1m[34mSELECT  "reviews".* FROM "reviews" LIMIT ?[0m  [["LIMIT", 11]]
+Started GET "/pt-BR/rooms/10/reviews/new" for 127.0.0.1 at 2017-07-20 00:03:46 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/pt-BR/rooms/10/reviews/new"):
+  
+actionpack (5.1.2) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.2) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.2) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.2) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.2) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.2) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.2) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.2) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.2) lib/rails/engine.rb:522:in `call'
+puma (3.9.1) lib/puma/configuration.rb:224:in `call'
+puma (3.9.1) lib/puma/server.rb:602:in `handle_request'
+puma (3.9.1) lib/puma/server.rb:435:in `process_client'
+puma (3.9.1) lib/puma/server.rb:299:in `block in run'
+puma (3.9.1) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/pt-BR/rooms" for 127.0.0.1 at 2017-07-20 00:17:49 -0300
+Processing by RoomsController#index as HTML
+  Parameters: {"locale"=>"pt-BR"}
+Completed 500 Internal Server Error in 21ms
+
+
+  
+NoMethodError (undefined method `most_recent' for Room (call 'Room.connection' to establish a connection):Class):
+  
+app/controllers/rooms_controller.rb:9:in `index'
+Started GET "/pt-BR/rooms" for 127.0.0.1 at 2017-07-20 00:23:36 -0300
+Processing by RoomsController#index as HTML
+  Parameters: {"locale"=>"pt-BR"}
+Completed 500 Internal Server Error in 19ms
+
+
+  
+NoMethodError (undefined method `most_recent' for Room (call 'Room.connection' to establish a connection):Class):
+  
+app/controllers/rooms_controller.rb:9:in `index'
+Started GET "/pt-BR/rooms" for 127.0.0.1 at 2017-07-20 00:23:37 -0300
+Processing by RoomsController#index as HTML
+  Parameters: {"locale"=>"pt-BR"}
+Completed 500 Internal Server Error in 16ms
+
+
+  
+NoMethodError (undefined method `most_recent' for Room (call 'Room.connection' to establish a connection):Class):
+  
+app/controllers/rooms_controller.rb:9:in `index'
+Started GET "/pt-BR/rooms" for 127.0.0.1 at 2017-07-20 00:23:38 -0300
+Processing by RoomsController#index as HTML
+  Parameters: {"locale"=>"pt-BR"}
+Completed 500 Internal Server Error in 15ms
+
+
+  
+NoMethodError (undefined method `most_recent' for Room (call 'Room.connection' to establish a connection):Class):
+  
+app/controllers/rooms_controller.rb:9:in `index'
+Started GET "/pt-BR/rooms" for 127.0.0.1 at 2017-07-20 00:23:38 -0300
+Processing by RoomsController#index as HTML
+  Parameters: {"locale"=>"pt-BR"}
+Completed 500 Internal Server Error in 15ms
+
+
+  
+NoMethodError (undefined method `most_recent' for Room (call 'Room.connection' to establish a connection):Class):
+  
+app/controllers/rooms_controller.rb:9:in `index'
+Started GET "/pt-BR/rooms" for 127.0.0.1 at 2017-07-20 00:23:39 -0300
+Processing by RoomsController#index as HTML
+  Parameters: {"locale"=>"pt-BR"}
+Completed 500 Internal Server Error in 16ms
+
+
+  
+NoMethodError (undefined method `most_recent' for Room (call 'Room.connection' to establish a connection):Class):
+  
+app/controllers/rooms_controller.rb:9:in `index'
+Started GET "/pt-BR/rooms" for 127.0.0.1 at 2017-07-20 00:23:39 -0300
+Processing by RoomsController#index as HTML
+  Parameters: {"locale"=>"pt-BR"}
+Completed 500 Internal Server Error in 16ms
+
+
+  
+NoMethodError (undefined method `most_recent' for Room (call 'Room.connection' to establish a connection):Class):
+  
+app/controllers/rooms_controller.rb:9:in `index'
+Started GET "/pt-BR/rooms" for 127.0.0.1 at 2017-07-20 00:23:40 -0300
+Processing by RoomsController#index as HTML
+  Parameters: {"locale"=>"pt-BR"}
+Completed 500 Internal Server Error in 15ms
+
+
+  
+NoMethodError (undefined method `most_recent' for Room (call 'Room.connection' to establish a connection):Class):
+  
+app/controllers/rooms_controller.rb:9:in `index'
+Started GET "/pt-BR/rooms" for 127.0.0.1 at 2017-07-20 00:23:47 -0300
+Processing by RoomsController#index as HTML
+  Parameters: {"locale"=>"pt-BR"}
+Completed 500 Internal Server Error in 17ms
+
+
+  
+NoMethodError (undefined method `most_recent' for Room (call 'Room.connection' to establish a connection):Class):
+  
+app/controllers/rooms_controller.rb:9:in `index'
+Started GET "/pt-BR/rooms" for 127.0.0.1 at 2017-07-20 00:24:15 -0300
+Processing by RoomsController#index as HTML
+  Parameters: {"locale"=>"pt-BR"}
+Completed 500 Internal Server Error in 19ms
+
+
+  
+NoMethodError (undefined method `most_recent' for Room (call 'Room.connection' to establish a connection):Class):
+  
+app/controllers/rooms_controller.rb:12:in `index'
+Started GET "/pt-BR/rooms" for 127.0.0.1 at 2017-07-20 00:24:44 -0300
+Processing by RoomsController#index as HTML
+  Parameters: {"locale"=>"pt-BR"}
+Completed 500 Internal Server Error in 21ms
+
+
+  
+NoMethodError (undefined method `most_recent' for Room (call 'Room.connection' to establish a connection):Class):
+  
+app/controllers/rooms_controller.rb:12:in `index'
+Started GET "/pt-BR/rooms" for 127.0.0.1 at 2017-07-20 00:24:50 -0300
+Processing by RoomsController#index as HTML
+  Parameters: {"locale"=>"pt-BR"}
+Completed 500 Internal Server Error in 17ms
+
+
+  
+NoMethodError (undefined method `most_recent' for Room (call 'Room.connection' to establish a connection):Class):
+  
+app/controllers/rooms_controller.rb:9:in `index'
+Started GET "/pt-BR/rooms" for 127.0.0.1 at 2017-07-20 00:27:29 -0300
+Processing by RoomsController#index as HTML
+  Parameters: {"locale"=>"pt-BR"}
+  [1m[36mRoom Load (0.1ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" IN (NULL, NULL)[0m
+Completed 404 Not Found in 8ms (ActiveRecord: 1.1ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find all Rooms with 'id': (all, {:limit=>3}) (found 0 results, but was looking for 2)):
+  
+app/models/room.rb:7:in `block in <class:Room>'
+app/controllers/rooms_controller.rb:9:in `index'
+Started GET "/pt-BR/rooms" for 127.0.0.1 at 2017-07-20 00:28:07 -0300
+Processing by RoomsController#index as HTML
+  Parameters: {"locale"=>"pt-BR"}
+  [1m[36mRoom Load (0.2ms)[0m  [1m[34mSELECT  "rooms".* FROM "rooms" LIMIT ?[0m  [["LIMIT", 3]]
+  Rendering rooms/index.html.erb within layouts/application
+  Rendered collection of templates [0 times] (0.0ms)
+  Rendered rooms/index.html.erb within layouts/application (0.7ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  Rendered layouts/_user_navbar.html.erb (25.7ms)
+Completed 200 OK in 203ms (Views: 185.5ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/pt-BR/rooms/new" for 127.0.0.1 at 2017-07-20 00:28:29 -0300
+Processing by RoomsController#new as HTML
+  Parameters: {"locale"=>"pt-BR"}
+  Rendering rooms/new.html.erb within layouts/application
+  Rendered rooms/_form.html.erb (5.0ms)
+  Rendered rooms/new.html.erb within layouts/application (44.4ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  Rendered layouts/_user_navbar.html.erb (1.8ms)
+Completed 200 OK in 109ms (Views: 73.5ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/pt-BR/rooms" for 127.0.0.1 at 2017-07-20 00:28:56 -0300
+Processing by RoomsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"m8f8n2+VPN/j37VdxpHhiIv4CyvUjXDOhM2xBQcA70gF5mCOvoNCaCIwZK7cg4ykNNhT8zc+DuJeKNc9hW3q4g==", "room"=>{"title"=>"Quarto em são joão de Meriti", "location"=>"São joão de Meriti", "description"=>"Belíssimo Qaurto na beira da praia"}, "commit"=>"Criar Quarto", "locale"=>"pt-BR"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (2.8ms)[0m  [1m[32mINSERT INTO "rooms" ("title", "location", "description", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "Quarto em são joão de Meriti"], ["location", "São joão de Meriti"], ["description", "Belíssimo Qaurto na beira da praia"], ["created_at", "2017-07-20 03:28:56.813288"], ["updated_at", "2017-07-20 03:28:56.813288"], ["user_id", 11]]
+  [1m[35m (184.5ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/pt-BR/rooms/12
+Completed 302 Found in 198ms (ActiveRecord: 187.6ms)
+
+
+Started GET "/pt-BR/rooms/12" for 127.0.0.1 at 2017-07-20 00:28:57 -0300
+Processing by RoomsController#show as HTML
+  Parameters: {"locale"=>"pt-BR", "id"=>"12"}
+  [1m[36mRoom Load (0.2ms)[0m  [1m[34mSELECT  "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mCACHE Room Load (0.0ms)[0m  [1m[34mSELECT  "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.3ms)
+
+
+  
+NameError (uninitialized constant RoomsController::RoomPresenter):
+  
+app/controllers/rooms_controller.rb:18:in `show'
+Started PUT "/__web_console/repl_sessions/7e7f927f8d363b38f8a0bf8d1a7c8526" for 127.0.0.1 at 2017-07-20 00:29:43 -0300
+Started PUT "/__web_console/repl_sessions/7e7f927f8d363b38f8a0bf8d1a7c8526" for 127.0.0.1 at 2017-07-20 00:29:43 -0300
+Started PUT "/__web_console/repl_sessions/7e7f927f8d363b38f8a0bf8d1a7c8526" for 127.0.0.1 at 2017-07-20 00:29:45 -0300
+Started PUT "/__web_console/repl_sessions/7e7f927f8d363b38f8a0bf8d1a7c8526" for 127.0.0.1 at 2017-07-20 00:29:55 -0300
