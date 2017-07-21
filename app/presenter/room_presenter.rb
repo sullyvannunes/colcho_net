@@ -30,4 +30,16 @@ class RoomPresenter
   def to_partial_path
     'room'
   end
+
+  def review_points
+    Review::POINTS
+  end
+
+  def stars
+    @room.reviews.stars
+  end
+  
+  def total_reviews
+    @room.reviews.size
+  end
 end

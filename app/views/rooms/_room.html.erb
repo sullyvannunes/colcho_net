@@ -1,10 +1,14 @@
 <article class="room">
-  <h2><%= link_to room.title, room.route %> </h2>
-  <%= render :partial => 'review', :locals => {:room => room} %>
+  <table class='tablefull'>
+    <tbody>
+      <th> <h2><%= link_to room.title, room.route %> </h2> </th>
+      <th class='direita'> <%= render :partial => 'review', :locals => {:room => room} %> </th>
+    </tbody>
+  </table>
 
-    <span class="created">
+  <span class="created">
 
-    <% if belongs_to_user(room) %>
+  <% if belongs_to_user(room) %>
     <ul>
       <li><%= link_to t('.edit'), edit_room_path(room.route) %> </li>
       <li><%= link_to t('.destroy'), room_path(room.route), :method => :delete, :data => {:confirm => t('dialogs.destroy')} %></li>

@@ -24876,3 +24876,711 @@ Processing by HomeController#index as HTML
 Completed 200 OK in 611ms (Views: 580.4ms | ActiveRecord: 0.9ms)
 
 
+Started GET "/pt-BR/rooms" for 127.0.0.1 at 2017-07-21 10:10:26 -0300
+Processing by RoomsController#index as HTML
+  Parameters: {"locale"=>"pt-BR"}
+  [1m[36mRoom Load (0.3ms)[0m  [1m[34mSELECT  "rooms".* FROM "rooms" LIMIT ?[0m  [["LIMIT", 3]]
+  Rendering rooms/index.html.erb within layouts/application
+  Rendered rooms/_review.html.erb (0.5ms)
+  Rendered collection of rooms/_room.html.erb [1 times] (56.2ms)
+  Rendered rooms/index.html.erb within layouts/application (66.6ms)
+  Rendered layouts/_visitor_navbar.html.erb (1.0ms)
+Completed 200 OK in 178ms (Views: 133.1ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/pt-BR/rooms/12" for 127.0.0.1 at 2017-07-21 10:10:28 -0300
+Processing by RoomsController#show as HTML
+  Parameters: {"locale"=>"pt-BR", "id"=>"12"}
+  [1m[36mRoom Load (0.3ms)[0m  [1m[34mSELECT  "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mCACHE Room Load (0.0ms)[0m  [1m[34mSELECT  "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  Rendering rooms/show.html.erb within layouts/application
+  Rendered rooms/show.html.erb within layouts/application (1.0ms)
+  Rendered layouts/_visitor_navbar.html.erb (0.9ms)
+Completed 200 OK in 319ms (Views: 21.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/pt-BR/rooms/12revewsa" for 127.0.0.1 at 2017-07-21 10:10:33 -0300
+Processing by RoomsController#show as HTML
+  Parameters: {"locale"=>"pt-BR", "id"=>"12revewsa"}
+  [1m[36mRoom Load (0.3ms)[0m  [1m[34mSELECT  "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mCACHE Room Load (0.0ms)[0m  [1m[34mSELECT  "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  Rendering rooms/show.html.erb within layouts/application
+  Rendered rooms/show.html.erb within layouts/application (1.1ms)
+  Rendered layouts/_visitor_navbar.html.erb (1.1ms)
+Completed 200 OK in 33ms (Views: 30.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/pt-BR/rooms/12revewsa" for 127.0.0.1 at 2017-07-21 10:10:37 -0300
+Processing by RoomsController#show as HTML
+  Parameters: {"locale"=>"pt-BR", "id"=>"12revewsa"}
+  [1m[36mRoom Load (0.1ms)[0m  [1m[34mSELECT  "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mCACHE Room Load (0.0ms)[0m  [1m[34mSELECT  "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  Rendering rooms/show.html.erb within layouts/application
+  Rendered rooms/show.html.erb within layouts/application (1.0ms)
+  Rendered layouts/_visitor_navbar.html.erb (1.5ms)
+Completed 200 OK in 57ms (Views: 55.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/pt-BR/rooms/12revews" for 127.0.0.1 at 2017-07-21 10:10:42 -0300
+Processing by RoomsController#show as HTML
+  Parameters: {"locale"=>"pt-BR", "id"=>"12revews"}
+  [1m[36mRoom Load (0.2ms)[0m  [1m[34mSELECT  "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mCACHE Room Load (0.0ms)[0m  [1m[34mSELECT  "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  Rendering rooms/show.html.erb within layouts/application
+  Rendered rooms/show.html.erb within layouts/application (1.6ms)
+  Rendered layouts/_visitor_navbar.html.erb (1.8ms)
+Completed 200 OK in 57ms (Views: 53.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/pt-BR/rooms/12/revews" for 127.0.0.1 at 2017-07-21 10:10:46 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/pt-BR/rooms/12/revews"):
+  
+actionpack (5.1.2) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.2) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.2) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.2) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.2) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.2) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.2) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.2) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.2) lib/rails/engine.rb:522:in `call'
+puma (3.9.1) lib/puma/configuration.rb:224:in `call'
+puma (3.9.1) lib/puma/server.rb:602:in `handle_request'
+puma (3.9.1) lib/puma/server.rb:435:in `process_client'
+puma (3.9.1) lib/puma/server.rb:299:in `block in run'
+puma (3.9.1) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/pt-BR/rooms/12/reviews" for 127.0.0.1 at 2017-07-21 10:10:56 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/pt-BR/rooms/12/reviews"):
+  
+actionpack (5.1.2) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.2) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.2) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.2) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.2) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.2) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.2) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.2) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.2) lib/rails/engine.rb:522:in `call'
+puma (3.9.1) lib/puma/configuration.rb:224:in `call'
+puma (3.9.1) lib/puma/server.rb:602:in `handle_request'
+puma (3.9.1) lib/puma/server.rb:435:in `process_client'
+puma (3.9.1) lib/puma/server.rb:299:in `block in run'
+puma (3.9.1) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/" for 127.0.0.1 at 2017-07-21 10:41:16 -0300
+Processing by HomeController#index as HTML
+  [1m[36mRoom Load (0.3ms)[0m  [1m[34mSELECT  "rooms".* FROM "rooms" ORDER BY "rooms"."id" ASC LIMIT ?[0m  [["LIMIT", 3]]
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (0.9ms)
+  Rendered layouts/_visitor_navbar.html.erb (0.9ms)
+Completed 200 OK in 231ms (Views: 212.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/pt-BR/rooms" for 127.0.0.1 at 2017-07-21 10:41:19 -0300
+Processing by RoomsController#index as HTML
+  Parameters: {"locale"=>"pt-BR"}
+  [1m[36mRoom Load (0.2ms)[0m  [1m[34mSELECT  "rooms".* FROM "rooms" LIMIT ?[0m  [["LIMIT", 3]]
+  Rendering rooms/index.html.erb within layouts/application
+  Rendered rooms/_review.html.erb (0.5ms)
+  Rendered collection of rooms/_room.html.erb [1 times] (10.9ms)
+  Rendered rooms/index.html.erb within layouts/application (45.0ms)
+  Rendered layouts/_visitor_navbar.html.erb (0.8ms)
+Completed 200 OK in 138ms (Views: 65.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/pt-BR/user_sessions/new" for 127.0.0.1 at 2017-07-21 10:41:21 -0300
+Processing by UserSessionsController#new as HTML
+  Parameters: {"locale"=>"pt-BR"}
+  Rendering user_sessions/new.html.erb within layouts/application
+  Rendered user_sessions/new.html.erb within layouts/application (166.9ms)
+  Rendered layouts/_visitor_navbar.html.erb (0.9ms)
+Completed 200 OK in 413ms (Views: 358.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/pt-BR/user_sessions" for 127.0.0.1 at 2017-07-21 10:41:24 -0300
+Processing by UserSessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"AKY7szK0YXFVZv5S6Wm7m3s+KcOCAxqUh3tpWOL/2JkpbhS8ZqRTOy1o4GPFx+iWQ5v3E4xKwYxh/ylQdATGgA==", "user_session"=>{"email"=>"slv@com.br", "password"=>"[FILTERED]"}, "commit"=>"Entrar", "locale"=>"pt-BR"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE (confirmed_at IS NOT NULL) AND "users"."email" = ? LIMIT ?[0m  [["email", "slv@com.br"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/?locale=pt-BR
+Completed 302 Found in 161ms (ActiveRecord: 1.0ms)
+
+
+Started GET "/?locale=pt-BR" for 127.0.0.1 at 2017-07-21 10:41:24 -0300
+Processing by HomeController#index as HTML
+  Parameters: {"locale"=>"pt-BR"}
+  [1m[36mRoom Load (0.2ms)[0m  [1m[34mSELECT  "rooms".* FROM "rooms" ORDER BY "rooms"."id" ASC LIMIT ?[0m  [["LIMIT", 3]]
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (1.0ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  Rendered layouts/_user_navbar.html.erb (2.4ms)
+Completed 200 OK in 30ms (Views: 27.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/pt-BR/rooms" for 127.0.0.1 at 2017-07-21 10:41:26 -0300
+Processing by RoomsController#index as HTML
+  Parameters: {"locale"=>"pt-BR"}
+  [1m[36mRoom Load (0.3ms)[0m  [1m[34mSELECT  "rooms".* FROM "rooms" LIMIT ?[0m  [["LIMIT", 3]]
+  Rendering rooms/index.html.erb within layouts/application
+  Rendered rooms/_review.html.erb (0.6ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  Rendered collection of rooms/_room.html.erb [1 times] (16.5ms)
+  Rendered rooms/index.html.erb within layouts/application (18.0ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  Rendered layouts/_user_navbar.html.erb (1.9ms)
+Completed 200 OK in 48ms (Views: 45.0ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/pt-BR/rooms/12" for 127.0.0.1 at 2017-07-21 10:41:48 -0300
+Processing by RoomsController#show as HTML
+  Parameters: {"locale"=>"pt-BR", "id"=>"12"}
+  [1m[36mRoom Load (0.2ms)[0m  [1m[34mSELECT  "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mCACHE Room Load (0.0ms)[0m  [1m[34mSELECT  "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  Rendering rooms/show.html.erb within layouts/application
+  Rendered rooms/show.html.erb within layouts/application (0.9ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  Rendered layouts/_user_navbar.html.erb (2.0ms)
+Completed 200 OK in 44ms (Views: 23.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/pt-BR/rooms" for 127.0.0.1 at 2017-07-21 11:01:35 -0300
+Processing by RoomsController#index as HTML
+  Parameters: {"locale"=>"pt-BR"}
+  [1m[36mRoom Load (0.1ms)[0m  [1m[34mSELECT  "rooms".* FROM "rooms" LIMIT ?[0m  [["LIMIT", 3]]
+  Rendering rooms/index.html.erb within layouts/application
+  Rendered rooms/_review.html.erb (0.3ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  Rendered collection of rooms/_room.html.erb [1 times] (29.0ms)
+  Rendered rooms/index.html.erb within layouts/application (30.0ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  Rendered layouts/_user_navbar.html.erb (1.8ms)
+Completed 200 OK in 73ms (Views: 52.6ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/pt-BR/rooms" for 127.0.0.1 at 2017-07-21 11:01:36 -0300
+Processing by RoomsController#index as HTML
+  Parameters: {"locale"=>"pt-BR"}
+  [1m[36mRoom Load (0.2ms)[0m  [1m[34mSELECT  "rooms".* FROM "rooms" LIMIT ?[0m  [["LIMIT", 3]]
+  Rendering rooms/index.html.erb within layouts/application
+  Rendered rooms/_review.html.erb (0.5ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  Rendered collection of rooms/_room.html.erb [1 times] (5.3ms)
+  Rendered rooms/index.html.erb within layouts/application (6.6ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  Rendered layouts/_user_navbar.html.erb (1.5ms)
+Completed 200 OK in 36ms (Views: 33.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/pt-BR/rooms" for 127.0.0.1 at 2017-07-21 11:01:37 -0300
+Processing by RoomsController#index as HTML
+  Parameters: {"locale"=>"pt-BR"}
+  [1m[36mRoom Load (0.3ms)[0m  [1m[34mSELECT  "rooms".* FROM "rooms" LIMIT ?[0m  [["LIMIT", 3]]
+  Rendering rooms/index.html.erb within layouts/application
+  Rendered rooms/_review.html.erb (0.4ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  Rendered collection of rooms/_room.html.erb [1 times] (4.5ms)
+  Rendered rooms/index.html.erb within layouts/application (5.9ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  Rendered layouts/_user_navbar.html.erb (1.7ms)
+Completed 200 OK in 46ms (Views: 43.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/pt-BR/users/11" for 127.0.0.1 at 2017-07-21 11:01:38 -0300
+Processing by UsersController#show as HTML
+  Parameters: {"locale"=>"pt-BR", "id"=>"11"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (1.7ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  Rendered layouts/_user_navbar.html.erb (2.0ms)
+Completed 200 OK in 37ms (Views: 25.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/pt-BR/rooms/12" for 127.0.0.1 at 2017-07-21 11:01:51 -0300
+Processing by RoomsController#show as HTML
+  Parameters: {"locale"=>"pt-BR", "id"=>"12"}
+  [1m[36mRoom Load (0.3ms)[0m  [1m[34mSELECT  "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mCACHE Room Load (0.0ms)[0m  [1m[34mSELECT  "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  Rendering rooms/show.html.erb within layouts/application
+  Rendered rooms/show.html.erb within layouts/application (1.0ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  Rendered layouts/_user_navbar.html.erb (2.2ms)
+Completed 200 OK in 38ms (Views: 35.2ms | ActiveRecord: 0.4ms)
+
+
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (5009.9ms)[0m  [1m[32mINSERT INTO "rooms" ("title", "location", "description", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "quarto aqui"], ["location", "aqui_mesmo"], ["description", "descrição de quarto bonito"], ["created_at", "2017-07-21 14:07:20.632568"], ["updated_at", "2017-07-21 14:07:20.632568"], ["user_id", 2]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (5009.2ms)[0m  [1m[32mINSERT INTO "rooms" ("title", "location", "description", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "quarto aqui"], ["location", "aqui_mesmo"], ["description", "descrição de quarto bonito"], ["created_at", "2017-07-21 14:07:20.632568"], ["updated_at", "2017-07-21 14:07:20.632568"], ["user_id", 2]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mRoom Load (0.4ms)[0m  [1m[34mSELECT  "rooms".* FROM "rooms" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (5009.7ms)[0m  [1m[32mINSERT INTO "rooms" ("title", "location", "description", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "quarto aqui"], ["location", "aqui_mesmo"], ["description", "descrição de quarto bonito"], ["created_at", "2017-07-21 14:07:20.632568"], ["updated_at", "2017-07-21 14:07:20.632568"], ["user_id", 2]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mRoom Load (1.2ms)[0m  [1m[34mSELECT  "rooms".* FROM "rooms" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mRoom Load (0.2ms)[0m  [1m[34mSELECT  "rooms".* FROM "rooms" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mRoom Load (0.2ms)[0m  [1m[34mSELECT  "rooms".* FROM "rooms" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mRoom Load (0.2ms)[0m  [1m[34mSELECT  "rooms".* FROM "rooms" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mRoom Load (0.2ms)[0m  [1m[34mSELECT  "rooms".* FROM "rooms" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mRoom Load (0.2ms)[0m  [1m[34mSELECT  "rooms".* FROM "rooms" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (5009.9ms)[0m  [1m[32mINSERT INTO "rooms" ("title", "location", "description", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "Quarto em caxias"], ["location", "Duque de Caxias"], ["description", "Quarto no Centro de Caxias proximo ao calçadão"], ["created_at", "2017-07-21 14:12:47.080516"], ["updated_at", "2017-07-21 14:12:47.080516"], ["user_id", 2]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (5009.3ms)[0m  [1m[32mINSERT INTO "rooms" ("title", "location", "description", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "Quarto em caxias"], ["location", "Duque de Caxias"], ["description", "Quarto no Centro de Caxias proximo ao calçadão"], ["created_at", "2017-07-21 14:14:58.978497"], ["updated_at", "2017-07-21 14:14:58.978497"], ["user_id", 10]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (5009.5ms)[0m  [1m[32mINSERT INTO "rooms" ("title", "location", "description", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "Quarto em caxias"], ["location", "Duque de Caxias"], ["description", "Quarto no Centro de Caxias proximo ao calçadão"], ["created_at", "2017-07-21 14:14:58.978497"], ["updated_at", "2017-07-21 14:14:58.978497"], ["user_id", 11]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN TRANSACTION; END;[0m
+  [1m[35m (0.7ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.6ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.6ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.7ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.6ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN TRANSACTION; END;[0m
+  [1m[35m (0.6ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT AVG("reviews"."points") FROM "reviews"[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT AVG("reviews"."points") FROM "reviews"[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews"[0m
+Started GET "/pt-BR/rooms" for 127.0.0.1 at 2017-07-21 11:57:59 -0300
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by RoomsController#index as HTML
+  Parameters: {"locale"=>"pt-BR"}
+  [1m[36mRoom Load (0.3ms)[0m  [1m[34mSELECT  "rooms".* FROM "rooms" LIMIT ?[0m  [["LIMIT", 3]]
+  Rendering rooms/index.html.erb within layouts/application
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT AVG("reviews"."points") FROM "reviews" WHERE "reviews"."room_id" = ?[0m  [["room_id", 12]]
+  Rendered rooms/_review.html.erb (36.6ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  Rendered collection of rooms/_room.html.erb [1 times] (65.3ms)
+  Rendered rooms/index.html.erb within layouts/application (122.6ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  Rendered layouts/_user_navbar.html.erb (2.2ms)
+Completed 200 OK in 811ms (Views: 743.5ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/pt-BR/rooms" for 127.0.0.1 at 2017-07-21 11:58:04 -0300
+Processing by RoomsController#index as HTML
+  Parameters: {"locale"=>"pt-BR"}
+  [1m[36mRoom Load (0.3ms)[0m  [1m[34mSELECT  "rooms".* FROM "rooms" LIMIT ?[0m  [["LIMIT", 3]]
+  Rendering rooms/index.html.erb within layouts/application
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT AVG("reviews"."points") FROM "reviews" WHERE "reviews"."room_id" = ?[0m  [["room_id", 12]]
+  Rendered rooms/_review.html.erb (3.8ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  Rendered collection of rooms/_room.html.erb [1 times] (9.2ms)
+  Rendered rooms/index.html.erb within layouts/application (10.9ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  Rendered layouts/_user_navbar.html.erb (1.7ms)
+Completed 200 OK in 38ms (Views: 34.2ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/pt-BR/rooms" for 127.0.0.1 at 2017-07-21 11:58:05 -0300
+Processing by RoomsController#index as HTML
+  Parameters: {"locale"=>"pt-BR"}
+  [1m[36mRoom Load (0.3ms)[0m  [1m[34mSELECT  "rooms".* FROM "rooms" LIMIT ?[0m  [["LIMIT", 3]]
+  Rendering rooms/index.html.erb within layouts/application
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT AVG("reviews"."points") FROM "reviews" WHERE "reviews"."room_id" = ?[0m  [["room_id", 12]]
+  Rendered rooms/_review.html.erb (2.9ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  Rendered collection of rooms/_room.html.erb [1 times] (7.6ms)
+  Rendered rooms/index.html.erb within layouts/application (8.9ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  Rendered layouts/_user_navbar.html.erb (3.7ms)
+Completed 200 OK in 44ms (Views: 41.0ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/pt-BR/rooms" for 127.0.0.1 at 2017-07-21 11:58:06 -0300
+Processing by RoomsController#index as HTML
+  Parameters: {"locale"=>"pt-BR"}
+  [1m[36mRoom Load (0.2ms)[0m  [1m[34mSELECT  "rooms".* FROM "rooms" LIMIT ?[0m  [["LIMIT", 3]]
+  Rendering rooms/index.html.erb within layouts/application
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT AVG("reviews"."points") FROM "reviews" WHERE "reviews"."room_id" = ?[0m  [["room_id", 12]]
+  Rendered rooms/_review.html.erb (2.7ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  Rendered collection of rooms/_room.html.erb [1 times] (6.7ms)
+  Rendered rooms/index.html.erb within layouts/application (7.9ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  Rendered layouts/_user_navbar.html.erb (1.8ms)
+Completed 200 OK in 41ms (Views: 38.0ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/pt-BR/rooms/12" for 127.0.0.1 at 2017-07-21 11:58:14 -0300
+Processing by RoomsController#show as HTML
+  Parameters: {"locale"=>"pt-BR", "id"=>"12"}
+  [1m[36mRoom Load (0.2ms)[0m  [1m[34mSELECT  "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mCACHE Room Load (0.0ms)[0m  [1m[34mSELECT  "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  Rendering rooms/show.html.erb within layouts/application
+  Rendered rooms/show.html.erb within layouts/application (1.5ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  Rendered layouts/_user_navbar.html.erb (1.9ms)
+Completed 200 OK in 58ms (Views: 34.8ms | ActiveRecord: 0.4ms)
+
+
+  [1m[36mRoom Load (1.2ms)[0m  [1m[34mSELECT  "rooms".* FROM "rooms" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mRoom Load (0.5ms)[0m  [1m[34mSELECT  "rooms".* FROM "rooms" ORDER BY "rooms"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+Started GET "/pt-BR/users/11" for 127.0.0.1 at 2017-07-21 12:00:06 -0300
+Processing by UsersController#show as HTML
+  Parameters: {"locale"=>"pt-BR", "id"=>"11"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (2.1ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  Rendered layouts/_user_navbar.html.erb (1.9ms)
+Completed 200 OK in 43ms (Views: 31.9ms | ActiveRecord: 0.4ms)
+
+
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mReview Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "reviews" WHERE "reviews"."user_id" = ? AND "reviews"."room_id" = ? LIMIT ?[0m  [["user_id", 11], ["room_id", 12], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "reviews" ("user_id", "room_id", "points", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 11], ["room_id", 12], ["points", 5], ["created_at", "2017-07-21 15:00:40.525993"], ["updated_at", "2017-07-21 15:00:40.525993"]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mReview Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "reviews" WHERE "reviews"."user_id" = ? AND "reviews"."room_id" = ? LIMIT ?[0m  [["user_id", 11], ["room_id", 12], ["LIMIT", 1]]
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "reviews" ("user_id", "room_id", "points", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 11], ["room_id", 12], ["points", 5], ["created_at", "2017-07-21 15:00:40.525993"], ["updated_at", "2017-07-21 15:00:40.525993"]]
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "rooms" SET "reviews_count" = COALESCE("reviews_count", 0) + 1 WHERE "rooms"."id" = ?[0m  [["id", 12]]
+  [1m[35m (102.9ms)[0m  [1m[36mcommit transaction[0m
+Started GET "/pt-BR/users/11" for 127.0.0.1 at 2017-07-21 12:01:06 -0300
+Processing by UsersController#show as HTML
+  Parameters: {"locale"=>"pt-BR", "id"=>"11"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (1.4ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  Rendered layouts/_user_navbar.html.erb (2.1ms)
+Completed 200 OK in 30ms (Views: 27.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/pt-BR/rooms" for 127.0.0.1 at 2017-07-21 12:01:08 -0300
+Processing by RoomsController#index as HTML
+  Parameters: {"locale"=>"pt-BR"}
+  [1m[36mRoom Load (0.3ms)[0m  [1m[34mSELECT  "rooms".* FROM "rooms" LIMIT ?[0m  [["LIMIT", 3]]
+  Rendering rooms/index.html.erb within layouts/application
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT AVG("reviews"."points") FROM "reviews" WHERE "reviews"."room_id" = ?[0m  [["room_id", 12]]
+  Rendered rooms/_review.html.erb (3.5ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  Rendered collection of rooms/_room.html.erb [1 times] (9.7ms)
+  Rendered rooms/index.html.erb within layouts/application (11.2ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  Rendered layouts/_user_navbar.html.erb (1.8ms)
+Completed 200 OK in 44ms (Views: 39.9ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/pt-BR/rooms" for 127.0.0.1 at 2017-07-21 12:06:05 -0300
+Processing by RoomsController#index as HTML
+  Parameters: {"locale"=>"pt-BR"}
+  [1m[36mRoom Load (0.2ms)[0m  [1m[34mSELECT  "rooms".* FROM "rooms" LIMIT ?[0m  [["LIMIT", 3]]
+  Rendering rooms/index.html.erb within layouts/application
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT AVG("reviews"."points") FROM "reviews" WHERE "reviews"."room_id" = ?[0m  [["room_id", 12]]
+  Rendered rooms/_review.html.erb (2.3ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  Rendered collection of rooms/_room.html.erb [1 times] (7.1ms)
+  Rendered rooms/index.html.erb within layouts/application (8.2ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  Rendered layouts/_user_navbar.html.erb (2.7ms)
+Completed 200 OK in 49ms (Views: 46.0ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/pt-BR/rooms" for 127.0.0.1 at 2017-07-21 13:36:04 -0300
+Processing by RoomsController#index as HTML
+  Parameters: {"locale"=>"pt-BR"}
+  [1m[36mRoom Load (0.3ms)[0m  [1m[34mSELECT  "rooms".* FROM "rooms" LIMIT ?[0m  [["LIMIT", 3]]
+  Rendering rooms/index.html.erb within layouts/application
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT AVG("reviews"."points") FROM "reviews" WHERE "reviews"."room_id" = ?[0m  [["room_id", 12]]
+  Rendered rooms/_review.html.erb (3.5ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  Rendered collection of rooms/_room.html.erb [1 times] (10.8ms)
+  Rendered rooms/index.html.erb within layouts/application (12.5ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  Rendered layouts/_user_navbar.html.erb (1.7ms)
+Completed 200 OK in 49ms (Views: 45.3ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/pt-BR/rooms" for 127.0.0.1 at 2017-07-21 13:38:05 -0300
+Processing by RoomsController#index as HTML
+  Parameters: {"locale"=>"pt-BR"}
+  [1m[36mRoom Load (0.3ms)[0m  [1m[34mSELECT  "rooms".* FROM "rooms" LIMIT ?[0m  [["LIMIT", 3]]
+  Rendering rooms/index.html.erb within layouts/application
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT AVG("reviews"."points") FROM "reviews" WHERE "reviews"."room_id" = ?[0m  [["room_id", 12]]
+  Rendered rooms/_review.html.erb (3.8ms)
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  Rendered collection of rooms/_room.html.erb [1 times] (10.1ms)
+  Rendered rooms/index.html.erb within layouts/application (11.8ms)
+DEPRECATION WARNING: Extra .css in SCSS file is unnecessary. Rename /home/sullyvan/workspace-sullyvan/proj/colcho_net/app/assets/stylesheets/shadow.css.scss to /home/sullyvan/workspace-sullyvan/proj/colcho_net/app/assets/stylesheets/shadow.scss. (called from _app_views_layouts_application_html_erb___3408752225195880684_70344384195680 at /home/sullyvan/workspace-sullyvan/proj/colcho_net/app/views/layouts/application.html.erb:7)
+DEPRECATION WARNING: Extra .css in SCSS file is unnecessary. Rename /home/sullyvan/workspace-sullyvan/proj/colcho_net/app/assets/stylesheets/shadow.css.scss to /home/sullyvan/workspace-sullyvan/proj/colcho_net/app/assets/stylesheets/shadow.scss. (called from _app_views_layouts_application_html_erb___3408752225195880684_70344384195680 at /home/sullyvan/workspace-sullyvan/proj/colcho_net/app/views/layouts/application.html.erb:7)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  Rendered layouts/_user_navbar.html.erb (1.9ms)
+Completed 200 OK in 239ms (Views: 235.2ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/pt-BR/rooms" for 127.0.0.1 at 2017-07-21 13:39:01 -0300
+Processing by RoomsController#index as HTML
+  Parameters: {"locale"=>"pt-BR"}
+  [1m[36mRoom Load (0.3ms)[0m  [1m[34mSELECT  "rooms".* FROM "rooms" LIMIT ?[0m  [["LIMIT", 3]]
+  Rendering rooms/index.html.erb within layouts/application
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT AVG("reviews"."points") FROM "reviews" WHERE "reviews"."room_id" = ?[0m  [["room_id", 12]]
+  Rendered rooms/_review.html.erb (3.7ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  Rendered collection of rooms/_room.html.erb [1 times] (9.2ms)
+  Rendered rooms/index.html.erb within layouts/application (10.8ms)
+DEPRECATION WARNING: Extra .css in SCSS file is unnecessary. Rename /home/sullyvan/workspace-sullyvan/proj/colcho_net/app/assets/stylesheets/shadow.css.scss to /home/sullyvan/workspace-sullyvan/proj/colcho_net/app/assets/stylesheets/shadow.scss. (called from _app_views_layouts_application_html_erb___3408752225195880684_70344434805820 at /home/sullyvan/workspace-sullyvan/proj/colcho_net/app/views/layouts/application.html.erb:7)
+DEPRECATION WARNING: Extra .css in SCSS file is unnecessary. Rename /home/sullyvan/workspace-sullyvan/proj/colcho_net/app/assets/stylesheets/shadow.css.scss to /home/sullyvan/workspace-sullyvan/proj/colcho_net/app/assets/stylesheets/shadow.scss. (called from _app_views_layouts_application_html_erb___3408752225195880684_70344434805820 at /home/sullyvan/workspace-sullyvan/proj/colcho_net/app/views/layouts/application.html.erb:7)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  Rendered layouts/_user_navbar.html.erb (2.1ms)
+Completed 200 OK in 104ms (Views: 100.2ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/pt-BR/rooms" for 127.0.0.1 at 2017-07-21 13:39:49 -0300
+Processing by RoomsController#index as HTML
+  Parameters: {"locale"=>"pt-BR"}
+  [1m[36mRoom Load (0.4ms)[0m  [1m[34mSELECT  "rooms".* FROM "rooms" LIMIT ?[0m  [["LIMIT", 3]]
+  Rendering rooms/index.html.erb within layouts/application
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT AVG("reviews"."points") FROM "reviews" WHERE "reviews"."room_id" = ?[0m  [["room_id", 12]]
+  Rendered rooms/_review.html.erb (3.6ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  Rendered collection of rooms/_room.html.erb [1 times] (9.4ms)
+  Rendered rooms/index.html.erb within layouts/application (13.4ms)
+DEPRECATION WARNING: Extra .css in SCSS file is unnecessary. Rename /home/sullyvan/workspace-sullyvan/proj/colcho_net/app/assets/stylesheets/shadow.css.scss to /home/sullyvan/workspace-sullyvan/proj/colcho_net/app/assets/stylesheets/shadow.scss. (called from _app_views_layouts_application_html_erb___3408752225195880684_70344386113700 at /home/sullyvan/workspace-sullyvan/proj/colcho_net/app/views/layouts/application.html.erb:7)
+DEPRECATION WARNING: Extra .css in SCSS file is unnecessary. Rename /home/sullyvan/workspace-sullyvan/proj/colcho_net/app/assets/stylesheets/shadow.css.scss to /home/sullyvan/workspace-sullyvan/proj/colcho_net/app/assets/stylesheets/shadow.scss. (called from _app_views_layouts_application_html_erb___3408752225195880684_70344386113700 at /home/sullyvan/workspace-sullyvan/proj/colcho_net/app/views/layouts/application.html.erb:7)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  Rendered layouts/_user_navbar.html.erb (1.8ms)
+Completed 200 OK in 119ms (Views: 114.4ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/pt-BR/rooms" for 127.0.0.1 at 2017-07-21 13:41:38 -0300
+Processing by RoomsController#index as HTML
+  Parameters: {"locale"=>"pt-BR"}
+  [1m[36mRoom Load (0.3ms)[0m  [1m[34mSELECT  "rooms".* FROM "rooms" LIMIT ?[0m  [["LIMIT", 3]]
+  Rendering rooms/index.html.erb within layouts/application
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT AVG("reviews"."points") FROM "reviews" WHERE "reviews"."room_id" = ?[0m  [["room_id", 12]]
+  Rendered rooms/_review.html.erb (4.0ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  Rendered collection of rooms/_room.html.erb [1 times] (9.8ms)
+  Rendered rooms/index.html.erb within layouts/application (11.4ms)
+DEPRECATION WARNING: Extra .css in SCSS file is unnecessary. Rename /home/sullyvan/workspace-sullyvan/proj/colcho_net/app/assets/stylesheets/shadow.css.scss to /home/sullyvan/workspace-sullyvan/proj/colcho_net/app/assets/stylesheets/shadow.scss. (called from _app_views_layouts_application_html_erb___3408752225195880684_70344383890880 at /home/sullyvan/workspace-sullyvan/proj/colcho_net/app/views/layouts/application.html.erb:7)
+DEPRECATION WARNING: Extra .css in SCSS file is unnecessary. Rename /home/sullyvan/workspace-sullyvan/proj/colcho_net/app/assets/stylesheets/shadow.css.scss to /home/sullyvan/workspace-sullyvan/proj/colcho_net/app/assets/stylesheets/shadow.scss. (called from _app_views_layouts_application_html_erb___3408752225195880684_70344383890880 at /home/sullyvan/workspace-sullyvan/proj/colcho_net/app/views/layouts/application.html.erb:7)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  Rendered layouts/_user_navbar.html.erb (1.7ms)
+Completed 200 OK in 105ms (Views: 101.3ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/pt-BR/rooms" for 127.0.0.1 at 2017-07-21 13:42:17 -0300
+Processing by RoomsController#index as HTML
+  Parameters: {"locale"=>"pt-BR"}
+  [1m[36mRoom Load (0.2ms)[0m  [1m[34mSELECT  "rooms".* FROM "rooms" LIMIT ?[0m  [["LIMIT", 3]]
+  Rendering rooms/index.html.erb within layouts/application
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT AVG("reviews"."points") FROM "reviews" WHERE "reviews"."room_id" = ?[0m  [["room_id", 12]]
+  Rendered rooms/_review.html.erb (3.2ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  Rendered collection of rooms/_room.html.erb [1 times] (8.9ms)
+  Rendered rooms/index.html.erb within layouts/application (10.1ms)
+DEPRECATION WARNING: Extra .css in SCSS file is unnecessary. Rename /home/sullyvan/workspace-sullyvan/proj/colcho_net/app/assets/stylesheets/shadow.css.scss to /home/sullyvan/workspace-sullyvan/proj/colcho_net/app/assets/stylesheets/shadow.scss. (called from _app_views_layouts_application_html_erb___3408752225195880684_70344283145000 at /home/sullyvan/workspace-sullyvan/proj/colcho_net/app/views/layouts/application.html.erb:7)
+DEPRECATION WARNING: Extra .css in SCSS file is unnecessary. Rename /home/sullyvan/workspace-sullyvan/proj/colcho_net/app/assets/stylesheets/shadow.css.scss to /home/sullyvan/workspace-sullyvan/proj/colcho_net/app/assets/stylesheets/shadow.scss. (called from _app_views_layouts_application_html_erb___3408752225195880684_70344283145000 at /home/sullyvan/workspace-sullyvan/proj/colcho_net/app/views/layouts/application.html.erb:7)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  Rendered layouts/_user_navbar.html.erb (2.6ms)
+Completed 200 OK in 103ms (Views: 100.3ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/pt-BR/rooms" for 127.0.0.1 at 2017-07-21 13:42:38 -0300
+Processing by RoomsController#index as HTML
+  Parameters: {"locale"=>"pt-BR"}
+  [1m[36mRoom Load (0.3ms)[0m  [1m[34mSELECT  "rooms".* FROM "rooms" LIMIT ?[0m  [["LIMIT", 3]]
+  Rendering rooms/index.html.erb within layouts/application
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT AVG("reviews"."points") FROM "reviews" WHERE "reviews"."room_id" = ?[0m  [["room_id", 12]]
+  Rendered rooms/_review.html.erb (3.1ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  Rendered collection of rooms/_room.html.erb [1 times] (7.2ms)
+  Rendered rooms/index.html.erb within layouts/application (8.6ms)
+DEPRECATION WARNING: Extra .css in SCSS file is unnecessary. Rename /home/sullyvan/workspace-sullyvan/proj/colcho_net/app/assets/stylesheets/shadow.css.scss to /home/sullyvan/workspace-sullyvan/proj/colcho_net/app/assets/stylesheets/shadow.scss. (called from _app_views_layouts_application_html_erb___3408752225195880684_70344385734760 at /home/sullyvan/workspace-sullyvan/proj/colcho_net/app/views/layouts/application.html.erb:7)
+DEPRECATION WARNING: Extra .css in SCSS file is unnecessary. Rename /home/sullyvan/workspace-sullyvan/proj/colcho_net/app/assets/stylesheets/shadow.css.scss to /home/sullyvan/workspace-sullyvan/proj/colcho_net/app/assets/stylesheets/shadow.scss. (called from _app_views_layouts_application_html_erb___3408752225195880684_70344385734760 at /home/sullyvan/workspace-sullyvan/proj/colcho_net/app/views/layouts/application.html.erb:7)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  Rendered layouts/_user_navbar.html.erb (1.8ms)
+Completed 200 OK in 99ms (Views: 96.0ms | ActiveRecord: 0.8ms)
+
+
+  [1m[36mRoom Load (0.3ms)[0m  [1m[34mSELECT  "rooms".* FROM "rooms" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "rooms" ("title", "location", "description", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "Quarto novo para alugar"], ["location", "Rio de Janerio"], ["description", "Quarto de frente a praia de copabana"], ["created_at", "2017-07-21 16:44:54.080509"], ["updated_at", "2017-07-21 16:44:54.080509"], ["user_id", 11]]
+  [1m[35m (101.5ms)[0m  [1m[36mcommit transaction[0m
+Started GET "/pt-BR/rooms" for 127.0.0.1 at 2017-07-21 13:44:57 -0300
+Processing by RoomsController#index as HTML
+  Parameters: {"locale"=>"pt-BR"}
+  [1m[36mRoom Load (0.3ms)[0m  [1m[34mSELECT  "rooms".* FROM "rooms" LIMIT ?[0m  [["LIMIT", 3]]
+  Rendering rooms/index.html.erb within layouts/application
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT AVG("reviews"."points") FROM "reviews" WHERE "reviews"."room_id" = ?[0m  [["room_id", 12]]
+  Rendered rooms/_review.html.erb (3.7ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT AVG("reviews"."points") FROM "reviews" WHERE "reviews"."room_id" = ?[0m  [["room_id", 14]]
+  Rendered rooms/_review.html.erb (1.7ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  Rendered collection of rooms/_room.html.erb [2 times] (13.5ms)
+  Rendered rooms/index.html.erb within layouts/application (15.1ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  Rendered layouts/_user_navbar.html.erb (1.7ms)
+Completed 200 OK in 45ms (Views: 41.3ms | ActiveRecord: 1.1ms)
+
+
+  [1m[36mRoom Load (0.2ms)[0m  [1m[34mSELECT  "rooms".* FROM "rooms" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mRoom Load (0.3ms)[0m  [1m[34mSELECT  "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mRoom Load (0.2ms)[0m  [1m[34mSELECT  "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mReview Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "reviews" WHERE "reviews"."user_id" = ? AND "reviews"."room_id" = ? LIMIT ?[0m  [["user_id", 11], ["room_id", 12], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mReview Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "reviews" WHERE "reviews"."user_id" = ? AND "reviews"."room_id" = ? LIMIT ?[0m  [["user_id", 11], ["room_id", 12], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mReview Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "reviews" WHERE "reviews"."user_id" = ? AND "reviews"."room_id" = ? LIMIT ?[0m  [["user_id", 10], ["room_id", 12], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "reviews" ("user_id", "room_id", "points", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 10], ["room_id", 12], ["points", 3], ["created_at", "2017-07-21 16:47:08.304522"], ["updated_at", "2017-07-21 16:47:08.304522"]]
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "rooms" SET "reviews_count" = COALESCE("reviews_count", 0) + 1 WHERE "rooms"."id" = ?[0m  [["id", 12]]
+  [1m[35m (126.9ms)[0m  [1m[36mcommit transaction[0m
+Started GET "/pt-BR/rooms" for 127.0.0.1 at 2017-07-21 13:47:11 -0300
+Processing by RoomsController#index as HTML
+  Parameters: {"locale"=>"pt-BR"}
+  [1m[36mRoom Load (0.3ms)[0m  [1m[34mSELECT  "rooms".* FROM "rooms" LIMIT ?[0m  [["LIMIT", 3]]
+  Rendering rooms/index.html.erb within layouts/application
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT AVG("reviews"."points") FROM "reviews" WHERE "reviews"."room_id" = ?[0m  [["room_id", 12]]
+  Rendered rooms/_review.html.erb (3.3ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT AVG("reviews"."points") FROM "reviews" WHERE "reviews"."room_id" = ?[0m  [["room_id", 14]]
+  Rendered rooms/_review.html.erb (1.9ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  Rendered collection of rooms/_room.html.erb [2 times] (14.4ms)
+  Rendered rooms/index.html.erb within layouts/application (15.9ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  Rendered layouts/_user_navbar.html.erb (1.6ms)
+Completed 200 OK in 44ms (Views: 40.0ms | ActiveRecord: 1.1ms)
+
+
+  [1m[36mRoom Load (0.3ms)[0m  [1m[34mSELECT  "rooms".* FROM "rooms" ORDER BY "rooms"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mReview Load (0.4ms)[0m  [1m[34mSELECT  "reviews".* FROM "reviews" WHERE "reviews"."room_id" = ? LIMIT ?[0m  [["room_id", 12], ["LIMIT", 11]]
+  [1m[36mRoom Load (0.2ms)[0m  [1m[34mSELECT  "rooms".* FROM "rooms" ORDER BY "rooms"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mRoom Load (0.2ms)[0m  [1m[34mSELECT  "rooms".* FROM "rooms" ORDER BY "rooms"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT  "reviews".* FROM "reviews" WHERE "reviews"."room_id" = ? LIMIT ?[0m  [["room_id", 12], ["LIMIT", 11]]
+  [1m[36mRoom Load (0.2ms)[0m  [1m[34mSELECT  "rooms".* FROM "rooms" ORDER BY "rooms"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT AVG("reviews"."points") FROM "reviews" WHERE "reviews"."room_id" = ?[0m  [["room_id", 12]]
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT  "reviews".* FROM "reviews" LIMIT ?[0m  [["LIMIT", 11]]
+Started GET "/pt-BR/rooms" for 127.0.0.1 at 2017-07-21 14:28:51 -0300
+Processing by RoomsController#index as HTML
+  Parameters: {"locale"=>"pt-BR"}
+  [1m[36mRoom Load (12.8ms)[0m  [1m[34mSELECT  "rooms".* FROM "rooms" LIMIT ?[0m  [["LIMIT", 3]]
+  Rendering rooms/index.html.erb within layouts/application
+  [1m[35m (16.7ms)[0m  [1m[34mSELECT AVG("reviews"."points") FROM "reviews" WHERE "reviews"."room_id" = ?[0m  [["room_id", 12]]
+  Rendered rooms/_review.html.erb (18.9ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT AVG("reviews"."points") FROM "reviews" WHERE "reviews"."room_id" = ?[0m  [["room_id", 14]]
+  Rendered rooms/_review.html.erb (1.5ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  Rendered collection of rooms/_room.html.erb [2 times] (26.9ms)
+  Rendered rooms/index.html.erb within layouts/application (28.1ms)
+Completed 500 Internal Server Error in 251ms (ActiveRecord: 29.9ms)
+
+
+  
+ActionView::Template::Error (couldn't find file 'font-awesome' with type 'text/css'
+Checked in these paths: 
+  /home/sullyvan/workspace-sullyvan/proj/colcho_net/app/assets/config
+  /home/sullyvan/workspace-sullyvan/proj/colcho_net/app/assets/images
+  /home/sullyvan/workspace-sullyvan/proj/colcho_net/app/assets/javascripts
+  /home/sullyvan/workspace-sullyvan/proj/colcho_net/app/assets/stylesheets
+  /home/sullyvan/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/coffee-rails-4.2.2/lib/assets/javascripts
+  /home/sullyvan/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actioncable-5.1.2/lib/assets/compiled
+  /home/sullyvan/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionview-5.1.2/lib/assets/compiled
+  /home/sullyvan/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/turbolinks-source-5.0.3/lib/assets/javascripts
+  /home/sullyvan/workspace-sullyvan/proj/colcho_net/node_modules):
+    4: 		<title>Colchonet</title>
+    5: 		<link href='http://fonts.googleapis.com/css?family=Pacifico'
+    6: 		rel='stylesheet' type='text/css'>
+    7: 		<%= stylesheet_link_tag "application", :media => "all" %>
+    8: 		<%= javascript_include_tag "application" %>
+    9: 		<%= csrf_meta_tags %>
+   10: 
+  
+app/assets/stylesheets/application.css:15
+app/views/layouts/application.html.erb:7:in `_app_views_layouts_application_html_erb___3408752225195880684_70344385230340'
+Started GET "/pt-BR/rooms" for 127.0.0.1 at 2017-07-21 14:33:29 -0300
+Processing by RoomsController#index as HTML
+  Parameters: {"locale"=>"pt-BR"}
+  [1m[36mRoom Load (0.4ms)[0m  [1m[34mSELECT  "rooms".* FROM "rooms" LIMIT ?[0m  [["LIMIT", 3]]
+  Rendering rooms/index.html.erb within layouts/application
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT AVG("reviews"."points") FROM "reviews" WHERE "reviews"."room_id" = ?[0m  [["room_id", 12]]
+  Rendered rooms/_review.html.erb (5.2ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT AVG("reviews"."points") FROM "reviews" WHERE "reviews"."room_id" = ?[0m  [["room_id", 14]]
+  Rendered rooms/_review.html.erb (3.0ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  Rendered collection of rooms/_room.html.erb [2 times] (71.4ms)
+  Rendered rooms/index.html.erb within layouts/application (72.7ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  Rendered layouts/_user_navbar.html.erb (2.0ms)
+Completed 200 OK in 956ms (Views: 937.4ms | ActiveRecord: 1.8ms)
+
+
