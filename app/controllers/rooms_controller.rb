@@ -3,18 +3,20 @@ class RoomsController < ApplicationController
   before_action :require_authenticate, :only => [:user, :edit, :update, :destroy]
   before_action :can_change, :only => [:update]
 
+  PER_PAGE = 10
+
   # GET /rooms
   # GET /rooms.json
   def index
-    @rooms = Room.most_recent.map do |room|
-      RoomPresenter.new(room, self, false)
-    end
-  end
+    @search_query = params[:q]
+    rooms = Room.search(@search_query).page(1).per(1)
 
+    @rooms = RoomCollectionPresenter.new(rooms.most_recent, self)
+  end
   # GET /rooms/1
   # GET /rooms/1.json
   def show
-    room_model = Room.find(params[:id])
+    room_model = Room.where(slug: params[:id]).first
     @room = RoomPresenter.new(room_model, self)
   end
 
@@ -25,6 +27,7 @@ class RoomsController < ApplicationController
 
   # GET /rooms/1/edit
   def edit
+    @room = Room.where(slug: params[:id]).first
   end
 
   # POST /rooms
@@ -46,7 +49,7 @@ class RoomsController < ApplicationController
   # PATCH/PUT /rooms/1
   # PATCH/PUT /rooms/1.json
   def update
-    @room = Room.find(params[:id])
+    @room = Room.where(slug: params[:id]).first
     respond_to do |format|
       #whitelist dos parametros de :room
       if @room.update_attributes(room_params)
@@ -72,16 +75,17 @@ class RoomsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
   def set_room
-    @room = Room.find(params[:id])
+    @room = Room.where(slug: params[:id])
   end
 
     # Never trust parameters from the scary internet, only allow the white list through.
   def room_params
-    params.require(:room).permit(:title, :location, :description)
+    params.require(:room).permit(:title, :location, :description, :picture)
   end
 
   def can_change
-    @room = Room.find(params[:id])
+    # @room = Room.find(params[:id])
+    @room = Room.where(slug: params[:id]).first
     unless user_signed_in? && @room.user_id == current_user.id
       redirect_to room_path(params[:id]), :notice => 'Quarto não correspondente ao usuário logado'
     end
