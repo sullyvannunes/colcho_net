@@ -30,6 +30,10 @@ Rails.application.configure do
   # Do not fallback to assets pipeline if a precompiled asset is missed.
   config.assets.compile = false
 
+  config.action_mailer.default_url_options = { :host => "calm-badlands-8648.herokuapp.com"}
+  config.action_mailer.smtp_settings = {:port=> ENV['MAILGUN_SMTP_PORT'],:address => ENV['MAILGUN_SMTP_SERVER'], :user_name => ENV['MAILGUN_SMTP_LOGIN'], :password => ENV['MAILGUN_SMTP_PASSWORD'], :domain => 'calm-badlands-8648.herokuapp.com', :authentication => :plain, }
+  config.action_mailer.delivery_method = :smtp
+
   # `config.assets.precompile` and `config.assets.version` have moved to config/initializers/assets.rb
 
   # Enable serving of images, stylesheets, and JavaScripts from an asset server.
