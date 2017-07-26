@@ -33534,3 +33534,169 @@ puma (3.9.1) lib/puma/server.rb:602:in `handle_request'
 puma (3.9.1) lib/puma/server.rb:435:in `process_client'
 puma (3.9.1) lib/puma/server.rb:299:in `block in run'
 puma (3.9.1) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/" for 127.0.0.1 at 2017-07-26 16:27:44 -0300
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#index as HTML
+  [1m[36mRoom Load (0.2ms)[0m  [1m[34mSELECT  "rooms".* FROM "rooms" ORDER BY "rooms"."id" ASC LIMIT ?[0m  [["LIMIT", 3]]
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (3.0ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  Rendered layouts/_user_navbar.html.erb (29.9ms)
+Completed 200 OK in 381ms (Views: 316.9ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/pt-BR/users/11" for 127.0.0.1 at 2017-07-26 16:27:46 -0300
+Processing by UsersController#show as HTML
+  Parameters: {"locale"=>"pt-BR", "id"=>"11"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (1.5ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  Rendered layouts/_user_navbar.html.erb (1.8ms)
+Completed 200 OK in 184ms (Views: 25.9ms | ActiveRecord: 0.4ms)
+
+
+Started DELETE "/pt-BR/user_sessions" for 127.0.0.1 at 2017-07-26 16:27:47 -0300
+Processing by UserSessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"R59ySr7cb+xWOpH6LdU60y8+Psl0t0na6+4deynQBt8YD0bJjGGA+J6IpPlV2y5fy+bRm4SCsFDZcXDGqhDAuQ==", "locale"=>"pt-BR"}
+Redirected to http://localhost:3000/?locale=pt-BR
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/?locale=pt-BR" for 127.0.0.1 at 2017-07-26 16:27:47 -0300
+Processing by HomeController#index as HTML
+  Parameters: {"locale"=>"pt-BR"}
+  [1m[36mRoom Load (0.4ms)[0m  [1m[34mSELECT  "rooms".* FROM "rooms" ORDER BY "rooms"."id" ASC LIMIT ?[0m  [["LIMIT", 3]]
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (1.1ms)
+  Rendered layouts/_visitor_navbar.html.erb (1.1ms)
+Completed 200 OK in 44ms (Views: 40.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/pt-BR/users/new" for 127.0.0.1 at 2017-07-26 16:27:48 -0300
+Processing by UsersController#new as HTML
+  Parameters: {"locale"=>"pt-BR"}
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (153.0ms)
+  Rendered users/new.html.erb within layouts/application (177.2ms)
+  Rendered layouts/_visitor_navbar.html.erb (0.8ms)
+Completed 200 OK in 350ms (Views: 204.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/pt-BR/users" for 127.0.0.1 at 2017-07-26 16:28:15 -0300
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"H480h4IauXK4qRFHQII1tRVSYZyyjAqjpULqCZSsjF4a0gkJWAu/DJzmHruT5TYhR1UwiclfPtpw2ggh5/ECew==", "user"=>{"full_name"=>"sull", "location"=>"rio", "email"=>"sullyvan@yahoo.com.br", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "bio"=>"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"}, "commit"=>"Criar Usuário", "locale"=>"pt-BR"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "sullyvan@yahoo.com.br"], ["LIMIT", 1]]
+  [1m[35mSQL (1.4ms)[0m  [1m[32mINSERT INTO "users" ("full_name", "email", "password_digest", "location", "bio", "created_at", "updated_at", "confirmation_token") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["full_name", "sull"], ["email", "sullyvan@yahoo.com.br"], ["password_digest", "$2a$10$kMRXCO3uWz7XgbokQs6M3ePUp6UImeowz3Lmi61PHrROurbu9FSHS"], ["location", "rio"], ["bio", "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"], ["created_at", "2017-07-26 19:28:15.898912"], ["updated_at", "2017-07-26 19:28:15.898912"], ["confirmation_token", "5TQi1lLhzzi_WAnwW9pTfQ"]]
+  [1m[35m (112.6ms)[0m  [1m[36mcommit transaction[0m
+SignupMailer#confirm_email: processed outbound mail in 23.5ms
+Completed 500 Internal Server Error in 590ms (ActiveRecord: 114.5ms)
+
+
+  
+ActionView::MissingTemplate (Missing template signup_mailer/confirm_email with "mailer". Searched in:
+  * "signup_mailer"
+):
+  
+app/mailers/signup_mailer.rb:7:in `confirm_email'
+app/controllers/users_controller.rb:21:in `create'
+Started POST "/pt-BR/users" for 127.0.0.1 at 2017-07-26 16:29:42 -0300
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"H480h4IauXK4qRFHQII1tRVSYZyyjAqjpULqCZSsjF4a0gkJWAu/DJzmHruT5TYhR1UwiclfPtpw2ggh5/ECew==", "user"=>{"full_name"=>"sull", "location"=>"rio", "email"=>"sullyvan@yahoo.com.br", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "bio"=>"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"}, "commit"=>"Criar Usuário", "locale"=>"pt-BR"}
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "sullyvan@yahoo.com.br"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (6.2ms)
+  Rendered users/new.html.erb within layouts/application (8.3ms)
+  Rendered layouts/_visitor_navbar.html.erb (1.7ms)
+Completed 200 OK in 144ms (Views: 53.8ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/pt-BR/users" for 127.0.0.1 at 2017-07-26 16:29:56 -0300
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"/m6hGjbT3DvcXVjeemh6x8zNCup1M3mt6bi55CrRp7Ch/pWZBG4zLxTvbd0CZm5LKBXluIUGgCfbJ9RZqRFh1g==", "user"=>{"full_name"=>"sull", "location"=>"rio", "email"=>"sullyva@erb.vom", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "bio"=>"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"}, "commit"=>"Criar Usuário", "locale"=>"pt-BR"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "sullyva@erb.vom"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("full_name", "email", "password_digest", "location", "bio", "created_at", "updated_at", "confirmation_token") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["full_name", "sull"], ["email", "sullyva@erb.vom"], ["password_digest", "$2a$10$fmNIk/RmQCC7y2kOts7VDuUM8kyGj95ykphyPXHJ.jP053lQcAPHi"], ["location", "rio"], ["bio", "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"], ["created_at", "2017-07-26 19:29:56.999615"], ["updated_at", "2017-07-26 19:29:56.999615"], ["confirmation_token", "Xq2R41MEM_c9ZgE6e60rcw"]]
+  [1m[35m (168.0ms)[0m  [1m[36mcommit transaction[0m
+SignupMailer#confirm_email: processed outbound mail in 13.3ms
+Completed 500 Internal Server Error in 262ms (ActiveRecord: 168.6ms)
+
+
+  
+ActionView::MissingTemplate (Missing template signup_mailer/confirm_email with "mailer". Searched in:
+  * "signup_mailer"
+):
+  
+app/mailers/signup_mailer.rb:7:in `confirm_email'
+app/controllers/users_controller.rb:21:in `create'
+Started PUT "/__web_console/repl_sessions/e17087646fa6df891d064283e80e87e5" for 127.0.0.1 at 2017-07-26 16:30:06 -0300
+Started PUT "/__web_console/repl_sessions/e17087646fa6df891d064283e80e87e5" for 127.0.0.1 at 2017-07-26 16:30:06 -0300
+Started POST "/pt-BR/users" for 127.0.0.1 at 2017-07-26 16:33:12 -0300
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"/m6hGjbT3DvcXVjeemh6x8zNCup1M3mt6bi55CrRp7Ch/pWZBG4zLxTvbd0CZm5LKBXluIUGgCfbJ9RZqRFh1g==", "user"=>{"full_name"=>"sull", "location"=>"rio", "email"=>"sullyva@erb.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "bio"=>"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"}, "commit"=>"Criar Usuário", "locale"=>"pt-BR"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "sullyva@erb.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("full_name", "email", "password_digest", "location", "bio", "created_at", "updated_at", "confirmation_token") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["full_name", "sull"], ["email", "sullyva@erb.com"], ["password_digest", "$2a$10$sQzN5yLaLDNm3SefciOOYObtF0RuZc63dEI/R6XagQCZBitU6hurW"], ["location", "rio"], ["bio", "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"], ["created_at", "2017-07-26 19:33:12.953600"], ["updated_at", "2017-07-26 19:33:12.953600"], ["confirmation_token", "BMkNHCOPrHSdbbzv8l4fgg"]]
+  [1m[35m (203.0ms)[0m  [1m[36mcommit transaction[0m
+  Rendering signup_mailer/confirm_email.html.erb
+  Rendered signup_mailer/confirm_email.html.erb (0.5ms)
+  Rendering signup_mailer/confirm_email.text.erb
+  Rendered signup_mailer/confirm_email.text.erb (0.2ms)
+SignupMailer#confirm_email: processed outbound mail in 32.8ms
+Sent mail to sullyva@erb.com (14.7ms)
+Date: Wed, 26 Jul 2017 16:33:13 -0300
+From: no-reply@colcho.net
+To: sullyva@erb.com
+Message-ID: <5978ee7931c9a_606c2acfd4eb75fc840c@PC-DSV-SULLYVAN.mail>
+Subject: Colcho.net - Confirme seu email
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_5978ee792eaa2_606c2acfd4eb75fc839b9";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_5978ee792eaa2_606c2acfd4eb75fc839b9
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_5978ee792eaa2_606c2acfd4eb75fc839b9
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <style>
+      /* Email styles need to be inline */
+    </style>
+  </head>
+
+  <body>
+    
+  </body>
+</html>
+
+----==_mimepart_5978ee792eaa2_606c2acfd4eb75fc839b9--
+
+Redirected to http://localhost:3000/pt-BR/users/14
+Completed 302 Found in 334ms (ActiveRecord: 203.5ms)
+
+
+Started GET "/pt-BR/users/14" for 127.0.0.1 at 2017-07-26 16:33:13 -0300
+Processing by UsersController#show as HTML
+  Parameters: {"locale"=>"pt-BR", "id"=>"14"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (1.2ms)
+  Rendered layouts/_visitor_navbar.html.erb (0.9ms)
+Completed 200 OK in 24ms (Views: 22.4ms | ActiveRecord: 0.1ms)
+
+
