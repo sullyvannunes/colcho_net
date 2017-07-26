@@ -34,7 +34,7 @@ class RoomsController < ApplicationController
   # POST /rooms.json
   def create
     @room = current_user.rooms.build(room_params)
-
+    # byebug
     respond_to do |format|
       if @room.save
         format.html { redirect_to @room, notice: 'Room was successfully created.' }
