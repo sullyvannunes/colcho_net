@@ -1,5 +1,5 @@
 class Rooms::ReviewsController < Rooms::BaseController
-  before_filter :require_authentication
+  before_action :require_authentication
   def create
     review = room.reviews.find_or_initialize_by(user_id: current_user.id)
     review.update_attributes!(params[:review])
