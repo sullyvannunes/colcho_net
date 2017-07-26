@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-	before_action :require_no_authentication, :only => [:new, :create]
+	before_action :require_no_authenticate, :only => [:new, :create]
 	before_action :can_change, :only => [:edit, :update]
 	include ActiveModel::ForbiddenAttributesProtection
 	def new
