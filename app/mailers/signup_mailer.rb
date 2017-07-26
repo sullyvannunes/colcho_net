@@ -3,8 +3,7 @@ class SignupMailer < ActionMailer::Base
 
   def confirm_email(user)
     @user = user
-    @confirmation_link = root_url #TODO mudar para rota do token
-
+    @confirmation_link = @confirmation_link = confirmation_url({:token => @user.confirmation_token})
     mail({
       :to => user.email,
       :bcc => ['sign ups <signups@colcho.net>'],
